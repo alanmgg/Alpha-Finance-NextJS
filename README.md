@@ -1,5 +1,3 @@
-# YFinance-React
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
