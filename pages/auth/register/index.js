@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import Link from "next/link";
 import AppConfig from "../../../layout/AppConfig";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
@@ -111,10 +112,13 @@ export default function RegisterPage() {
               <span className="text-600 font-medium">
                 ¿Ya tienes una cuenta?
               </span>
-              <a href="/auth/login" className="text-600 font-medium font-bold">
+              <Link
+                href="/auth/login"
+                className="text-600 font-medium font-bold"
+              >
                 {" "}
                 Inicia sesión
-              </a>
+              </Link>
             </div>
 
             <div>

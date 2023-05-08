@@ -1,5 +1,6 @@
-import { useRouter } from "next/router";
 import React, { useContext, useState } from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import AppConfig from "../../../layout/AppConfig";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
@@ -48,13 +49,13 @@ const LoginPage = () => {
               <span className="text-600 font-medium">
                 ¿Aun no tienes una cuenta?
               </span>
-              <a
+              <Link
                 href="/auth/register"
                 className="text-600 font-medium font-bold"
               >
                 {" "}
                 Registrate
-              </a>
+              </Link>
             </div>
 
             <div>
