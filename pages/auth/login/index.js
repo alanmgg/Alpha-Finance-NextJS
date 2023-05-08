@@ -57,7 +57,6 @@ export default function LoginPage() {
   async function loadUserHandler(response) {
     if (response.ok) {
       var logClient = await response.json();
-      console.log(logClient);
 
       localStorage.setItem("logClient", JSON.stringify(logClient));
       toast.success("Sesión iniciada!", {
@@ -83,10 +82,26 @@ export default function LoginPage() {
       throw new Error(error);
     } else if (response.status === 401) {
       const error = await response.json();
-      // ActionsNotifications.pushLoadingError(error.message);
+      toast.error(error.message, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      });
     } else if (response.status === 404) {
       const error = await response.json();
-      // ActionsNotifications.pushLoadingError(error.detail);
+      toast.error(error.detail, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      });
     }
     throw new Error("Network response was not ok");
   }
