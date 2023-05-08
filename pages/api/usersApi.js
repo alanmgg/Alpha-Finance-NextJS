@@ -23,3 +23,18 @@ export function createUser(
     .then(responseHandler)
     .catch(errorHandler);
 }
+
+export function authUser(
+  form,
+  responseHandler = handleResponse,
+  errorHandler = handleError
+) {
+  let endpoint_url =
+    "https://yfinance-api.vercel.app/users/" + form.email + "/" + form.password;
+
+  return fetch(endpoint_url, {
+    method: "POST"
+  })
+    .then(responseHandler)
+    .catch(errorHandler);
+}

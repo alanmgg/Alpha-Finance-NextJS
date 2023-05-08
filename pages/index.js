@@ -31,7 +31,7 @@ const lineData = {
   ]
 };
 
-const Dashboard = () => {
+export default function Dashboard() {
   const [products, setProducts] = useState(null);
   const menu1 = useRef(null);
   const menu2 = useRef(null);
@@ -39,6 +39,14 @@ const Dashboard = () => {
   const { layoutConfig } = useContext(LayoutContext);
 
   const router = useRouter();
+
+  useEffect(() => {
+    const sessionClient = localStorage.getItem("logClient");
+    if (sessionClient === null) {
+      router.push("/auth/login");
+    }
+    // const jsonClient = JSON.parse(sessionClient);
+  }, []);
 
   const applyLightTheme = () => {
     const lineOptions = {
@@ -504,6 +512,4 @@ const Dashboard = () => {
       </div>
     </div>
   );
-};
-
-export default Dashboard;
+}

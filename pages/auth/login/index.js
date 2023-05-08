@@ -8,17 +8,70 @@ import { Password } from "primereact/password";
 import { LayoutContext } from "../../../layout/context/layoutcontext";
 import { InputText } from "primereact/inputtext";
 import { classNames } from "primereact/utils";
+// Api
+import { authUser } from "../../api/usersApi";
 
-const LoginPage = () => {
-  const [password, setPassword] = useState("");
+export default function LoginPage() {
   const [checked, setChecked] = useState(false);
   const { layoutConfig } = useContext(LayoutContext);
+
+  const [form, setForm] = useState({
+    email: "",
+    password: ""
+  });
 
   const router = useRouter();
   const containerClassName = classNames(
     "surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden",
     { "p-input-filled": layoutConfig.inputStyle === "filled" }
   );
+
+  function fillFields(type, data) {
+    switch (type) {
+      case "email":
+        setForm({ ...form, email: data });
+        break;
+      case "password":
+        setForm({ ...form, password: data });
+        break;
+      default:
+        break;
+    }
+  }
+
+  function onSubmit() {
+    authUser(form, loadUserHandler, loadErrorHandler);
+  }
+
+  async function loadUserHandler(response) {
+    if (response.ok) {
+      var logClient = await response.json();
+      console.log(logClient);
+
+      localStorage.setItem("logClient", JSON.stringify(logClient));
+      // ActionsNotifications.pushSuccess("Usuario creado ...");
+      setForm({
+        email: "",
+        password: ""
+      });
+
+      router.push("/");
+      return;
+    }
+    if (response.status === 400) {
+      const error = await response.text();
+      throw new Error(error);
+    } else if (response.status === 401) {
+      const error = await response.json();
+      // ActionsNotifications.pushLoadingError(error.message);
+    } else if (response.status === 404) {
+      const error = await response.json();
+      // ActionsNotifications.pushLoadingError(error.detail);
+    }
+    throw new Error("Network response was not ok");
+  }
+
+  function loadErrorHandler(error) {}
 
   return (
     <div className={containerClassName}>
@@ -63,30 +116,32 @@ const LoginPage = () => {
                 htmlFor="email1"
                 className="block text-900 text-xl font-medium mb-2"
               >
-                Email
+                Correo
               </label>
               <InputText
                 inputid="email1"
                 type="text"
-                placeholder="Email address"
+                placeholder="admin@mail.com"
                 className="w-full md:w-30rem mb-5"
                 style={{ padding: "1rem" }}
+                value={form.email !== "" ? form.email : ""}
+                onChange={(e) => fillFields("email", e.target.value)}
               />
 
               <label
                 htmlFor="password1"
                 className="block text-900 font-medium text-xl mb-2"
               >
-                Password
+                Contraseña
               </label>
               <Password
                 inputid="password1"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
                 toggleMask
                 className="w-full mb-5"
                 inputClassName="w-full p-3 md:w-30rem"
+                value={form.password !== "" ? form.password : ""}
+                onChange={(e) => fillFields("password", e.target.value)}
               ></Password>
 
               <div className="flex align-items-center justify-content-between mb-5 gap-5">
@@ -107,9 +162,9 @@ const LoginPage = () => {
                 </a>
               </div>
               <Button
-                label="Sign In"
+                label="Iniciar sesión"
                 className="w-full p-3 text-xl"
-                onClick={() => router.push("/")}
+                onClick={() => onSubmit()}
               ></Button>
             </div>
           </div>
@@ -117,7 +172,7 @@ const LoginPage = () => {
       </div>
     </div>
   );
-};
+}
 
 LoginPage.getLayout = function getLayout(page) {
   return (
@@ -127,4 +182,3 @@ LoginPage.getLayout = function getLayout(page) {
     </React.Fragment>
   );
 };
-export default LoginPage;

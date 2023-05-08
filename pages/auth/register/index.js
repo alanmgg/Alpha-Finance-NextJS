@@ -13,8 +13,8 @@ import { createUser } from "../../api/usersApi";
 // import ActionsNotifications from "../../ActionsNotifications";
 
 export default function RegisterPage() {
-  const [checked, setChecked] = useState(false);
   const { layoutConfig } = useContext(LayoutContext);
+  const [checked, setChecked] = useState(false);
 
   const [form, setForm] = useState({
     name: "",
@@ -190,7 +190,7 @@ export default function RegisterPage() {
                 htmlFor="password1"
                 className="block text-900 font-medium text-xl mb-2"
               >
-                Password
+                Contraseña
               </label>
               <Password
                 inputid="password1"
