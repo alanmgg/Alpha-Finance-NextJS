@@ -11,7 +11,7 @@ import { classNames } from "primereact/utils";
 // Api
 import { authUser } from "../../api/usersApi";
 // Notifications
-import ActionsNotifications from "../../ActionsNotifications";
+import { toast } from "react-toastify";
 
 export default function LoginPage() {
   const [checked, setChecked] = useState(false);
@@ -42,7 +42,15 @@ export default function LoginPage() {
   }
 
   function onSubmit() {
-    ActionsNotifications.pushInfo("Iniciando sesión ...");
+    toast.info("Iniciando sesión ...", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined
+    });
     authUser(form, loadUserHandler, loadErrorHandler);
   }
 
@@ -52,7 +60,16 @@ export default function LoginPage() {
       console.log(logClient);
 
       localStorage.setItem("logClient", JSON.stringify(logClient));
-      ActionsNotifications.pushSuccess("Sesión iniciada!");
+      toast.success("Sesión iniciada!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      });
+
       setForm({
         email: "",
         password: ""
@@ -66,10 +83,10 @@ export default function LoginPage() {
       throw new Error(error);
     } else if (response.status === 401) {
       const error = await response.json();
-      ActionsNotifications.pushLoadingError(error.message);
+      // ActionsNotifications.pushLoadingError(error.message);
     } else if (response.status === 404) {
       const error = await response.json();
-      ActionsNotifications.pushLoadingError(error.detail);
+      // ActionsNotifications.pushLoadingError(error.detail);
     }
     throw new Error("Network response was not ok");
   }
