@@ -10,7 +10,7 @@ import { classNames } from "primereact/utils";
 // Api
 import { createUser } from "../../api/usersApi";
 // Notifications
-import ActionsNotifications from "../../ActionsNotifications";
+// import ActionsNotifications from "../../ActionsNotifications";
 
 export default function RegisterPage() {
   const [checked, setChecked] = useState(false);
@@ -58,7 +58,7 @@ export default function RegisterPage() {
   async function loadUserHandler(response) {
     if (response.ok) {
       var logClient = await response.json();
-      ActionsNotifications.pushSuccess("Usuario creado ...");
+      // ActionsNotifications.pushSuccess("Usuario creado ...");
       setForm({
         name: "",
         lastName: "",
@@ -73,10 +73,10 @@ export default function RegisterPage() {
       throw new Error(error);
     } else if (response.status === 401) {
       const error = await response.json();
-      ActionsNotifications.pushLoadingError(error.message);
+      // ActionsNotifications.pushLoadingError(error.message);
     } else if (response.status === 404) {
       const error = await response.json();
-      ActionsNotifications.pushLoadingError(error.detail);
+      // ActionsNotifications.pushLoadingError(error.detail);
     }
     throw new Error("Network response was not ok");
   }
