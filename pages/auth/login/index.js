@@ -12,6 +12,7 @@ import { classNames } from "primereact/utils";
 import { authUser } from "../../api/usersApi";
 // Notifications
 import { toast } from "react-toastify";
+import { notificationSuccess, notificationInfo } from "../../notifications";
 
 export default function LoginPage() {
   const [checked, setChecked] = useState(false);
@@ -42,15 +43,7 @@ export default function LoginPage() {
   }
 
   function onSubmit() {
-    toast.info("Iniciando sesión ...", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined
-    });
+    notificationInfo("Iniciando sesión ...");
     authUser(form, loadUserHandler, loadErrorHandler);
   }
 
@@ -59,15 +52,7 @@ export default function LoginPage() {
       var logClient = await response.json();
 
       localStorage.setItem("logClient", JSON.stringify(logClient));
-      toast.success("Sesión iniciada!", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined
-      });
+      notificationSuccess("Sesión iniciada!");
 
       setForm({
         email: "",
