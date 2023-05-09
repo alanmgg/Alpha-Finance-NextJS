@@ -10,7 +10,7 @@ import { classNames } from "primereact/utils";
 // Api
 import { createUser } from "../../api/usersApi";
 // Notifications
-// import ActionsNotifications from "../../ActionsNotifications";
+import { toast } from "react-toastify";
 
 export default function RegisterPage() {
   const { layoutConfig } = useContext(LayoutContext);
@@ -58,7 +58,15 @@ export default function RegisterPage() {
   async function loadUserHandler(response) {
     if (response.ok) {
       var logClient = await response.json();
-      // ActionsNotifications.pushSuccess("Usuario creado ...");
+      toast.success("Usuario creado ...", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      });
       setForm({
         name: "",
         lastName: "",
@@ -73,10 +81,26 @@ export default function RegisterPage() {
       throw new Error(error);
     } else if (response.status === 401) {
       const error = await response.json();
-      // ActionsNotifications.pushLoadingError(error.message);
+      toast.error(error.message, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      });
     } else if (response.status === 404) {
       const error = await response.json();
-      // ActionsNotifications.pushLoadingError(error.detail);
+      toast.error(error.detail, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      });
     }
     throw new Error("Network response was not ok");
   }
