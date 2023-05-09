@@ -13,7 +13,7 @@ import { authUser } from "../../api/usersApi";
 // Notifications
 import { toast } from "react-toastify";
 // import { NotificationSuccess, notificationInfo } from "../../notifications/NotificationSuccess";
-import { notificationSuccess } from "../../notifications/notiSuccess";
+import { notiSuccess } from "../../notifications/notiSuccess";
 
 export default function LoginPage() {
   const [checked, setChecked] = useState(false);
@@ -53,8 +53,8 @@ export default function LoginPage() {
       var logClient = await response.json();
 
       localStorage.setItem("logClient", JSON.stringify(logClient));
-      // NotificationSuccess("Sesión iniciada!");
-      notificationSuccess("Sesión iniciada!");
+      // notiSuccess("Sesión iniciada!");
+      notiSuccess("Sesión iniciada!");
 
       setForm({
         email: "",

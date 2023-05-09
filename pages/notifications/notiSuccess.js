@@ -1,6 +1,7 @@
+import React from "react";
 import { toast } from "react-toastify";
 
-export function notificationSuccess(message) {
+export function notiSuccess(message) {
   toast.success(message, {
     position: "top-right",
     autoClose: 3000,
