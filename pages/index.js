@@ -46,7 +46,7 @@ export default function Dashboard() {
       router.push("/auth/login");
     }
     // const jsonClient = JSON.parse(sessionClient);
-  }, []);
+  }, [router]);
 
   const applyLightTheme = () => {
     const lineOptions = {
