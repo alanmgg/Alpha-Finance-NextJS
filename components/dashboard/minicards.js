@@ -23,9 +23,9 @@ export default function Minicards(props) {
   return (
     <div className="grid">
       {companies !== null
-        ? companies.map((item) => {
+        ? companies.map((item, index) => {
             return (
-              <div className="col-12 lg:col-6 xl:col-3">
+              <div key={index} className="col-12 lg:col-6 xl:col-3">
                 <div className="card mb-0">
                   <div className="flex justify-content-between mb-3">
                     <div>
