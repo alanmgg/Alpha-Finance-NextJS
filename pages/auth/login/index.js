@@ -9,7 +9,7 @@ import { LayoutContext } from "../../../layout/context/layoutcontext";
 import { InputText } from "primereact/inputtext";
 import { classNames } from "primereact/utils";
 // Api
-import { authUser } from "../../api/usersApi";
+import { authUser } from "./../../../api/usersApi";
 // Notifications
 import { toast } from "react-toastify";
 

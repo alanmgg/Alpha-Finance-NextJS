@@ -8,7 +8,7 @@ import { LayoutContext } from "../../../layout/context/layoutcontext";
 import { InputText } from "primereact/inputtext";
 import { classNames } from "primereact/utils";
 // Api
-import { createUser } from "../../api/usersApi";
+import { createUser } from "./../../../api/usersApi";
 // Notifications
 import { toast } from "react-toastify";
 

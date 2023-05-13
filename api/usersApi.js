@@ -5,7 +5,7 @@ export function createUser(
   responseHandler = handleResponse,
   errorHandler = handleError
 ) {
-  let endpoint_url = "https://yfinance-api.vercel.app/users";
+  let endpoint_url = "https://alpha-finance-api.vercel.app/users";
 
   const text_config = {
     name: form.name,
@@ -30,7 +30,10 @@ export function authUser(
   errorHandler = handleError
 ) {
   let endpoint_url =
-    "https://yfinance-api.vercel.app/users/" + form.email + "/" + form.password;
+    "https://alpha-finance-api.vercel.app/users/" +
+    form.email +
+    "/" +
+    form.password;
 
   return fetch(endpoint_url, {
     method: "POST"

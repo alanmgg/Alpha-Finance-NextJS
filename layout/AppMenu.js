@@ -9,9 +9,10 @@ const AppMenu = () => {
 
   const model = [
     {
-      label: "Home",
-      items: [{ label: "Dashboard", icon: "pi pi-fw pi-home", to: "/" }]
+      label: "Inicio",
+      items: [{ label: "Panel", icon: "pi pi-fw pi-home", to: "/" }]
     },
+
     // {
     //     label: 'UI Components',
     //     items: [
@@ -33,87 +34,91 @@ const AppMenu = () => {
     //         { label: 'Misc', icon: 'pi pi-fw pi-circle', to: '/uikit/misc' }
     //     ]
     // },
-    {
-      label: "Prime Blocks",
-      items: [
-        {
-          label: "Free Blocks",
-          icon: "pi pi-fw pi-eye",
-          to: "/blocks",
-          badge: "NEW"
-        }
-        // { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://blocks.primereact.org', target: '_blank' }
-      ]
-    },
-    {
-      label: "Utilities",
-      items: [
-        {
-          label: "PrimeIcons",
-          icon: "pi pi-fw pi-prime",
-          to: "/utilities/icons"
-        }
-        // { label: 'PrimeFlex', icon: 'pi pi-fw pi-desktop', url: 'https://www.primefaces.org/primeflex/', target: '_blank' }
-      ]
-    },
-    {
-      label: "Pages",
-      icon: "pi pi-fw pi-briefcase",
-      to: "/pages",
-      items: [
-        {
-          label: "Landing",
-          icon: "pi pi-fw pi-globe",
-          to: "/landing"
-        },
-        {
-          label: "Auth",
-          icon: "pi pi-fw pi-user",
-          items: [
-            {
-              label: "Login",
-              icon: "pi pi-fw pi-sign-in",
-              to: "/auth/login"
-            },
-            {
-              label: "Register",
-              icon: "pi pi-fw pi-sign-in",
-              to: "/auth/register"
-            },
-            {
-              label: "Error",
-              icon: "pi pi-fw pi-times-circle",
-              to: "/auth/error"
-            },
-            {
-              label: "Access Denied",
-              icon: "pi pi-fw pi-lock",
-              to: "/auth/access"
-            }
-          ]
-        },
-        {
-          label: "Crud",
-          icon: "pi pi-fw pi-pencil",
-          to: "/pages/crud"
-        },
-        {
-          label: "Timeline",
-          icon: "pi pi-fw pi-calendar",
-          to: "/pages/timeline"
-        },
-        {
-          label: "Not Found",
-          icon: "pi pi-fw pi-exclamation-circle",
-          to: "/pages/notfound"
-        },
-        {
-          label: "Empty",
-          icon: "pi pi-fw pi-circle-off",
-          to: "/pages/empty"
-        }
-      ]
-    },
+
+    // {
+    //   label: "Prime Blocks",
+    //   items: [
+    //     {
+    //       label: "Free Blocks",
+    //       icon: "pi pi-fw pi-eye",
+    //       to: "/blocks",
+    //       badge: "NEW"
+    //     }
+    //     // { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://blocks.primereact.org', target: '_blank' }
+    //   ]
+    // },
+
+    // {
+    //   label: "Utilities",
+    //   items: [
+    //     {
+    //       label: "PrimeIcons",
+    //       icon: "pi pi-fw pi-prime",
+    //       to: "/utilities/icons"
+    //     }
+    // { label: 'PrimeFlex', icon: 'pi pi-fw pi-desktop', url: 'https://www.primefaces.org/primeflex/', target: '_blank' }
+    //   ]
+    // },
+
+    // {
+    //   label: "Pages",
+    //   icon: "pi pi-fw pi-briefcase",
+    //   to: "/pages",
+    //   items: [
+    //     {
+    //       label: "Landing",
+    //       icon: "pi pi-fw pi-globe",
+    //       to: "/landing"
+    //     },
+    //     {
+    //       label: "Auth",
+    //       icon: "pi pi-fw pi-user",
+    //       items: [
+    //         {
+    //           label: "Login",
+    //           icon: "pi pi-fw pi-sign-in",
+    //           to: "/auth/login"
+    //         },
+    //         {
+    //           label: "Register",
+    //           icon: "pi pi-fw pi-sign-in",
+    //           to: "/auth/register"
+    //         },
+    //         {
+    //           label: "Error",
+    //           icon: "pi pi-fw pi-times-circle",
+    //           to: "/auth/error"
+    //         },
+    //         {
+    //           label: "Access Denied",
+    //           icon: "pi pi-fw pi-lock",
+    //           to: "/auth/access"
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       label: "Crud",
+    //       icon: "pi pi-fw pi-pencil",
+    //       to: "/pages/crud"
+    //     },
+    //     {
+    //       label: "Timeline",
+    //       icon: "pi pi-fw pi-calendar",
+    //       to: "/pages/timeline"
+    //     },
+    //     {
+    //       label: "Not Found",
+    //       icon: "pi pi-fw pi-exclamation-circle",
+    //       to: "/pages/notfound"
+    //     },
+    //     {
+    //       label: "Empty",
+    //       icon: "pi pi-fw pi-circle-off",
+    //       to: "/pages/empty"
+    //     }
+    //   ]
+    // },
+
     // {
     //     label: 'Hierarchy',
     //     items: [
@@ -158,18 +163,19 @@ const AppMenu = () => {
     //         }
     //     ]
     // },
+
     {
-      label: "Get Started",
+      label: "¿Cómo empezar?",
       items: [
         {
-          label: "Documentation",
+          label: "Documentación",
           icon: "pi pi-fw pi-question",
           to: "/documentation"
         },
         {
-          label: "View Source",
+          label: "Ver código",
           icon: "pi pi-fw pi-search",
-          url: "https://github.com/primefaces/sakai-react",
+          url: "https://github.com/alanmgg/Alpha-Finance-NextJS",
           target: "_blank"
         }
       ]
