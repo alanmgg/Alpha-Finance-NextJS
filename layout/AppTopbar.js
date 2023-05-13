@@ -52,7 +52,7 @@ const AppTopbar = forwardRef((props, ref) => {
           widt={"true"}
           alt="logo"
         />
-        <span>MD Dashboard</span>
+        <span>Alpha Finance</span>
       </Link>
 
       <button
@@ -83,14 +83,16 @@ const AppTopbar = forwardRef((props, ref) => {
           <i className="pi pi-calendar"></i>
           <span>Calendar</span>
         </button> */}
+
         <button
           type="button"
           className="p-link layout-topbar-button"
           onClick={() => logoutUser()}
         >
           <i className="pi pi-user"></i>
-          <span>Profile</span>
+          <span>Cerrar sesión</span>
         </button>
+
         {/* <Link href="/documentation">
           <button type="button" className="p-link layout-topbar-button">
             <i className="pi pi-cog"></i>

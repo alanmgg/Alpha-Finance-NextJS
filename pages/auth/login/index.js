@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
 import AppConfig from "../../../layout/AppConfig";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
@@ -110,6 +111,9 @@ export default function LoginPage() {
 
   return (
     <div className={containerClassName}>
+      <Head>
+        <title>Alpha Finance | Inicio de sesión</title>
+      </Head>
       <div className="flex flex-column align-items-center justify-content-center">
         <img
           src={`/layout/images/logo-${

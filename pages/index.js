@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Chart } from "primereact/chart";
-import { Menu } from "primereact/menu";
-import { LayoutContext } from "../layout/context/layoutcontext";
-import Link from "next/link";
+import Head from "next/head";
 // API
 import { getCompanies } from "./../api/dashboard";
 
@@ -14,8 +11,11 @@ import Spinner from "../components/utilities/spinner";
 export default function Dashboard() {
   const [companies, setCompanies] = useState(null);
 
+  const router = useRouter();
+
   useEffect(() => {
     const sessionClient = localStorage.getItem("logClient");
+    console.log(sessionClient);
     if (sessionClient === null) {
       router.push("/auth/login");
     }
@@ -62,6 +62,9 @@ export default function Dashboard() {
 
   return (
     <div>
+      <Head>
+        <title>Alpha Finance</title>
+      </Head>
       {companies === null ? (
         <Spinner />
       ) : (

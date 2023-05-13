@@ -1,8 +1,8 @@
-import Head from "next/head";
+import React, { useContext, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import { useEventListener, useUnmountEffect } from "primereact/hooks";
 import { classNames, DomHandler } from "primereact/utils";
-import React, { useContext, useEffect, useRef } from "react";
 import AppFooter from "./AppFooter";
 import AppSidebar from "./AppSidebar";
 import AppTopbar from "./AppTopbar";
@@ -123,7 +123,7 @@ const Layout = (props) => {
   return (
     <React.Fragment>
       <Head>
-        <title>MD Dashboard | NextJS</title>
+        <title>Alpha Finance</title>
         <meta charSet="UTF-8" />
         <meta
           name="description"
@@ -134,11 +134,11 @@ const Layout = (props) => {
         <meta property="og:type" content="website"></meta>
         <meta
           property="og:title"
-          content="Sakai by PrimeReact | Free Admin Template for NextJS"
+          content="Alpha Finance | Mineria de datos"
         ></meta>
         <meta
           property="og:url"
-          content="https://www.primefaces.org/sakai-react"
+          content="https://alpha-finance-nextjs.vercel.app/"
         ></meta>
         <meta
           property="og:description"

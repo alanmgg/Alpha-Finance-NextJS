@@ -9,7 +9,7 @@ class MyDocument extends Document {
   //   lara-dark-teal
   render() {
     return (
-      <Html lang="en">
+      <Html lang="es">
         <Head>
           <link
             id="theme-css"
