@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
 
 export default function Tablecompanies(props) {
   const [companies, setCompanies] = useState(null);
+
+  const router = useRouter();
 
   useEffect(() => {
     if (props.var !== null) {
@@ -17,6 +20,10 @@ export default function Tablecompanies(props) {
       style: "currency",
       currency: "USD"
     });
+  }
+
+  function pushPage(symbol) {
+    router.push("/process/[symbol]", "/process/" + symbol);
   }
 
   return (
@@ -52,9 +59,14 @@ export default function Tablecompanies(props) {
             <Column
               header="Vista"
               style={{ width: "25%" }}
-              body={() => (
+              body={(data) => (
                 <>
-                  <Button icon="pi pi-wallet" type="button" text />
+                  <Button
+                    icon="pi pi-wallet"
+                    type="button"
+                    text
+                    onClick={() => pushPage(data.symbol)}
+                  />
                 </>
               )}
             />

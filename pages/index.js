@@ -15,7 +15,6 @@ export default function Dashboard() {
 
   useEffect(() => {
     const sessionClient = localStorage.getItem("logClient");
-    console.log(sessionClient);
     if (sessionClient === null) {
       router.push("/auth/login");
     }

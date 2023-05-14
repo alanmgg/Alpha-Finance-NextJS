@@ -1,7 +1,7 @@
 import React from "react";
 import RingLoader from "react-spinners/RingLoader";
 
-export default function Spinner() {
+export default function Spinner(props) {
   return (
     <div
       className="grid"
@@ -15,7 +15,7 @@ export default function Spinner() {
       <RingLoader
         color="#3B82F6"
         loading={true}
-        size={250}
+        size={props.layout === "small" ? 150 : 250}
         aria-label="Loading Spinner"
         data-testid="loader"
       />
