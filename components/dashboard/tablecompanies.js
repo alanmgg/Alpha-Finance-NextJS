@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
@@ -22,8 +23,14 @@ export default function Tablecompanies(props) {
     });
   }
 
-  function pushPage(symbol) {
-    router.push("/process/[symbol]", "/process/" + symbol);
+  function pushPage(name, symbol) {
+    // var nombre = name.replace(" ", "-");
+    var nombre = name.replace(".", "");
+    nombre = nombre.replace(",", "");
+    router.push(
+      "/process/[symbol]-[name]",
+      "/process/" + symbol + "-" + encodeURIComponent(nombre)
+    );
   }
 
   return (
@@ -61,12 +68,19 @@ export default function Tablecompanies(props) {
               style={{ width: "25%" }}
               body={(data) => (
                 <>
-                  <Button
-                    icon="pi pi-wallet"
-                    type="button"
-                    text
-                    onClick={() => pushPage(data.symbol)}
-                  />
+                  <Link
+                    href={{
+                      pathname: "/process",
+                      query: { symbol: data.symbol, name: data.name }
+                    }}
+                  >
+                    <Button
+                      icon="pi pi-wallet"
+                      type="button"
+                      text
+                      // onClick={() => pushPage(data.name, data.symbol)}
+                    />
+                  </Link>
                 </>
               )}
             />

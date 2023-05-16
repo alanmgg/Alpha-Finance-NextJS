@@ -8,7 +8,7 @@ export default function Tablemaindata(props) {
   const [mainData, setMainData] = useState(null);
 
   useEffect(() => {
-    if (props.var !== null) {
+    if (props.var !== null && mainData === null) {
       objectData = [];
 
       for (const item in props.var) {
@@ -21,9 +21,8 @@ export default function Tablemaindata(props) {
           volume: props.var[item]["5. volume"]
         });
       }
+      setMainData(objectData);
     }
-
-    setMainData(objectData);
   }, [props]);
 
   return (

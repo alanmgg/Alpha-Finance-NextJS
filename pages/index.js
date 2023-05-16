@@ -19,7 +19,9 @@ export default function Dashboard() {
       router.push("/auth/login");
     }
 
-    getCompanies(loadCompaniesHandler, loadErrorHandler);
+    if (companies === null) {
+      getCompanies(loadCompaniesHandler, loadErrorHandler);
+    }
   }, []);
 
   async function loadCompaniesHandler(response) {

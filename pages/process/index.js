@@ -1,39 +1,33 @@
 import React from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function Process() {
   const router = useRouter();
-  const { symbol } = router.query;
-
-  function pushProcess(process) {
-    switch (process) {
-      case "EDA":
-        router.push("/process/eda/[symbol]", "/process/eda/" + symbol);
-        break;
-      case "PCA":
-        router.push("/process/pca/[symbol]", "/process/pca/" + symbol);
-        break;
-      default:
-        break;
-    }
-  }
+  const { symbol, name } = router.query;
 
   return (
     <div>
       <div className="grid">
         <div className="col-3">
-          <div
-            className="card"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              cursor: "pointer"
+          <Link
+            href={{
+              pathname: "/process/eda",
+              query: { symbol: symbol, name: name }
             }}
-            onClick={() => pushProcess("EDA")}
           >
-            <h5>Análisis exploratorio de datos</h5>
-          </div>
+            <div
+              className="card"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer"
+              }}
+            >
+              <h5>Análisis exploratorio de datos</h5>
+            </div>
+          </Link>
         </div>
 
         <div className="col-3">
@@ -45,7 +39,6 @@ export default function Process() {
               alignItems: "center",
               cursor: "pointer"
             }}
-            onClick={() => pushProcess("PCA")}
           >
             <h5>Análisis de componentes principales</h5>
           </div>
