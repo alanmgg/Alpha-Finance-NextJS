@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
+// API
 import { getDescribeData } from "./../../api/eda";
+// JSON
+import DescribeDataJson from "./../../config/docs/describeData.json";
 
 var objectData = [];
 
@@ -10,7 +13,23 @@ export default function DescribeData(props) {
 
   useEffect(() => {
     if (props.value !== null && props.value !== undefined) {
-      getDescribeData(props.value, loadDescribeHandler, loadErrorHandler);
+      // getDescribeData(props.value, loadDescribeHandler, loadErrorHandler);
+
+      // JSON
+      objectData = [];
+
+      for (const item in DescribeDataJson.data) {
+        objectData.push({
+          index: DescribeDataJson.data[item].index,
+          open: DescribeDataJson.data[item].open,
+          high: DescribeDataJson.data[item].high,
+          low: DescribeDataJson.data[item].low,
+          close: DescribeDataJson.data[item].close,
+          volume: DescribeDataJson.data[item].volume
+        });
+      }
+      setDescribeDataCharge(objectData);
+      //
     }
   }, [props, props.value]);
 
@@ -46,7 +65,7 @@ export default function DescribeData(props) {
   function loadErrorHandler(error) {}
 
   return (
-    <div className="pt-3">
+    <div className="pt-5">
       <p style={{ fontWeight: "bold" }}>
         2) Resumen estadístico de variables numéricas.
       </p>

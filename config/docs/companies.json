@@ -1,0 +1,227 @@
+[
+  {
+    "symbol": "TSLA",
+    "name": "Tesla, Inc.",
+    "price": "166.35",
+    "change": "-1.63",
+    "change_porcent": "-0.97%",
+    "volume": "105.141M",
+    "market_capitalization": "529.005B"
+  },
+  {
+    "symbol": "SOFI",
+    "name": "SoFi Technologies, Inc.",
+    "price": "4.7700",
+    "change": "-0.2500",
+    "change_porcent": "-4.98%",
+    "volume": "102.606M",
+    "market_capitalization": "4.899B"
+  },
+  {
+    "symbol": "PLTR",
+    "name": "Palantir Technologies Inc.",
+    "price": "9.52",
+    "change": "+0.02",
+    "change_porcent": "+0.21%",
+    "volume": "53.071M",
+    "market_capitalization": "21.102B"
+  },
+  {
+    "symbol": "F",
+    "name": "Ford Motor Company",
+    "price": "11.64",
+    "change": "-0.03",
+    "change_porcent": "-0.26%",
+    "volume": "52.391M",
+    "market_capitalization": "47.447B"
+  },
+  {
+    "symbol": "AI",
+    "name": "C3.ai, Inc.",
+    "price": "23.97",
+    "change": "+4.55",
+    "change_porcent": "+23.43%",
+    "volume": "50.429M",
+    "market_capitalization": "2.795B"
+  },
+  {
+    "symbol": "AMD",
+    "name": "Advanced Micro Devices, Inc.",
+    "price": "97.40",
+    "change": "+2.14",
+    "change_porcent": "+2.25%",
+    "volume": "50.967M",
+    "market_capitalization": "159.747B"
+  },
+  {
+    "symbol": "AMZN",
+    "name": "Amazon.com, Inc.",
+    "price": "111.20",
+    "change": "+0.94",
+    "change_porcent": "+0.85%",
+    "volume": "51.838M",
+    "market_capitalization": "1.141T"
+  },
+  {
+    "symbol": "NU",
+    "name": "Nu Holdings Ltd.",
+    "price": "6.09",
+    "change": "+0.28",
+    "change_porcent": "+4.82%",
+    "volume": "38.524M",
+    "market_capitalization": "29.083B"
+  },
+  {
+    "symbol": "BAC",
+    "name": "Bank of America Corporation",
+    "price": "27.65",
+    "change": "+0.56",
+    "change_porcent": "+2.07%",
+    "volume": "37.871M",
+    "market_capitalization": "220.347B"
+  },
+  {
+    "symbol": "NIO",
+    "name": "NIO Inc.",
+    "price": "8.25",
+    "change": "+0.30",
+    "change_porcent": "+3.77%",
+    "volume": "35.278M",
+    "market_capitalization": "13.924B"
+  },
+  {
+    "symbol": "BBD",
+    "name": "Banco Bradesco S.A.",
+    "price": "3.2400",
+    "change": "+0.0700",
+    "change_porcent": "+2.21%",
+    "volume": "33.062M",
+    "market_capitalization": "34.428B"
+  },
+  {
+    "symbol": "AAPL",
+    "name": "Apple Inc.",
+    "price": "172.07",
+    "change": "-0.50",
+    "change_porcent": "-0.29%",
+    "volume": "37.163M",
+    "market_capitalization": "2.706T"
+  },
+  {
+    "symbol": "SWN",
+    "name": "Southwestern Energy Company",
+    "price": "5.20",
+    "change": "+0.21",
+    "change_porcent": "+4.21%",
+    "volume": "30.592M",
+    "market_capitalization": "5.727B"
+  },
+  {
+    "symbol": "GOOGL",
+    "name": "Alphabet Inc.",
+    "price": "116.51",
+    "change": "-1.00",
+    "change_porcent": "-0.85%",
+    "volume": "36.015M",
+    "market_capitalization": "1.41T"
+  },
+  {
+    "symbol": "CCL",
+    "name": "Carnival Corporation & plc",
+    "price": "10.31",
+    "change": "+0.48",
+    "change_porcent": "+4.88%",
+    "volume": "27.439M",
+    "market_capitalization": "14.334B"
+  },
+  {
+    "symbol": "NVDA",
+    "name": "NVIDIA Corporation",
+    "price": "289.53",
+    "change": "+6.13",
+    "change_porcent": "+2.16%",
+    "volume": "29.318M",
+    "market_capitalization": "729.815B"
+  },
+  {
+    "symbol": "T",
+    "name": "AT&T Inc.",
+    "price": "16.95",
+    "change": "-0.08",
+    "change_porcent": "-0.47%",
+    "volume": "27.995M",
+    "market_capitalization": "121.176B"
+  },
+  {
+    "symbol": "PBR",
+    "name": "Petróleo Brasileiro S.A. - Petrobras",
+    "price": "11.69",
+    "change": "-0.17",
+    "change_porcent": "-1.43%",
+    "volume": "24.502M",
+    "market_capitalization": "76.243B"
+  },
+  {
+    "symbol": "INTC",
+    "name": "Intel Corporation",
+    "price": "29.80",
+    "change": "+0.85",
+    "change_porcent": "+2.94%",
+    "volume": "28.134M",
+    "market_capitalization": "128.675B"
+  },
+  {
+    "symbol": "PLUG",
+    "name": "Plug Power Inc.",
+    "price": "7.85",
+    "change": "+0.37",
+    "change_porcent": "+4.95%",
+    "volume": "22.683M",
+    "market_capitalization": "4.935B"
+  },
+  {
+    "symbol": "KEY",
+    "name": "KeyCorp",
+    "price": "9.59",
+    "change": "+0.60",
+    "change_porcent": "+6.67%",
+    "volume": "22.165M",
+    "market_capitalization": "9.298B"
+  },
+  {
+    "symbol": "RIVN",
+    "name": "Rivian Automotive, Inc.",
+    "price": "13.44",
+    "change": "+0.53",
+    "change_porcent": "+4.11%",
+    "volume": "22.5M",
+    "market_capitalization": "12.625B"
+  },
+  {
+    "symbol": "OKE",
+    "name": "ONEOK, Inc.",
+    "price": "57.95",
+    "change": "-5.77",
+    "change_porcent": "-9.06%",
+    "volume": "20.65M",
+    "market_capitalization": "25.929B"
+  },
+  {
+    "symbol": "WFC",
+    "name": "Wells Fargo & Company",
+    "price": "38.77",
+    "change": "+1.28",
+    "change_porcent": "+3.41%",
+    "volume": "24.369M",
+    "market_capitalization": "148.539B"
+  },
+  {
+    "symbol": "BABA",
+    "name": "Alibaba Group Holding Limited",
+    "price": "88.34",
+    "change": "+3.00",
+    "change_porcent": "+3.52%",
+    "volume": "21.259M",
+    "market_capitalization": "228.58B"
+  }
+]

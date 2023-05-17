@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DescribeData from "./describeData";
 import CandleData from "./candleData";
+import LineData from "./lineData";
 // Google Chart
 import { Chart } from "react-google-charts";
 
@@ -18,6 +19,7 @@ export default function ValuesOutliners(props) {
   const [valuesOutlinersVolume, setValuesOutlinersVolume] = useState(null);
 
   const [mainData, setMainData] = useState(null);
+  const [symbol, setSymbol] = useState(null);
 
   useEffect(() => {
     setValuesOutlinersOpen(null);
@@ -27,9 +29,9 @@ export default function ValuesOutliners(props) {
     setValuesOutlinersVolume(null);
 
     if (props.var !== undefined) {
-      console.log(props.symbol);
-
+      setSymbol(props.symbol);
       setMainData(props.var);
+
       objectDataOpen = [];
       objectDataOpen.push(["Open", "Value"]);
       objectDataHigh = [];
@@ -98,7 +100,7 @@ export default function ValuesOutliners(props) {
   };
 
   return (
-    <div className="grid pt-5">
+    <div className="grid pt-5 pl-0 pr-0">
       <div className="col-12">
         <div className="card">
           <h5>Paso 3: Detección de valores atípicos.</h5>
@@ -172,8 +174,9 @@ export default function ValuesOutliners(props) {
             izquierda.
           </p>
 
-          {/* <DescribeData value={symbol} /> */}
+          <DescribeData value={symbol} />
           <CandleData var={mainData} />
+          <LineData var={mainData} value={symbol} />
         </div>
       </div>
     </div>

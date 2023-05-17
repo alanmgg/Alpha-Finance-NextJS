@@ -5,11 +5,14 @@ import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 // API
 import { getMainData } from "../../../api/eda";
+// JSON
+import MainDataJson from "./../../../config/docs/mainData.json";
 
 import Tablemaindata from "../../../components/eda/tablemaindata";
 import DescripcionData from "../../../components/eda/descripcionData";
 import NullData from "../../../components/eda/nullData";
 import ValuesOutliners from "../../../components/eda/valuesOutliers";
+import MatrizData from "../../../components/eda/matrizData";
 import Spinner from "../../../components/utilities/spinner";
 
 var customEvents = [];
@@ -45,7 +48,12 @@ export default function ProcessEda() {
     setLoadSpinner(true);
     setCountTask(0);
     setEventsTask(customEvents);
-    getMainData(symbol, loadMainDataHandler, loadErrorHandler);
+    // getMainData(symbol, loadMainDataHandler, loadErrorHandler);
+
+    // JSON
+    setMainData(MainDataJson["Weekly Time Series"]);
+    setLoadSpinner(false);
+    //
   }, []);
 
   async function loadMainDataHandler(response) {
@@ -134,6 +142,19 @@ export default function ProcessEda() {
         setCountTask(count + 1);
         setLoadSpinner(true);
         break;
+      case 3:
+        customEvents.push({
+          status: "Paso 4: Identificación de relaciones entre pares variables",
+          subTitle: "Matriz de correlaciones.",
+          description:
+            "Una matriz de correlaciones es útil para analizar la relación entre las variables numéricas.",
+          icon: "pi pi-chart-bar",
+          color: "#673AB7"
+        });
+        setEventsTask(customEvents);
+        setCountTask(count + 1);
+        // setLoadSpinner(true);
+        break;
       default:
         break;
     }
@@ -181,9 +202,11 @@ export default function ProcessEda() {
               />
             ) : null}
 
+            {countTask >= 4 ? <MatrizData methodCharge={finishCharge} /> : null}
+
             {loadSpinner === true ? <Spinner layout="small" /> : null}
 
-            {loadSpinner === false && countTask >= 0 ? (
+            {loadSpinner === false && countTask >= 0 && countTask <= 3 ? (
               <div
                 style={{
                   display: "flex",
