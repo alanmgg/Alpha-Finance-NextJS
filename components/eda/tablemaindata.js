@@ -4,7 +4,7 @@ import { Column } from "primereact/column";
 
 var objectData = [];
 
-export default function Tablemaindata(props) {
+export default function TableDainData(props) {
   const [mainData, setMainData] = useState(null);
 
   useEffect(() => {

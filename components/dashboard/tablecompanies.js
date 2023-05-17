@@ -24,7 +24,6 @@ export default function Tablecompanies(props) {
   }
 
   function pushPage(name, symbol) {
-    // var nombre = name.replace(" ", "-");
     var nombre = name.replace(".", "");
     nombre = nombre.replace(",", "");
     router.push(

@@ -6,9 +6,9 @@ import { Button } from "primereact/button";
 // API
 import { getMainData } from "../../../api/eda";
 // JSON
-import MainDataJson from "./../../../config/docs/mainData.json";
+// import MainDataJson from "./../../../config/mainData.json";
 
-import Tablemaindata from "../../../components/eda/tablemaindata";
+import TableMainData from "../../../components/eda/tablemaindata";
 import DescripcionData from "../../../components/eda/descripcionData";
 import NullData from "../../../components/eda/nullData";
 import ValuesOutliners from "../../../components/eda/valuesOutliers";
@@ -48,11 +48,11 @@ export default function ProcessEda() {
     setLoadSpinner(true);
     setCountTask(0);
     setEventsTask(customEvents);
-    // getMainData(symbol, loadMainDataHandler, loadErrorHandler);
+    getMainData(symbol, loadMainDataHandler, loadErrorHandler);
 
     // JSON
-    setMainData(MainDataJson["Weekly Time Series"]);
-    setLoadSpinner(false);
+    // setMainData(MainDataJson["Weekly Time Series"]);
+    // setLoadSpinner(false);
     //
   }, []);
 
@@ -148,12 +148,12 @@ export default function ProcessEda() {
           subTitle: "Matriz de correlaciones.",
           description:
             "Una matriz de correlaciones es útil para analizar la relación entre las variables numéricas.",
-          icon: "pi pi-chart-bar",
+          icon: "pi pi-map",
           color: "#673AB7"
         });
         setEventsTask(customEvents);
         setCountTask(count + 1);
-        // setLoadSpinner(true);
+        setLoadSpinner(true);
         break;
       default:
         break;
@@ -185,7 +185,7 @@ export default function ProcessEda() {
             </div>
 
             {mainData !== null && countTask >= 0 ? (
-              <Tablemaindata var={mainData} />
+              <TableMainData var={mainData} />
             ) : null}
 
             {countTask >= 1 ? (
@@ -202,7 +202,9 @@ export default function ProcessEda() {
               />
             ) : null}
 
-            {countTask >= 4 ? <MatrizData methodCharge={finishCharge} /> : null}
+            {countTask >= 4 ? (
+              <MatrizData value={symbol} methodCharge={finishCharge} />
+            ) : null}
 
             {loadSpinner === true ? <Spinner layout="small" /> : null}
 

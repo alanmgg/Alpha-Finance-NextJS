@@ -4,7 +4,7 @@ import Head from "next/head";
 // API
 import { getCompanies } from "./../api/dashboard";
 // JSON
-import Companies from "./../config/docs/companies.json";
+// import Companies from "./../config/companies.json";
 
 import Minicards from "../components/dashboard/minicards";
 import Tablecompanies from "../components/dashboard/tablecompanies";
@@ -16,16 +16,16 @@ export default function Dashboard() {
   const router = useRouter();
 
   useEffect(() => {
-    // const sessionClient = localStorage.getItem("logClient");
-    // if (sessionClient === null) {
-    //   router.push("/auth/login");
-    // }
+    const sessionClient = localStorage.getItem("logClient");
+    if (sessionClient === null) {
+      router.push("/auth/login");
+    }
 
     if (companies === null) {
-      // getCompanies(loadCompaniesHandler, loadErrorHandler);
+      getCompanies(loadCompaniesHandler, loadErrorHandler);
 
       // JSON
-      setCompanies(Companies);
+      // setCompanies(Companies);
       //
     }
   }, []);

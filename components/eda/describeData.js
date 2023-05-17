@@ -4,7 +4,7 @@ import { Column } from "primereact/column";
 // API
 import { getDescribeData } from "./../../api/eda";
 // JSON
-import DescribeDataJson from "./../../config/docs/describeData.json";
+// import DescribeDataJson from "./../../config/describeData.json";
 
 var objectData = [];
 
@@ -13,22 +13,22 @@ export default function DescribeData(props) {
 
   useEffect(() => {
     if (props.value !== null && props.value !== undefined) {
-      // getDescribeData(props.value, loadDescribeHandler, loadErrorHandler);
+      getDescribeData(props.value, loadDescribeHandler, loadErrorHandler);
 
       // JSON
-      objectData = [];
+      // objectData = [];
 
-      for (const item in DescribeDataJson.data) {
-        objectData.push({
-          index: DescribeDataJson.data[item].index,
-          open: DescribeDataJson.data[item].open,
-          high: DescribeDataJson.data[item].high,
-          low: DescribeDataJson.data[item].low,
-          close: DescribeDataJson.data[item].close,
-          volume: DescribeDataJson.data[item].volume
-        });
-      }
-      setDescribeDataCharge(objectData);
+      // for (const item in DescribeDataJson.data) {
+      //   objectData.push({
+      //     index: DescribeDataJson.data[item].index,
+      //     open: DescribeDataJson.data[item].open,
+      //     high: DescribeDataJson.data[item].high,
+      //     low: DescribeDataJson.data[item].low,
+      //     close: DescribeDataJson.data[item].close,
+      //     volume: DescribeDataJson.data[item].volume
+      //   });
+      // }
+      // setDescribeDataCharge(objectData);
       //
     }
   }, [props, props.value]);

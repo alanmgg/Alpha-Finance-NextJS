@@ -78,11 +78,17 @@ export default function CandleData(props) {
         }
       }
 
-      objectDataOpen.push(minValueOpen, maxValueOpen, 2500);
-      objectDataHigh.push(minValueHigh, maxValueHigh, 2500);
-      objectDataLow.push(minValueLow, maxValueLow, 2500);
-      objectDataClose.push(minValueClose, maxValueClose, 2500);
-      objectDataVolume.push(minValueVolume, maxValueVolume, 1200000000);
+      let topOpen = maxValueOpen + 50;
+      let topHigh = maxValueHigh + 50;
+      let topLow = maxValueLow + 50;
+      let topClose = maxValueClose + 50;
+      let topVolume = maxValueVolume + 2500;
+
+      objectDataOpen.push(minValueOpen, maxValueOpen, topOpen);
+      objectDataHigh.push(minValueHigh, maxValueHigh, topHigh);
+      objectDataLow.push(minValueLow, maxValueLow, topLow);
+      objectDataClose.push(minValueClose, maxValueClose, topClose);
+      objectDataVolume.push(minValueVolume, maxValueVolume, topVolume);
       const arrayOfArraysOpen = [objectField, objectDataOpen];
       const arrayOfArraysHigh = [objectField, objectDataHigh];
       const arrayOfArraysLow = [objectField, objectDataLow];
