@@ -42,6 +42,20 @@ export const LayoutProvider = (props) => {
     }
   };
 
+  const onMenuToggleProcess = (value) => {
+    if (value) {
+      setLayoutState((prevLayoutState) => ({
+        ...prevLayoutState,
+        staticMenuDesktopInactive: false
+      }));
+    } else {
+      setLayoutState((prevLayoutState) => ({
+        ...prevLayoutState,
+        staticMenuDesktopInactive: true
+      }));
+    }
+  };
+
   const showProfileSidebar = () => {
     setLayoutState((prevLayoutState) => ({
       ...prevLayoutState,
@@ -63,6 +77,7 @@ export const LayoutProvider = (props) => {
     layoutState,
     setLayoutState,
     onMenuToggle,
+    onMenuToggleProcess,
     showProfileSidebar
   };
 

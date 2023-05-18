@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { LayoutContext } from "./../../layout/context/layoutcontext";
 
 export default function Process() {
+  const { onMenuToggleProcess } = useContext(LayoutContext);
   const router = useRouter();
-  const { symbol, name } = router.query;
+  const { symbol, name, menu } = router.query;
+
+  useEffect(() => {
+    if (menu === "yes") {
+      onMenuToggleProcess(true);
+    }
+  }, []);
 
   return (
     <div>
@@ -13,7 +21,7 @@ export default function Process() {
           <Link
             href={{
               pathname: "/process/eda",
-              query: { symbol: symbol, name: name }
+              query: { symbol: symbol, name: name, menu: "no" }
             }}
           >
             <div

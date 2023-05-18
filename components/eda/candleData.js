@@ -106,7 +106,7 @@ export default function CandleData(props) {
   const options = {
     legend: "none",
     orientation: "vertical",
-    colors: ["#22C597"]
+    colors: ["#763CAD"]
   };
 
   return (

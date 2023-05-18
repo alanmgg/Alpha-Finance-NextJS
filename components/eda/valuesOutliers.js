@@ -5,6 +5,8 @@ import LineData from "./lineData";
 // Google Chart
 import { Chart } from "react-google-charts";
 
+import Spinner from "../../components/utilities/spinner";
+
 var objectDataOpen = [];
 var objectDataHigh = [];
 var objectDataLow = [];
@@ -55,15 +57,17 @@ export default function ValuesOutliners(props) {
       setValuesOutlinersLow(objectDataLow);
       setValuesOutlinersClose(objectDataClose);
       setValuesOutlinersVolume(objectDataVolume);
-
-      props.methodCharge();
     }
   }, [props]);
+
+  function finishCharge() {
+    props.methodCharge();
+  }
 
   const optionsOpen = {
     title: "Open",
     legend: { position: "none" },
-    colors: ["#22C597"],
+    colors: ["#763CAD"],
     chartArea: { width: 321 },
     bar: { gap: 0 }
   };
@@ -71,7 +75,7 @@ export default function ValuesOutliners(props) {
   const optionsHigh = {
     title: "High",
     legend: { position: "none" },
-    colors: ["#22C597"],
+    colors: ["#763CAD"],
     chartArea: { width: 321 },
     bar: { gap: 0 }
   };
@@ -79,7 +83,7 @@ export default function ValuesOutliners(props) {
   const optionsLow = {
     title: "Low",
     legend: { position: "none" },
-    colors: ["#22C597"],
+    colors: ["#763CAD"],
     chartArea: { width: 321 },
     bar: { gap: 0 }
   };
@@ -87,7 +91,7 @@ export default function ValuesOutliners(props) {
   const optionsClose = {
     title: "Close",
     legend: { position: "none" },
-    colors: ["#22C597"],
+    colors: ["#763CAD"],
     chartArea: { width: 321 },
     bar: { gap: 0 }
   };
@@ -95,25 +99,29 @@ export default function ValuesOutliners(props) {
   const optionsVolume = {
     title: "Volume",
     legend: { position: "none" },
-    colors: ["#22C597"],
+    colors: ["#763CAD"],
     bar: { gap: 0 }
   };
 
   return (
     <div className="grid pt-5 pl-0 pr-0">
       <div className="col-12">
-        <div className="card">
-          <h5>Paso 3: Detección de valores atípicos.</h5>
-          <p style={{ fontWeight: "bold" }}>
-            1) Distribución de variables numéricas.
-          </p>
-          <p>
-            Se pueden utilizar gráficos para tener una idea general de las
-            distribuciones de los datos, y se sacan estadísticas para resumir
-            los datos. Estas dos estrategias son recomendables y se
-            complementan.
-          </p>
-          {valuesOutlinersOpen !== null && valuesOutlinersHigh !== null ? (
+        {valuesOutlinersOpen !== null &&
+        valuesOutlinersHigh !== null &&
+        valuesOutlinersLow !== null &&
+        valuesOutlinersClose !== null &&
+        valuesOutlinersVolume !== null ? (
+          <div className="card">
+            <h5>Paso 3: Detección de valores atípicos.</h5>
+            <p style={{ fontWeight: "bold" }}>
+              1) Distribución de variables numéricas.
+            </p>
+            <p>
+              Se pueden utilizar gráficos para tener una idea general de las
+              distribuciones de los datos, y se sacan estadísticas para resumir
+              los datos. Estas dos estrategias son recomendables y se
+              complementan.
+            </p>
             <div className="grid">
               <div className="col-6">
                 <Chart
@@ -134,9 +142,7 @@ export default function ValuesOutliners(props) {
                 />
               </div>
             </div>
-          ) : null}
 
-          {valuesOutlinersLow !== null && valuesOutlinersClose !== null ? (
             <div className="grid">
               <div className="col-6">
                 <Chart
@@ -157,9 +163,7 @@ export default function ValuesOutliners(props) {
                 />
               </div>
             </div>
-          ) : null}
 
-          {valuesOutlinersVolume !== null ? (
             <Chart
               chartType="Histogram"
               width="100%"
@@ -167,17 +171,17 @@ export default function ValuesOutliners(props) {
               data={valuesOutlinersVolume}
               options={optionsVolume}
             />
-          ) : null}
 
-          <p className="pt-3">
-            En el histograma se observa que Volume tiene valores sesgados a la
-            izquierda.
-          </p>
+            <p className="pt-3">
+              En el histograma se observa que Volume tiene valores sesgados a la
+              izquierda.
+            </p>
 
-          <DescribeData value={symbol} />
-          <CandleData var={mainData} />
-          <LineData var={mainData} value={symbol} />
-        </div>
+            <DescribeData value={symbol} method={finishCharge} />
+            <CandleData var={mainData} />
+            <LineData var={mainData} value={symbol} />
+          </div>
+        ) : null}
       </div>
     </div>
   );

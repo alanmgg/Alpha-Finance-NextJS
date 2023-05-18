@@ -49,6 +49,7 @@ export default function DescribeData(props) {
         });
       }
       setDescribeDataCharge(objectData);
+      props.method();
       return;
     }
     if (response.status === 400) {

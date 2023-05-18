@@ -6,7 +6,7 @@ import { getCorrData } from "../../api/eda";
 // JSON
 import CorrDataJson from "./../../config/corrData.json";
 
-var countLoad = 0;
+import Spinner from "../../components/utilities/spinner";
 
 export default function MatrizData(props) {
   const [corrData, setCorrData] = useState(null);
@@ -44,11 +44,6 @@ export default function MatrizData(props) {
 
   function fieldColor(value) {
     if (value === 1) {
-      countLoad = countLoad + 1;
-      if (countLoad === 5) {
-        props.methodCharge();
-      }
-
       return (
         <div
           className="p-2"
@@ -155,11 +150,11 @@ export default function MatrizData(props) {
   return (
     <div className="grid pt-5">
       <div className="col-12">
-        <div className="card">
-          <h5>Paso 4: Identificación de relaciones entre pares variables.</h5>
-          <p>Regresa la suma de todos los valores nulos en cada variable:</p>
+        {corrData !== null ? (
+          <div className="card">
+            <h5>Paso 4: Identificación de relaciones entre pares variables.</h5>
+            <p>Regresa la suma de todos los valores nulos en cada variable:</p>
 
-          {corrData !== null ? (
             <DataTable value={corrData} rows={5}>
               <Column
                 field="index"
@@ -198,8 +193,10 @@ export default function MatrizData(props) {
                 body={(data) => fieldColor(data.volume)}
               />
             </DataTable>
-          ) : null}
-        </div>
+          </div>
+        ) : (
+          <Spinner layout="small" />
+        )}
       </div>
     </div>
   );

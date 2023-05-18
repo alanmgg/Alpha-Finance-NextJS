@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { Timeline } from "primereact/timeline";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
+import { LayoutContext } from "./../../../layout/context/layoutcontext";
+import styles from "./../../uikit/button/index.module.scss";
 // API
 import { getMainData } from "../../../api/eda";
 // JSON
@@ -18,8 +21,9 @@ import Spinner from "../../../components/utilities/spinner";
 var customEvents = [];
 
 export default function ProcessEda() {
+  const { onMenuToggleProcess } = useContext(LayoutContext);
   const router = useRouter();
-  const { symbol, name } = router.query;
+  const { symbol, name, menu } = router.query;
 
   const [loadSpinner, setLoadSpinner] = useState(true);
   const [mainData, setMainData] = useState(null);
@@ -27,6 +31,10 @@ export default function ProcessEda() {
   const [eventsTask, setEventsTask] = useState([]);
 
   useEffect(() => {
+    if (menu === "no") {
+      onMenuToggleProcess(false);
+    }
+
     customEvents = [];
     customEvents.push({
       status: "Contexto",
@@ -96,6 +104,7 @@ export default function ProcessEda() {
   }
 
   function finishCharge() {
+    console.log("Entre");
     setLoadSpinner(false);
   }
 
@@ -153,7 +162,6 @@ export default function ProcessEda() {
         });
         setEventsTask(customEvents);
         setCountTask(count + 1);
-        setLoadSpinner(true);
         break;
       default:
         break;
@@ -202,9 +210,7 @@ export default function ProcessEda() {
               />
             ) : null}
 
-            {countTask >= 4 ? (
-              <MatrizData value={symbol} methodCharge={finishCharge} />
-            ) : null}
+            {countTask >= 4 ? <MatrizData value={symbol} /> : null}
 
             {loadSpinner === true ? <Spinner layout="small" /> : null}
 
@@ -219,10 +225,49 @@ export default function ProcessEda() {
                 className="pt-5"
               >
                 <Button
-                  label="Siguiente"
-                  className="p-3 text-sl"
+                  className={styles.google}
+                  aria-label="Google"
                   onClick={() => nextTask(countTask)}
-                ></Button>
+                >
+                  <span className="flex align-items-center px-2 bg-purple-700 text-white">
+                    <i className="pi pi-angle-double-right"></i>
+                  </span>
+                  <span className="px-3 py-2 flex align-items-center text-white">
+                    Siguiente
+                  </span>
+                </Button>
+              </div>
+            ) : null}
+
+            {loadSpinner === false && countTask >= 4 ? (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  cursor: "pointer"
+                }}
+                className="pt-5"
+              >
+                <Link
+                  href={{
+                    pathname: "/process",
+                    query: { symbol: symbol, name: name, menu: "yes" }
+                  }}
+                >
+                  <Button
+                    className={styles.google}
+                    aria-label="Google"
+                    onClick={() => nextTask(countTask)}
+                  >
+                    <span className="flex align-items-center px-2 bg-purple-700 text-white">
+                      <i className="pi pi-angle-double-left"></i>
+                    </span>
+                    <span className="px-3 py-2 flex align-items-center text-white">
+                      Regresar
+                    </span>
+                  </Button>
+                </Link>
               </div>
             ) : null}
           </div>

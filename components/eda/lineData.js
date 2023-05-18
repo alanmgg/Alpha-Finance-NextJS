@@ -31,7 +31,7 @@ export default function LineData(props) {
   }, [props]);
 
   var options = {
-    colors: ["#22C597", "#C89FA3"],
+    colors: ["#763CAD", "#D02525"],
     chart: {
       title: symbol,
       subtitle: "(USD)"
