@@ -94,17 +94,17 @@ export default function TableMainData(props) {
           <h6>Descripción.</h6>
           <ul>
             <li>
-              En el comercio de acciones, 'High' y 'Low' se refieren a los
+              En el comercio de acciones, "High" y "Low" se refieren a los
               precios máximos y mínimos en un período determinado.
             </li>
             <li>
-              'Open' y 'Close' son los precios en los que una acción comenzó y
+              "Open" y "Close" son los precios en los que una acción comenzó y
               terminó cotizando en el mismo período.
             </li>
-            <li>'Volume' es la cantidad total de la actividad comercial.</li>
+            <li>"Volume" es la cantidad total de la actividad comercial.</li>
             <li>
               Los valores ajustados tienen en cuenta las acciones corporativas,
-              como los 'Dividends', los 'Stock Splits' y la emisión de nuevas
+              como los "Dividends", los "Stock Splits" y la emisión de nuevas
               acciones.
             </li>
           </ul>
