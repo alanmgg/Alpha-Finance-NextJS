@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Spinner from "../utilities/Spinner";
+import Spinner from "../utilities/spinner";
 
 export default function DescripcionData(props) {
   const [shape, setShape] = useState(null);
