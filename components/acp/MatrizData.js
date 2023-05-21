@@ -12,16 +12,16 @@ export default function MatrizData(props) {
     if (props.var !== null) {
       objectData = [];
 
-      for (const item in props.var.corr) {
+      for (const item in props.var.corr_data) {
         objectData.push({
-          index: props.var.corr[item]["index"],
-          open: props.var.corr[item]["Open"],
-          high: props.var.corr[item]["High"],
-          low: props.var.corr[item]["Low"],
-          close: props.var.corr[item]["Close"],
-          volume: props.var.corr[item]["Volume"],
-          dividends: props.var.corr[item]["Dividends"],
-          stock: props.var.corr[item]["Stock Splits"]
+          index: props.var.corr_data[item]["index"],
+          open: props.var.corr_data[item]["Open"],
+          high: props.var.corr_data[item]["High"],
+          low: props.var.corr_data[item]["Low"],
+          close: props.var.corr_data[item]["Close"],
+          volume: props.var.corr_data[item]["Volume"],
+          dividends: props.var.corr_data[item]["Dividends"],
+          stock: props.var.corr_data[item]["Stock Splits"]
         });
       }
       setCorrData(objectData);
@@ -151,8 +151,9 @@ export default function MatrizData(props) {
       <div className="col-12 xl:col-12">
         {corrData !== null ? (
           <div className="card">
-            <h5>Paso 4: Identificación de relaciones entre pares variables.</h5>
-            <p>Regresa la suma de todos los valores nulos en cada variable:</p>
+            <h5>
+              Paso 1: Hay evidencia de variables posiblemente correlacionadas.
+            </h5>
 
             <DataTable value={corrData} rows={6}>
               <Column

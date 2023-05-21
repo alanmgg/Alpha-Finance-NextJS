@@ -5,24 +5,24 @@ import Spinner from "./../utilities/Spinner";
 
 var objectData = [];
 
-export default function TableMainData(props) {
+export default function TableStandardData(props) {
   const [mainData, setMainData] = useState(null);
 
   useEffect(() => {
     if (props.var !== null) {
       objectData = [];
 
-      for (const item in props.var.main_data) {
-        var date = props.var.main_data[item]["Date"].split("T");
+      for (const item in props.var.m_estandarizada) {
         objectData.push({
-          date: date[0],
-          open: props.var.main_data[item]["Open"].toFixed(4),
-          high: props.var.main_data[item]["High"].toFixed(4),
-          low: props.var.main_data[item]["Low"].toFixed(4),
-          close: props.var.main_data[item]["Close"].toFixed(4),
-          volume: props.var.main_data[item]["Volume"],
-          dividends: props.var.main_data[item]["Dividends"],
-          stockSplits: props.var.main_data[item]["Stock Splits"]
+          index: props.var.m_estandarizada[item]["index"],
+          open: props.var.m_estandarizada[item]["Open"].toFixed(4),
+          high: props.var.m_estandarizada[item]["High"].toFixed(4),
+          low: props.var.m_estandarizada[item]["Low"].toFixed(4),
+          close: props.var.m_estandarizada[item]["Close"].toFixed(4),
+          volume: props.var.m_estandarizada[item]["Volume"].toFixed(4),
+          dividends: props.var.m_estandarizada[item]["Dividends"],
+          stockSplits:
+            props.var.m_estandarizada[item]["Stock Splits"].toFixed(4)
         });
       }
       setMainData(objectData);
@@ -34,6 +34,8 @@ export default function TableMainData(props) {
       {mainData !== null ? (
         <div className="col-12 xl:col-12">
           <div className="card">
+            <h5>Paso 2: Se hace una estandarización de los datos.</h5>
+
             <DataTable
               value={mainData}
               rows={5}
@@ -41,10 +43,10 @@ export default function TableMainData(props) {
               responsiveLayout="scroll"
             >
               <Column
-                field="date"
-                header="Fecha"
+                field="index"
+                header=""
                 sortable
-                style={{ width: "20%", fontSize: 12 }}
+                style={{ width: "20%", fontWeight: "bold", fontSize: 12 }}
               />
               <Column
                 field="open"
@@ -90,29 +92,6 @@ export default function TableMainData(props) {
               />
             </DataTable>
           </div>
-
-          <h6>Descripción.</h6>
-          <ul>
-            <li>
-              En el comercio de acciones, <strong>High</strong> y{" "}
-              <strong>Low</strong> se refieren a los precios máximos y mínimos
-              en un período determinado.
-            </li>
-            <li>
-              <strong>Open</strong> y <strong>Close</strong> son los precios en
-              los que una acción comenzó y terminó cotizando en el mismo
-              período.
-            </li>
-            <li>
-              <strong>Volume</strong> es la cantidad total de la actividad
-              comercial.
-            </li>
-            <li>
-              Los valores ajustados tienen en cuenta las acciones corporativas,
-              como los <strong>Dividends</strong>, los{" "}
-              <strong>Stock Splits</strong> y la emisión de nuevas acciones.
-            </li>
-          </ul>
         </div>
       ) : (
         <div className="col-12 xl:col-12">

@@ -17,7 +17,7 @@ export default function NullData(props) {
           <div className="card">
             <h5>Paso 2: Identificación de datos faltantes.</h5>
             <p>Regresa la suma de todos los valores nulos en cada variable:</p>
-            <pre className="app-code">
+            <pre className="app-code" style={{ fontSize: 12 }}>
               <code>
                 {`Open            `}
                 {nullData.open}
@@ -47,7 +47,9 @@ export default function NullData(props) {
           </div>
         </div>
       ) : (
-        <Spinner layout="small" />
+        <div className="col-12 xl:col-12">
+          <Spinner layout="small" />
+        </div>
       )}
     </div>
   );

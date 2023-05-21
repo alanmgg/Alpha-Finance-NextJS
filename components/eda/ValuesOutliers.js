@@ -307,7 +307,9 @@ export default function ValuesOutliners(props) {
             <LineData var={mainData} name={name} />
           </div>
         ) : (
-          <Spinner layout="small" />
+          <div className="col-12 xl:col-12">
+            <Spinner layout="small" />
+          </div>
         )}
       </div>
     </div>

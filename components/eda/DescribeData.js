@@ -40,18 +40,42 @@ export default function DescribeData(props) {
         <Column
           field="index"
           header=""
-          style={{ width: "10%", fontWeight: "bold" }}
+          style={{ width: "10%", fontWeight: "bold", fontSize: 12 }}
         />
-        <Column field="open" header="Open" style={{ width: "15%" }} />
-        <Column field="high" header="High" style={{ width: "15%" }} />
-        <Column field="low" header="Low" style={{ width: "15%" }} />
-        <Column field="close" header="Close" style={{ width: "15%" }} />
-        <Column field="volume" header="Volume" style={{ width: "25%" }} />
-        <Column field="dividends" header="Dividends" style={{ width: "10%" }} />
+        <Column
+          field="open"
+          header="Open"
+          style={{ width: "15%", fontSize: 12 }}
+        />
+        <Column
+          field="high"
+          header="High"
+          style={{ width: "15%", fontSize: 12 }}
+        />
+        <Column
+          field="low"
+          header="Low"
+          style={{ width: "15%", fontSize: 12 }}
+        />
+        <Column
+          field="close"
+          header="Close"
+          style={{ width: "15%", fontSize: 12 }}
+        />
+        <Column
+          field="volume"
+          header="Volume"
+          style={{ width: "25%", fontSize: 12 }}
+        />
+        <Column
+          field="dividends"
+          header="Dividends"
+          style={{ width: "10%", fontSize: 12 }}
+        />
         <Column
           field="stockSplits"
           header="Stock Splits"
-          style={{ width: "10%" }}
+          style={{ width: "10%", fontSize: 12 }}
         />
       </DataTable>
 

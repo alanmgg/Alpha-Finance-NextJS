@@ -21,7 +21,7 @@ export default function DescripcionData(props) {
             <p>
               La cantidad de filas y columnas que tiene el conjunto de datos:
             </p>
-            <pre className="app-code">
+            <pre className="app-code" style={{ fontSize: 12 }}>
               <code>
                 {`(`}
                 {shape[0]}
@@ -31,7 +31,7 @@ export default function DescripcionData(props) {
               </code>
             </pre>
             <p>Los tipos de datos de las columnas (variables y tipos):</p>
-            <pre className="app-code">
+            <pre className="app-code" style={{ fontSize: 12 }}>
               <code>
                 {`Open            `}
                 {dTypes.open}
@@ -62,7 +62,9 @@ export default function DescripcionData(props) {
           </div>
         </div>
       ) : (
-        <Spinner layout="small" />
+        <div className="col-12 xl:col-12">
+          <Spinner layout="small" />
+        </div>
       )}
     </div>
   );

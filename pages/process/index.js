@@ -57,13 +57,36 @@ export default function Process() {
                 justifyContent: "center",
                 alignItems: "center",
                 cursor: "pointer",
-                backgroundColor: "#D45766",
                 height: "15vh"
               }}
             >
-              <h5 style={{ color: "#FFFFFF", fontWeight: "bold" }}>
-                Análisis Exploratorio de Datos
-              </h5>
+              <h5>Análisis Exploratorio de Datos</h5>
+            </div>
+          </Link>
+        </div>
+
+        <div
+          className={
+            windowSize.width > 590 ? "col-3 xl:col-3" : "col-12 xl:col-12"
+          }
+        >
+          <Link
+            href={{
+              pathname: "/process/acp",
+              query: { symbol: symbol, name: name, menu: "no" }
+            }}
+          >
+            <div
+              className="card"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                height: "15vh"
+              }}
+            >
+              <h5>Análisis de Componentes Principales</h5>
             </div>
           </Link>
         </div>
@@ -80,13 +103,10 @@ export default function Process() {
               justifyContent: "center",
               alignItems: "center",
               cursor: "pointer",
-              backgroundColor: "#DA965C",
               height: "15vh"
             }}
           >
-            <h5 style={{ color: "#FFFFFF", fontWeight: "bold" }}>
-              Análisis de Componentes Principales
-            </h5>
+            <h5>Pronóstico con árboles de decisión</h5>
           </div>
         </div>
 
@@ -102,35 +122,10 @@ export default function Process() {
               justifyContent: "center",
               alignItems: "center",
               cursor: "pointer",
-              backgroundColor: "#E0C04B",
               height: "15vh"
             }}
           >
-            <h5 style={{ color: "#FFFFFF", fontWeight: "bold" }}>
-              Pronóstico con árboles de decisión
-            </h5>
-          </div>
-        </div>
-
-        <div
-          className={
-            windowSize.width > 590 ? "col-3 xl:col-3" : "col-12 xl:col-12"
-          }
-        >
-          <div
-            className="card"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              cursor: "pointer",
-              backgroundColor: "#F06091",
-              height: "15vh"
-            }}
-          >
-            <h5 style={{ color: "#FFFFFF", fontWeight: "bold" }}>
-              Pronóstico con bosques aleatorios
-            </h5>
+            <h5>Pronóstico con bosques aleatorios</h5>
           </div>
         </div>
 
@@ -142,13 +137,10 @@ export default function Process() {
               justifyContent: "center",
               alignItems: "center",
               cursor: "pointer",
-              backgroundColor: "#E28F99",
               height: "15vh"
             }}
           >
-            <h5 style={{ color: "#FFFFFF", fontWeight: "bold" }}>
-              Clasificación con árboles de decisión y bosques aleatorios
-            </h5>
+            <h5>Clasificación con árboles de decisión y bosques aleatorios</h5>
           </div>
         </div>
       </div>
@@ -200,7 +192,7 @@ export default function Process() {
             >
               <img
                 src="https://devopedia.org/images/article/139/9153.1547301619.png"
-                alt="process-pca"
+                alt="process-acp"
                 width={windowSize.width > 590 ? "500" : "250"}
               />
             </div>

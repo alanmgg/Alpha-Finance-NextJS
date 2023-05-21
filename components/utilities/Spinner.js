@@ -1,5 +1,5 @@
 import React from "react";
-import RingLoader from "react-spinners/RingLoader";
+import MoonLoader from "react-spinners/MoonLoader";
 
 export default function Spinner(props) {
   return (
@@ -9,15 +9,16 @@ export default function Spinner(props) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "50vh"
+        height: props.layout === "small" ? "20vh" : "50vh"
       }}
     >
-      <RingLoader
+      <MoonLoader
         color="#3B82F6"
         loading={true}
-        size={props.layout === "small" ? 150 : 250}
+        size={props.layout === "small" ? 100 : 150}
         aria-label="Loading Spinner"
         data-testid="loader"
+        speedMultiplier={1}
       />
     </div>
   );
