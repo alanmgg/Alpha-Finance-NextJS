@@ -10,8 +10,28 @@ export default function TableCompanies(props) {
   const [copyCompanies, setCopyCompanies] = useState(null);
   const [form, setForm] = useState({ companie: "" });
 
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined
+  });
+
   useEffect(() => {
     setForm({ companie: "" });
+
+    // Screen resize
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+    if (typeof window !== "undefined") {
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
 
   useEffect(() => {
@@ -56,7 +76,7 @@ export default function TableCompanies(props) {
           />
           <DataTable
             value={companies}
-            rows={10}
+            rows={windowSize.width > 590 ? 10 : 5}
             paginator
             responsiveLayout="scroll"
           >

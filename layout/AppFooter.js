@@ -1,16 +1,48 @@
-import React, { useContext } from 'react';
-import { LayoutContext } from './context/layoutcontext';
+import React, { useContext, useState, useEffect } from "react";
+import { LayoutContext } from "./context/layoutcontext";
 
-const AppFooter = () => {
-    const { layoutConfig } = useContext(LayoutContext);
+export default function AppFooter() {
+  const { layoutConfig } = useContext(LayoutContext);
 
-    return (
-        <div className="layout-footer">
-            <img src={`/layout/images/logo-${layoutConfig.colorScheme === 'light' ? 'dark' : 'white'}.svg`} alt="Logo" height="20" className="mr-2" />
-            by
-            <span className="font-medium ml-2">Alan Francisco M. & Diana Celeste H.</span>
-        </div>
-    );
-};
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined
+  });
 
-export default AppFooter;
+  useEffect(() => {
+    // Screen resize
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+    if (typeof window !== "undefined") {
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
+
+  return (
+    <div
+      className="layout-footer"
+      style={{ fontSize: windowSize.width > 590 ? 17 : 12 }}
+    >
+      <img
+        src={`/layout/images/logo-${
+          layoutConfig.colorScheme === "light" ? "dark" : "white"
+        }.svg`}
+        alt="Logo"
+        height="20"
+        className="mr-2"
+      />
+      by
+      <span className="font-medium ml-2">
+        Alan Francisco M. & Diana Celeste H.
+      </span>
+    </div>
+  );
+}
