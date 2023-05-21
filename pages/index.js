@@ -25,7 +25,7 @@ export default function Dashboard() {
 
       // JSON
       // setCompanies(Companies);
-      //table
+      //
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

@@ -67,6 +67,8 @@ export default function ProcessEda() {
     // JSON
     // setMainData(EDAJson);
     //
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function loadMainDataHandler(response) {

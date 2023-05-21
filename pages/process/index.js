@@ -12,6 +12,8 @@ export default function Process() {
     if (menu === "yes") {
       onMenuToggleProcess(true);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
