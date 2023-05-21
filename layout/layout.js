@@ -161,7 +161,7 @@ const Layout = (props) => {
           <div className="layout-main">{props.children}</div>
           <AppFooter />
         </div>
-        <AppConfig simple />
+        {/* <AppConfig simple /> */}
         <div className="layout-mask"></div>
       </div>
     </React.Fragment>

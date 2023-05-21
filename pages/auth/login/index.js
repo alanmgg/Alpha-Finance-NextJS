@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
-import AppConfig from "../../../layout/AppConfig";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
 import { Password } from "primereact/password";
@@ -214,10 +213,5 @@ export default function LoginPage() {
 }
 
 LoginPage.getLayout = function getLayout(page) {
-  return (
-    <React.Fragment>
-      {page}
-      <AppConfig simple />
-    </React.Fragment>
-  );
+  return <React.Fragment>{page}</React.Fragment>;
 };

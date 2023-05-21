@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { LayoutContext } from "./../../layout/context/layoutcontext";
@@ -8,9 +8,29 @@ export default function Process() {
   const router = useRouter();
   const { symbol, name, menu } = router.query;
 
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined
+  });
+
   useEffect(() => {
     if (menu === "yes") {
       onMenuToggleProcess(true);
+    }
+
+    // Screen resize
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+    if (typeof window !== "undefined") {
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -19,7 +39,11 @@ export default function Process() {
   return (
     <div>
       <div className="grid">
-        <div className="col-3">
+        <div
+          className={
+            windowSize.width > 590 ? "col-3 xl:col-3" : "col-12 xl:col-12"
+          }
+        >
           <Link
             href={{
               pathname: "/process/eda",
@@ -32,59 +56,105 @@ export default function Process() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                cursor: "pointer"
+                cursor: "pointer",
+                backgroundColor: "#D45766",
+                height: "15vh"
               }}
             >
-              <h5>Análisis Exploratorio de Datos</h5>
+              <h5 style={{ color: "#FFFFFF", fontWeight: "bold" }}>
+                Análisis Exploratorio de Datos
+              </h5>
             </div>
           </Link>
         </div>
 
-        <div className="col-3">
+        <div
+          className={
+            windowSize.width > 590 ? "col-3 xl:col-3" : "col-12 xl:col-12"
+          }
+        >
           <div
             className="card"
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              cursor: "pointer"
+              cursor: "pointer",
+              backgroundColor: "#DA965C",
+              height: "15vh"
             }}
           >
-            <h5>Análisis de componentes principales</h5>
+            <h5 style={{ color: "#FFFFFF", fontWeight: "bold" }}>
+              Análisis de Componentes Principales
+            </h5>
           </div>
         </div>
 
-        <div className="col-3">
+        <div
+          className={
+            windowSize.width > 590 ? "col-3 xl:col-3" : "col-12 xl:col-12"
+          }
+        >
           <div
             className="card"
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              cursor: "pointer"
+              cursor: "pointer",
+              backgroundColor: "#E0C04B",
+              height: "15vh"
             }}
           >
-            <h5>Pronóstico de decisión con árboles</h5>
+            <h5 style={{ color: "#FFFFFF", fontWeight: "bold" }}>
+              Pronóstico con árboles de decisión
+            </h5>
           </div>
         </div>
 
-        <div className="col-3">
+        <div
+          className={
+            windowSize.width > 590 ? "col-3 xl:col-3" : "col-12 xl:col-12"
+          }
+        >
           <div
             className="card"
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              cursor: "pointer"
+              cursor: "pointer",
+              backgroundColor: "#F06091",
+              height: "15vh"
             }}
           >
-            <h5>Empty</h5>
+            <h5 style={{ color: "#FFFFFF", fontWeight: "bold" }}>
+              Pronóstico con bosques aleatorios
+            </h5>
+          </div>
+        </div>
+
+        <div className="col-12 xl:col-12">
+          <div
+            className="card"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              cursor: "pointer",
+              backgroundColor: "#E28F99",
+              height: "15vh"
+            }}
+          >
+            <h5 style={{ color: "#FFFFFF", fontWeight: "bold" }}>
+              Clasificación con árboles de decisión y bosques aleatorios
+            </h5>
           </div>
         </div>
       </div>
 
-      <div className="grid">
-        <div className="col-12">
+      <div className="grid pt-2">
+        <div className="col-12 xl:col-12">
           <div className="card">
             <h5>¿Qué es el análisis exploratorio de datos?</h5>
             <p style={{ textAlign: "justify" }}>
@@ -105,7 +175,7 @@ export default function Process() {
               <img
                 src="https://www.masterdatascienceucm.com/wp-content/uploads/2020/08/proceso-mineria-de-datos.png.webp"
                 alt="process-eda"
-                width="500"
+                width={windowSize.width > 590 ? "500" : "350"}
               />
             </div>
             <br />
@@ -131,7 +201,7 @@ export default function Process() {
               <img
                 src="https://devopedia.org/images/article/139/9153.1547301619.png"
                 alt="process-pca"
-                width="500"
+                width={windowSize.width > 590 ? "500" : "350"}
               />
             </div>
           </div>

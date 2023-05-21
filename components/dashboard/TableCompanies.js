@@ -7,6 +7,7 @@ import { InputText } from "primereact/inputtext";
 
 export default function TableCompanies(props) {
   const [companies, setCompanies] = useState(null);
+  const [copyCompanies, setCopyCompanies] = useState(null);
   const [form, setForm] = useState({ companie: "" });
 
   useEffect(() => {
@@ -16,6 +17,7 @@ export default function TableCompanies(props) {
   useEffect(() => {
     if (props.var !== null) {
       setCompanies(props.var);
+      setCopyCompanies(props.var);
     }
   }, [props]);
 
@@ -23,6 +25,15 @@ export default function TableCompanies(props) {
     switch (type) {
       case "companie":
         setForm({ ...form, companie: data });
+
+        const copyArrayCompanie = [...copyCompanies];
+
+        const patron = new RegExp(data);
+        const arrayFiltrado = copyArrayCompanie.filter((objeto) => {
+          return Object.values(objeto).some((valor) => patron.test(valor));
+        });
+
+        setCompanies(arrayFiltrado);
         break;
       default:
         break;
@@ -37,7 +48,7 @@ export default function TableCompanies(props) {
           <InputText
             inputid="companie1"
             type="text"
-            placeholder="Tesla, AMD, Meta, Spotify ..."
+            placeholder="Tesla, AMD, Meta, Netflix ..."
             className="w-full mb-3"
             style={{ padding: "1rem" }}
             value={form.companie !== "" ? form.companie : ""}

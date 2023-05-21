@@ -29,6 +29,11 @@ export default function ProcessEda() {
   const [countTask, setCountTask] = useState(0);
   const [eventsTask, setEventsTask] = useState([]);
 
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined
+  });
+
   useEffect(() => {
     if (menu === "no") {
       onMenuToggleProcess(false);
@@ -63,6 +68,21 @@ export default function ProcessEda() {
     setCountTask(0);
     setEventsTask(customEvents);
     getEdaData(symbol, loadMainDataHandler, loadErrorHandler);
+
+    // Screen resize
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+    if (typeof window !== "undefined") {
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
 
     // JSON
     // setMainData(EDAJson);
@@ -173,7 +193,11 @@ export default function ProcessEda() {
       </Head>
 
       <div className="grid">
-        <div className="col-5">
+        <div
+          className={
+            windowSize.width > 590 ? "col-5 xl:col-5" : "col-12 xl:col-12"
+          }
+        >
           <div className="card timeline-demo">
             <h5>Análisis Exploratorio de Datos</h5>
             <Timeline
@@ -186,7 +210,11 @@ export default function ProcessEda() {
           </div>
         </div>
 
-        <div className="col-7">
+        <div
+          className={
+            windowSize.width > 590 ? "col-7 xl:col-7" : "col-12 xl:col-12"
+          }
+        >
           <div className="card">
             <div>
               <h5>
