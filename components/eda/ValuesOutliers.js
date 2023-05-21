@@ -28,6 +28,28 @@ export default function ValuesOutliners(props) {
   const [mainData, setMainData] = useState(null);
   const [name, setName] = useState(null);
 
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined
+  });
+
+  useEffect(() => {
+    // Screen resize
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+    if (typeof window !== "undefined") {
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
+
   useEffect(() => {
     setValuesOutlinersOpen(null);
     setValuesOutlinersHigh(null);
@@ -152,7 +174,7 @@ export default function ValuesOutliners(props) {
 
   return (
     <div className="grid pt-5 pl-0 pr-0">
-      <div className="col-12">
+      <div className="col-12 xl:col-12">
         {valuesOutlinersOpen !== null &&
         valuesOutlinersHigh !== null &&
         valuesOutlinersLow !== null &&
@@ -172,7 +194,11 @@ export default function ValuesOutliners(props) {
               complementan.
             </p>
             <div className="grid">
-              <div className="col-6">
+              <div
+                className={
+                  windowSize.width > 590 ? "col-6 xl:col-6" : "col-12 xl:col-12"
+                }
+              >
                 <Chart
                   chartType="Histogram"
                   width="100%"
@@ -181,7 +207,11 @@ export default function ValuesOutliners(props) {
                   options={optionsOpen}
                 />
               </div>
-              <div className="col-6">
+              <div
+                className={
+                  windowSize.width > 590 ? "col-6 xl:col-6" : "col-12 xl:col-12"
+                }
+              >
                 <Chart
                   chartType="Histogram"
                   width="100%"
@@ -193,7 +223,11 @@ export default function ValuesOutliners(props) {
             </div>
 
             <div className="grid">
-              <div className="col-6">
+              <div
+                className={
+                  windowSize.width > 590 ? "col-6 xl:col-6" : "col-12 xl:col-12"
+                }
+              >
                 <Chart
                   chartType="Histogram"
                   width="100%"
@@ -202,7 +236,11 @@ export default function ValuesOutliners(props) {
                   options={optionsLow}
                 />
               </div>
-              <div className="col-6">
+              <div
+                className={
+                  windowSize.width > 590 ? "col-6 xl:col-6" : "col-12 xl:col-12"
+                }
+              >
                 <Chart
                   chartType="Histogram"
                   width="100%"
@@ -214,7 +252,11 @@ export default function ValuesOutliners(props) {
             </div>
 
             <div className="grid">
-              <div className="col-6">
+              <div
+                className={
+                  windowSize.width > 590 ? "col-6 xl:col-6" : "col-12 xl:col-12"
+                }
+              >
                 <Chart
                   chartType="Histogram"
                   width="100%"
@@ -223,7 +265,11 @@ export default function ValuesOutliners(props) {
                   options={optionsVolume}
                 />
               </div>
-              <div className="col-6">
+              <div
+                className={
+                  windowSize.width > 590 ? "col-6 xl:col-6" : "col-12 xl:col-12"
+                }
+              >
                 <Chart
                   chartType="Histogram"
                   width="100%"
@@ -235,7 +281,11 @@ export default function ValuesOutliners(props) {
             </div>
 
             <div className="grid">
-              <div className="col-6">
+              <div
+                className={
+                  windowSize.width > 590 ? "col-6 xl:col-6" : "col-12 xl:col-12"
+                }
+              >
                 <Chart
                   chartType="Histogram"
                   width="100%"

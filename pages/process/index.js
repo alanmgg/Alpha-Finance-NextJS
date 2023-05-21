@@ -175,7 +175,7 @@ export default function Process() {
               <img
                 src="https://www.masterdatascienceucm.com/wp-content/uploads/2020/08/proceso-mineria-de-datos.png.webp"
                 alt="process-eda"
-                width={windowSize.width > 590 ? "500" : "350"}
+                width={windowSize.width > 590 ? "500" : "250"}
               />
             </div>
             <br />
@@ -201,7 +201,7 @@ export default function Process() {
               <img
                 src="https://devopedia.org/images/article/139/9153.1547301619.png"
                 alt="process-pca"
-                width={windowSize.width > 590 ? "500" : "350"}
+                width={windowSize.width > 590 ? "500" : "250"}
               />
             </div>
           </div>

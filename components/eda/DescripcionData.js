@@ -15,7 +15,7 @@ export default function DescripcionData(props) {
   return (
     <div className="grid pt-5">
       {shape !== null && dTypes !== null ? (
-        <div className="col-12">
+        <div className="col-12 xl:col-12">
           <div className="card">
             <h5>Paso 1: Descripción de la estructura de los datos.</h5>
             <p>

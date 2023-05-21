@@ -148,7 +148,7 @@ export default function MatrizData(props) {
 
   return (
     <div className="grid pt-5">
-      <div className="col-12">
+      <div className="col-12 xl:col-12">
         {corrData !== null ? (
           <div className="card">
             <h5>Paso 4: Identificación de relaciones entre pares variables.</h5>
