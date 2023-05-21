@@ -13,6 +13,34 @@ const AppMenu = () => {
       items: [{ label: "Panel", icon: "pi pi-fw pi-home", to: "/" }]
     },
 
+    {
+      label: "Algoritmos",
+      items: [
+        {
+          label: "Análisis exploratorio de datos",
+          icon: "pi pi-fw pi-table",
+          to: "/process/eda",
+          query: { symbol: "NFLX", name: "Netflix", menu: "no" }
+        },
+        {
+          label: "Análisis de componentes principales",
+          icon: "pi pi-fw pi-bars",
+          to: "/process/acp",
+          query: { symbol: "NFLX", name: "Netflix", menu: "no" }
+        }
+        // {
+        //   label: "Pronóstico con árboles de decisión",
+        //   icon: "pi pi-fw pi-share-alt",
+        //   to: "/uikit/tree"
+        // },
+        // {
+        //   label: "Pronóstico con bosques aleatorios",
+        //   icon: "pi pi-fw pi-circle",
+        //   to: "/uikit/misc"
+        // }
+      ]
+    },
+
     // {
     //     label: 'UI Components',
     //     items: [
