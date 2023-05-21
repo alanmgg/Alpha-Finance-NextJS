@@ -6,7 +6,7 @@ import { getCompanies } from "./../api/dashboard";
 // JSON
 // import Companies from "./../config/Companies.json";
 
-import TableCompanies from "./../components/dashboard/TableCompanies";
+import TableCompanies from "./../components/dashboard/TableCompanies.js";
 import Spinner from "./../components/utilities/Spinner";
 
 export default function Dashboard() {
