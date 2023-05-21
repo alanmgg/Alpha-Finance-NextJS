@@ -3,9 +3,15 @@ import Link from "next/link";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
+import { InputText } from "primereact/inputtext";
 
-export default function Tablecompanies(props) {
+export default function TableCompanies(props) {
   const [companies, setCompanies] = useState(null);
+  const [form, setForm] = useState({ companie: "" });
+
+  useEffect(() => {
+    setForm({ companie: "" });
+  }, []);
 
   useEffect(() => {
     if (props.var !== null) {
@@ -13,11 +19,14 @@ export default function Tablecompanies(props) {
     }
   }, [props]);
 
-  function formatCurrency(value) {
-    return value.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD"
-    });
+  function fillFields(type, data) {
+    switch (type) {
+      case "companie":
+        setForm({ ...form, companie: data });
+        break;
+      default:
+        break;
+    }
   }
 
   return (
@@ -25,6 +34,15 @@ export default function Tablecompanies(props) {
       <div className="col-12 xl:col-12">
         <div className="card">
           <h5>Empresas</h5>
+          <InputText
+            inputid="companie1"
+            type="text"
+            placeholder="Tesla, AMD, Meta, Spotify ..."
+            className="w-full mb-3"
+            style={{ padding: "1rem" }}
+            value={form.companie !== "" ? form.companie : ""}
+            onChange={(e) => fillFields("companie", e.target.value)}
+          />
           <DataTable
             value={companies}
             rows={10}
@@ -44,11 +62,10 @@ export default function Tablecompanies(props) {
               style={{ width: "35%" }}
             />
             <Column
-              field="price"
-              header="Precio"
+              field="founded"
+              header="Fundada"
               sortable
               style={{ width: "35%" }}
-              body={(data) => formatCurrency(data.price)}
             />
             <Column
               header="Vista"
@@ -61,7 +78,7 @@ export default function Tablecompanies(props) {
                       query: { symbol: data.symbol, name: data.name }
                     }}
                   >
-                    <Button icon="pi pi-wallet" type="button" text />
+                    <Button icon="pi pi-search" type="button" text />
                   </Link>
                 </>
               )}

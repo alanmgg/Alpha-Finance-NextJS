@@ -33,7 +33,7 @@ export default function Process() {
                 cursor: "pointer"
               }}
             >
-              <h5>Análisis exploratorio de datos</h5>
+              <h5>Análisis Exploratorio de Datos</h5>
             </div>
           </Link>
         </div>

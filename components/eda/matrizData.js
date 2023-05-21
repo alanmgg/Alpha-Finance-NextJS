@@ -1,40 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-// API
-import { getCorrData } from "../../api/eda";
-// JSON
-import CorrDataJson from "./../../config/corrData.json";
+import Spinner from "../utilities/Spinner";
 
-import Spinner from "../../components/utilities/spinner";
+var objectData = [];
 
 export default function MatrizData(props) {
   const [corrData, setCorrData] = useState(null);
 
   useEffect(() => {
-    if (props.value !== null && props.value !== undefined) {
-      getCorrData(props.value, loadCorrHandler, loadErrorHandler);
-    }
-  }, [props, props.value]);
+    if (props.var !== null) {
+      objectData = [];
 
-  async function loadCorrHandler(response) {
-    if (response.ok) {
-      var responseCorr = await response.json();
-      setCorrData(responseCorr.data);
-      return;
+      for (const item in props.var.corr) {
+        objectData.push({
+          index: props.var.corr[item]["index"],
+          open: props.var.corr[item]["Open"],
+          high: props.var.corr[item]["High"],
+          low: props.var.corr[item]["Low"],
+          close: props.var.corr[item]["Close"],
+          volume: props.var.corr[item]["Volume"],
+          dividends: props.var.corr[item]["Dividends"],
+          stock: props.var.corr[item]["Stock Splits"]
+        });
+      }
+      setCorrData(objectData);
     }
-    if (response.status === 400) {
-      const error = await response.text();
-      throw new Error(error);
-    } else if (response.status === 401) {
-      const error = await response.json();
-    } else if (response.status === 404) {
-      const error = await response.json();
-    }
-    throw new Error("Network response was not ok");
-  }
-
-  function loadErrorHandler(error) {}
+  }, [props]);
 
   function UppercaseString(stringTable) {
     let strinResult =
@@ -142,6 +134,13 @@ export default function MatrizData(props) {
           {value}
         </div>
       );
+    } else if (value === null) {
+      return (
+        <div
+          className="p-2"
+          style={{ backgroundColor: "#EFF1F3", color: "#000000" }}
+        ></div>
+      );
     } else {
       return <div></div>;
     }
@@ -155,42 +154,59 @@ export default function MatrizData(props) {
             <h5>Paso 4: Identificación de relaciones entre pares variables.</h5>
             <p>Regresa la suma de todos los valores nulos en cada variable:</p>
 
-            <DataTable value={corrData} rows={5}>
+            <DataTable value={corrData} rows={6}>
               <Column
                 field="index"
                 header=""
-                style={{ width: "5%", fontWeight: "bold", textAlign: "right" }}
+                style={{
+                  width: "5%",
+                  fontWeight: "bold",
+                  textAlign: "right",
+                  fontSize: 12
+                }}
                 body={(data) => UppercaseString(data.index)}
               />
               <Column
                 field="open"
                 header="Open"
-                style={{ width: "20%" }}
+                style={{ width: "10%", fontSize: 12 }}
                 body={(data) => fieldColor(data.open)}
               />
               <Column
                 field="high"
                 header="High"
-                style={{ width: "20%" }}
+                style={{ width: "10%", fontSize: 12 }}
                 body={(data) => fieldColor(data.high)}
               />
               <Column
                 field="low"
                 header="Low"
-                style={{ width: "20%" }}
+                style={{ width: "10%", fontSize: 12 }}
                 body={(data) => fieldColor(data.low)}
               />
               <Column
                 field="close"
                 header="Close"
-                style={{ width: "20%" }}
+                style={{ width: "10%", fontSize: 12 }}
                 body={(data) => fieldColor(data.close)}
               />
               <Column
                 field="volume"
                 header="Volume"
-                style={{ width: "20%" }}
+                style={{ width: "10%", fontSize: 12 }}
                 body={(data) => fieldColor(data.volume)}
+              />
+              <Column
+                field="dividends"
+                header="Dividends"
+                style={{ width: "10%", fontSize: 12 }}
+                body={(data) => fieldColor(data.dividends)}
+              />
+              <Column
+                field="stock"
+                header="Stock Splits"
+                style={{ width: "10%", fontSize: 12 }}
+                body={(data) => fieldColor(data.stock)}
               />
             </DataTable>
           </div>

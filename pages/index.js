@@ -4,10 +4,10 @@ import Head from "next/head";
 // API
 import { getCompanies } from "./../api/dashboard";
 // JSON
-// import Companies from "./../config/companies.json";
+// import Companies from "./../config/Companies.json";
 
-import Minicards from "../components/dashboard/minicards";
-import Tablecompanies from "../components/dashboard/tablecompanies";
+// import Minicards from "../components/dashboard/minicards";
+import TableCompanies from "../components/dashboard/TableCompanies";
 import Spinner from "../components/utilities/spinner";
 
 export default function Dashboard() {
@@ -26,7 +26,7 @@ export default function Dashboard() {
 
       // JSON
       // setCompanies(Companies);
-      //
+      //table
     }
   }, []);
 
@@ -76,8 +76,8 @@ export default function Dashboard() {
         <Spinner />
       ) : (
         <div>
-          <Minicards var={companies} />
-          <Tablecompanies var={companies} />
+          {/* <Minicards var={companies} /> */}
+          <TableCompanies var={companies} />
         </div>
       )}
     </div>

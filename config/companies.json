@@ -1,227 +1,2517 @@
 [
   {
-    "symbol": "TSLA",
-    "name": "Tesla, Inc.",
-    "price": "166.35",
-    "change": "-1.63",
-    "change_porcent": "-0.97%",
-    "volume": "105.141M",
-    "market_capitalization": "529.005B"
+    "symbol": "MMM",
+    "name": "3M",
+    "founded": "1902"
   },
   {
-    "symbol": "SOFI",
-    "name": "SoFi Technologies, Inc.",
-    "price": "4.7700",
-    "change": "-0.2500",
-    "change_porcent": "-4.98%",
-    "volume": "102.606M",
-    "market_capitalization": "4.899B"
+    "symbol": "AOS",
+    "name": "A. O. Smith",
+    "founded": "1916"
   },
   {
-    "symbol": "PLTR",
-    "name": "Palantir Technologies Inc.",
-    "price": "9.52",
-    "change": "+0.02",
-    "change_porcent": "+0.21%",
-    "volume": "53.071M",
-    "market_capitalization": "21.102B"
+    "symbol": "ABT",
+    "name": "Abbott",
+    "founded": "1888"
   },
   {
-    "symbol": "F",
-    "name": "Ford Motor Company",
-    "price": "11.64",
-    "change": "-0.03",
-    "change_porcent": "-0.26%",
-    "volume": "52.391M",
-    "market_capitalization": "47.447B"
+    "symbol": "ABBV",
+    "name": "AbbVie",
+    "founded": "2013 (1888)"
   },
   {
-    "symbol": "AI",
-    "name": "C3.ai, Inc.",
-    "price": "23.97",
-    "change": "+4.55",
-    "change_porcent": "+23.43%",
-    "volume": "50.429M",
-    "market_capitalization": "2.795B"
+    "symbol": "ACN",
+    "name": "Accenture",
+    "founded": "1989"
   },
   {
-    "symbol": "AMD",
-    "name": "Advanced Micro Devices, Inc.",
-    "price": "97.40",
-    "change": "+2.14",
-    "change_porcent": "+2.25%",
-    "volume": "50.967M",
-    "market_capitalization": "159.747B"
+    "symbol": "ATVI",
+    "name": "Activision Blizzard",
+    "founded": "2008"
+  },
+  {
+    "symbol": "ADM",
+    "name": "ADM",
+    "founded": "1902"
+  },
+  {
+    "symbol": "ADBE",
+    "name": "Adobe Inc.",
+    "founded": "1982"
+  },
+  {
+    "symbol": "ADP",
+    "name": "ADP",
+    "founded": "1949"
+  },
+  {
+    "symbol": "AAP",
+    "name": "Advance Auto Parts",
+    "founded": "1932"
+  },
+  {
+    "symbol": "AES",
+    "name": "AES Corporation",
+    "founded": "1981"
+  },
+  {
+    "symbol": "AFL",
+    "name": "Aflac",
+    "founded": "1955"
+  },
+  {
+    "symbol": "A",
+    "name": "Agilent Technologies",
+    "founded": "1999"
+  },
+  {
+    "symbol": "APD",
+    "name": "Air Products and Chemicals",
+    "founded": "1940"
+  },
+  {
+    "symbol": "AKAM",
+    "name": "Akamai",
+    "founded": "1998"
+  },
+  {
+    "symbol": "ALK",
+    "name": "Alaska Air Group",
+    "founded": "1985"
+  },
+  {
+    "symbol": "ALB",
+    "name": "Albemarle Corporation",
+    "founded": "1994"
+  },
+  {
+    "symbol": "ARE",
+    "name": "Alexandria Real Estate Equities",
+    "founded": "1994"
+  },
+  {
+    "symbol": "ALGN",
+    "name": "Align Technology",
+    "founded": "1997"
+  },
+  {
+    "symbol": "ALLE",
+    "name": "Allegion",
+    "founded": "1908"
+  },
+  {
+    "symbol": "LNT",
+    "name": "Alliant Energy",
+    "founded": "1917"
+  },
+  {
+    "symbol": "ALL",
+    "name": "Allstate",
+    "founded": "1931"
+  },
+  {
+    "symbol": "GOOGL",
+    "name": "Alphabet Inc. (Class A)",
+    "founded": "1998"
+  },
+  {
+    "symbol": "GOOG",
+    "name": "Alphabet Inc. (Class C)",
+    "founded": "1998"
+  },
+  {
+    "symbol": "MO",
+    "name": "Altria",
+    "founded": "1985"
   },
   {
     "symbol": "AMZN",
-    "name": "Amazon.com, Inc.",
-    "price": "111.20",
-    "change": "+0.94",
-    "change_porcent": "+0.85%",
-    "volume": "51.838M",
-    "market_capitalization": "1.141T"
+    "name": "Amazon",
+    "founded": "1994"
   },
   {
-    "symbol": "NU",
-    "name": "Nu Holdings Ltd.",
-    "price": "6.09",
-    "change": "+0.28",
-    "change_porcent": "+4.82%",
-    "volume": "38.524M",
-    "market_capitalization": "29.083B"
+    "symbol": "AMCR",
+    "name": "Amcor",
+    "founded": "2019 (1860)"
   },
   {
-    "symbol": "BAC",
-    "name": "Bank of America Corporation",
-    "price": "27.65",
-    "change": "+0.56",
-    "change_porcent": "+2.07%",
-    "volume": "37.871M",
-    "market_capitalization": "220.347B"
+    "symbol": "AMD",
+    "name": "AMD",
+    "founded": "1969"
   },
   {
-    "symbol": "NIO",
-    "name": "NIO Inc.",
-    "price": "8.25",
-    "change": "+0.30",
-    "change_porcent": "+3.77%",
-    "volume": "35.278M",
-    "market_capitalization": "13.924B"
+    "symbol": "AEE",
+    "name": "Ameren",
+    "founded": "1902"
   },
   {
-    "symbol": "BBD",
-    "name": "Banco Bradesco S.A.",
-    "price": "3.2400",
-    "change": "+0.0700",
-    "change_porcent": "+2.21%",
-    "volume": "33.062M",
-    "market_capitalization": "34.428B"
+    "symbol": "AAL",
+    "name": "American Airlines Group",
+    "founded": "1934"
+  },
+  {
+    "symbol": "AEP",
+    "name": "American Electric Power",
+    "founded": "1906"
+  },
+  {
+    "symbol": "AXP",
+    "name": "American Express",
+    "founded": "1850"
+  },
+  {
+    "symbol": "AIG",
+    "name": "American International Group",
+    "founded": "1919"
+  },
+  {
+    "symbol": "AMT",
+    "name": "American Tower",
+    "founded": "1995"
+  },
+  {
+    "symbol": "AWK",
+    "name": "American Water Works",
+    "founded": "1886"
+  },
+  {
+    "symbol": "AMP",
+    "name": "Ameriprise Financial",
+    "founded": "1894"
+  },
+  {
+    "symbol": "ABC",
+    "name": "AmerisourceBergen",
+    "founded": "1985"
+  },
+  {
+    "symbol": "AME",
+    "name": "Ametek",
+    "founded": "1930"
+  },
+  {
+    "symbol": "AMGN",
+    "name": "Amgen",
+    "founded": "1980"
+  },
+  {
+    "symbol": "APH",
+    "name": "Amphenol",
+    "founded": "1932"
+  },
+  {
+    "symbol": "ADI",
+    "name": "Analog Devices",
+    "founded": "1965"
+  },
+  {
+    "symbol": "ANSS",
+    "name": "Ansys",
+    "founded": "1969"
+  },
+  {
+    "symbol": "AON",
+    "name": "Aon",
+    "founded": "1982 (1919)"
+  },
+  {
+    "symbol": "APA",
+    "name": "APA Corporation",
+    "founded": "1954"
   },
   {
     "symbol": "AAPL",
     "name": "Apple Inc.",
-    "price": "172.07",
-    "change": "-0.50",
-    "change_porcent": "-0.29%",
-    "volume": "37.163M",
-    "market_capitalization": "2.706T"
+    "founded": "1977"
   },
   {
-    "symbol": "SWN",
-    "name": "Southwestern Energy Company",
-    "price": "5.20",
-    "change": "+0.21",
-    "change_porcent": "+4.21%",
-    "volume": "30.592M",
-    "market_capitalization": "5.727B"
+    "symbol": "AMAT",
+    "name": "Applied Materials",
+    "founded": "1967"
   },
   {
-    "symbol": "GOOGL",
-    "name": "Alphabet Inc.",
-    "price": "116.51",
-    "change": "-1.00",
-    "change_porcent": "-0.85%",
-    "volume": "36.015M",
-    "market_capitalization": "1.41T"
+    "symbol": "APTV",
+    "name": "Aptiv",
+    "founded": "1994"
   },
   {
-    "symbol": "CCL",
-    "name": "Carnival Corporation & plc",
-    "price": "10.31",
-    "change": "+0.48",
-    "change_porcent": "+4.88%",
-    "volume": "27.439M",
-    "market_capitalization": "14.334B"
+    "symbol": "ACGL",
+    "name": "Arch Capital Group",
+    "founded": "1995"
   },
   {
-    "symbol": "NVDA",
-    "name": "NVIDIA Corporation",
-    "price": "289.53",
-    "change": "+6.13",
-    "change_porcent": "+2.16%",
-    "volume": "29.318M",
-    "market_capitalization": "729.815B"
+    "symbol": "ANET",
+    "name": "Arista Networks",
+    "founded": "2004"
+  },
+  {
+    "symbol": "AJG",
+    "name": "Arthur J. Gallagher & Co.",
+    "founded": "1927"
+  },
+  {
+    "symbol": "AIZ",
+    "name": "Assurant",
+    "founded": "1892"
   },
   {
     "symbol": "T",
-    "name": "AT&T Inc.",
-    "price": "16.95",
-    "change": "-0.08",
-    "change_porcent": "-0.47%",
-    "volume": "27.995M",
-    "market_capitalization": "121.176B"
+    "name": "AT&T",
+    "founded": "1983 (1885)"
   },
   {
-    "symbol": "PBR",
-    "name": "Petróleo Brasileiro S.A. - Petrobras",
-    "price": "11.69",
-    "change": "-0.17",
-    "change_porcent": "-1.43%",
-    "volume": "24.502M",
-    "market_capitalization": "76.243B"
+    "symbol": "ATO",
+    "name": "Atmos Energy",
+    "founded": "1906"
+  },
+  {
+    "symbol": "ADSK",
+    "name": "Autodesk",
+    "founded": "1982"
+  },
+  {
+    "symbol": "AZO",
+    "name": "AutoZone",
+    "founded": "1979"
+  },
+  {
+    "symbol": "AVB",
+    "name": "AvalonBay Communities",
+    "founded": "1978"
+  },
+  {
+    "symbol": "AVY",
+    "name": "Avery Dennison",
+    "founded": "1990"
+  },
+  {
+    "symbol": "AXON",
+    "name": "Axon Enterprise",
+    "founded": "1993"
+  },
+  {
+    "symbol": "BKR",
+    "name": "Baker Hughes",
+    "founded": "2017"
+  },
+  {
+    "symbol": "BALL",
+    "name": "Ball Corporation",
+    "founded": "1880"
+  },
+  {
+    "symbol": "BAC",
+    "name": "Bank of America",
+    "founded": "1998 (1923 / 1874)"
+  },
+  {
+    "symbol": "BBWI",
+    "name": "Bath & Body Works, Inc.",
+    "founded": "1963"
+  },
+  {
+    "symbol": "BAX",
+    "name": "Baxter International",
+    "founded": "1931"
+  },
+  {
+    "symbol": "BDX",
+    "name": "Becton Dickinson",
+    "founded": "1897"
+  },
+  {
+    "symbol": "WRB",
+    "name": "Berkley",
+    "founded": "1967"
+  },
+  {
+    "symbol": "BRK.B",
+    "name": "Berkshire Hathaway",
+    "founded": "1839"
+  },
+  {
+    "symbol": "BBY",
+    "name": "Best Buy",
+    "founded": "1966"
+  },
+  {
+    "symbol": "BIO",
+    "name": "Bio-Rad",
+    "founded": "1952"
+  },
+  {
+    "symbol": "TECH",
+    "name": "Bio-Techne",
+    "founded": "1976"
+  },
+  {
+    "symbol": "BIIB",
+    "name": "Biogen",
+    "founded": "1978"
+  },
+  {
+    "symbol": "BLK",
+    "name": "BlackRock",
+    "founded": "1988"
+  },
+  {
+    "symbol": "BK",
+    "name": "BNY Mellon",
+    "founded": "1784"
+  },
+  {
+    "symbol": "BA",
+    "name": "Boeing",
+    "founded": "1916"
+  },
+  {
+    "symbol": "BKNG",
+    "name": "Booking Holdings",
+    "founded": "1996"
+  },
+  {
+    "symbol": "BWA",
+    "name": "BorgWarner",
+    "founded": "1880"
+  },
+  {
+    "symbol": "BXP",
+    "name": "Boston Properties",
+    "founded": "1970"
+  },
+  {
+    "symbol": "BSX",
+    "name": "Boston Scientific",
+    "founded": "1979"
+  },
+  {
+    "symbol": "BMY",
+    "name": "Bristol Myers Squibb",
+    "founded": "1989 (1887)"
+  },
+  {
+    "symbol": "AVGO",
+    "name": "Broadcom Inc.",
+    "founded": "1961"
+  },
+  {
+    "symbol": "BR",
+    "name": "Broadridge Financial Solutions",
+    "founded": "1962"
+  },
+  {
+    "symbol": "BRO",
+    "name": "Brown & Brown",
+    "founded": "1939"
+  },
+  {
+    "symbol": "BF.B",
+    "name": "Brown–Forman",
+    "founded": "1870"
+  },
+  {
+    "symbol": "BG",
+    "name": "Bunge Limited",
+    "founded": "1818"
+  },
+  {
+    "symbol": "CHRW",
+    "name": "C.H. Robinson",
+    "founded": "1905"
+  },
+  {
+    "symbol": "CDNS",
+    "name": "Cadence Design Systems",
+    "founded": "1988"
+  },
+  {
+    "symbol": "CZR",
+    "name": "Caesars Entertainment",
+    "founded": "1973"
+  },
+  {
+    "symbol": "CPT",
+    "name": "Camden Property Trust",
+    "founded": "1981"
+  },
+  {
+    "symbol": "CPB",
+    "name": "Campbell Soup Company",
+    "founded": "1869"
+  },
+  {
+    "symbol": "COF",
+    "name": "Capital One",
+    "founded": "1994"
+  },
+  {
+    "symbol": "CAH",
+    "name": "Cardinal Health",
+    "founded": "1971"
+  },
+  {
+    "symbol": "KMX",
+    "name": "CarMax",
+    "founded": "1993"
+  },
+  {
+    "symbol": "CCL",
+    "name": "Carnival",
+    "founded": "1972"
+  },
+  {
+    "symbol": "CARR",
+    "name": "Carrier Global",
+    "founded": "2020 (1915)"
+  },
+  {
+    "symbol": "CTLT",
+    "name": "Catalent",
+    "founded": "2007"
+  },
+  {
+    "symbol": "CAT",
+    "name": "Caterpillar Inc.",
+    "founded": "1925"
+  },
+  {
+    "symbol": "CBOE",
+    "name": "Cboe Global Markets",
+    "founded": "1973"
+  },
+  {
+    "symbol": "CBRE",
+    "name": "CBRE Group",
+    "founded": "1906"
+  },
+  {
+    "symbol": "CDW",
+    "name": "CDW",
+    "founded": "1984"
+  },
+  {
+    "symbol": "CE",
+    "name": "Celanese",
+    "founded": "1918"
+  },
+  {
+    "symbol": "CNC",
+    "name": "Centene Corporation",
+    "founded": "1984"
+  },
+  {
+    "symbol": "CNP",
+    "name": "CenterPoint Energy",
+    "founded": "1882"
+  },
+  {
+    "symbol": "CDAY",
+    "name": "Ceridian",
+    "founded": "1992"
+  },
+  {
+    "symbol": "CF",
+    "name": "CF Industries",
+    "founded": "1946"
+  },
+  {
+    "symbol": "CRL",
+    "name": "Charles River Laboratories",
+    "founded": "1947"
+  },
+  {
+    "symbol": "SCHW",
+    "name": "Charles Schwab Corporation",
+    "founded": "1971"
+  },
+  {
+    "symbol": "CHTR",
+    "name": "Charter Communications",
+    "founded": "1993"
+  },
+  {
+    "symbol": "CVX",
+    "name": "Chevron Corporation",
+    "founded": "1879"
+  },
+  {
+    "symbol": "CMG",
+    "name": "Chipotle Mexican Grill",
+    "founded": "1993"
+  },
+  {
+    "symbol": "CB",
+    "name": "Chubb Limited",
+    "founded": "1985"
+  },
+  {
+    "symbol": "CHD",
+    "name": "Church & Dwight",
+    "founded": "1847"
+  },
+  {
+    "symbol": "CI",
+    "name": "Cigna",
+    "founded": "1982"
+  },
+  {
+    "symbol": "CINF",
+    "name": "Cincinnati Financial",
+    "founded": "1950"
+  },
+  {
+    "symbol": "CTAS",
+    "name": "Cintas",
+    "founded": "1929"
+  },
+  {
+    "symbol": "CSCO",
+    "name": "Cisco",
+    "founded": "1984"
+  },
+  {
+    "symbol": "C",
+    "name": "Citigroup",
+    "founded": "1998"
+  },
+  {
+    "symbol": "CFG",
+    "name": "Citizens Financial Group",
+    "founded": "1828"
+  },
+  {
+    "symbol": "CLX",
+    "name": "Clorox",
+    "founded": "1913"
+  },
+  {
+    "symbol": "CME",
+    "name": "CME Group",
+    "founded": "1848"
+  },
+  {
+    "symbol": "CMS",
+    "name": "CMS Energy",
+    "founded": "1886"
+  },
+  {
+    "symbol": "KO",
+    "name": "Coca-Cola Company (The)",
+    "founded": "1886"
+  },
+  {
+    "symbol": "CTSH",
+    "name": "Cognizant",
+    "founded": "1994"
+  },
+  {
+    "symbol": "CL",
+    "name": "Colgate-Palmolive",
+    "founded": "1806"
+  },
+  {
+    "symbol": "CMCSA",
+    "name": "Comcast",
+    "founded": "1963"
+  },
+  {
+    "symbol": "CMA",
+    "name": "Comerica",
+    "founded": "1849"
+  },
+  {
+    "symbol": "CAG",
+    "name": "Conagra Brands",
+    "founded": "1919"
+  },
+  {
+    "symbol": "COP",
+    "name": "ConocoPhillips",
+    "founded": "2002"
+  },
+  {
+    "symbol": "ED",
+    "name": "Consolidated Edison",
+    "founded": "1823"
+  },
+  {
+    "symbol": "STZ",
+    "name": "Constellation Brands",
+    "founded": "1945"
+  },
+  {
+    "symbol": "CEG",
+    "name": "Constellation Energy",
+    "founded": "1999"
+  },
+  {
+    "symbol": "COO",
+    "name": "CooperCompanies",
+    "founded": "1958"
+  },
+  {
+    "symbol": "CPRT",
+    "name": "Copart",
+    "founded": "1982"
+  },
+  {
+    "symbol": "GLW",
+    "name": "Corning Inc.",
+    "founded": "1851"
+  },
+  {
+    "symbol": "CTVA",
+    "name": "Corteva",
+    "founded": "2019"
+  },
+  {
+    "symbol": "CSGP",
+    "name": "CoStar Group",
+    "founded": "1987"
+  },
+  {
+    "symbol": "COST",
+    "name": "Costco",
+    "founded": "1976"
+  },
+  {
+    "symbol": "CTRA",
+    "name": "Coterra",
+    "founded": "2021 (1989)"
+  },
+  {
+    "symbol": "CCI",
+    "name": "Crown Castle",
+    "founded": "1994"
+  },
+  {
+    "symbol": "CSX",
+    "name": "CSX",
+    "founded": "1980"
+  },
+  {
+    "symbol": "CMI",
+    "name": "Cummins",
+    "founded": "1919"
+  },
+  {
+    "symbol": "CVS",
+    "name": "CVS Health",
+    "founded": "1996"
+  },
+  {
+    "symbol": "DHI",
+    "name": "D.R. Horton",
+    "founded": "1978"
+  },
+  {
+    "symbol": "DHR",
+    "name": "Danaher Corporation",
+    "founded": "1969"
+  },
+  {
+    "symbol": "DRI",
+    "name": "Darden Restaurants",
+    "founded": "1938"
+  },
+  {
+    "symbol": "DVA",
+    "name": "DaVita Inc.",
+    "founded": "1979"
+  },
+  {
+    "symbol": "DE",
+    "name": "John Deere",
+    "founded": "1837"
+  },
+  {
+    "symbol": "DAL",
+    "name": "Delta Air Lines",
+    "founded": "1929"
+  },
+  {
+    "symbol": "XRAY",
+    "name": "Dentsply Sirona",
+    "founded": "2016 (1969)"
+  },
+  {
+    "symbol": "DVN",
+    "name": "Devon Energy",
+    "founded": "1971"
+  },
+  {
+    "symbol": "DXCM",
+    "name": "Dexcom",
+    "founded": "1999"
+  },
+  {
+    "symbol": "FANG",
+    "name": "Diamondback Energy",
+    "founded": "2007"
+  },
+  {
+    "symbol": "DLR",
+    "name": "Digital Realty",
+    "founded": "2004"
+  },
+  {
+    "symbol": "DFS",
+    "name": "Discover Financial",
+    "founded": "1985"
+  },
+  {
+    "symbol": "DISH",
+    "name": "Dish Network",
+    "founded": "1980"
+  },
+  {
+    "symbol": "DIS",
+    "name": "Disney",
+    "founded": "1923"
+  },
+  {
+    "symbol": "DG",
+    "name": "Dollar General",
+    "founded": "1939"
+  },
+  {
+    "symbol": "DLTR",
+    "name": "Dollar Tree",
+    "founded": "1986"
+  },
+  {
+    "symbol": "D",
+    "name": "Dominion Energy",
+    "founded": "1983"
+  },
+  {
+    "symbol": "DPZ",
+    "name": "Domino's",
+    "founded": "1960"
+  },
+  {
+    "symbol": "DOV",
+    "name": "Dover Corporation",
+    "founded": "1955"
+  },
+  {
+    "symbol": "DOW",
+    "name": "Dow Inc.",
+    "founded": "2019"
+  },
+  {
+    "symbol": "DTE",
+    "name": "DTE Energy",
+    "founded": "1995"
+  },
+  {
+    "symbol": "DUK",
+    "name": "Duke Energy",
+    "founded": "1904"
+  },
+  {
+    "symbol": "DD",
+    "name": "DuPont",
+    "founded": "2017"
+  },
+  {
+    "symbol": "DXC",
+    "name": "DXC Technology",
+    "founded": "2017"
+  },
+  {
+    "symbol": "EMN",
+    "name": "Eastman Chemical Company",
+    "founded": "1920"
+  },
+  {
+    "symbol": "ETN",
+    "name": "Eaton Corporation",
+    "founded": "1911"
+  },
+  {
+    "symbol": "EBAY",
+    "name": "eBay",
+    "founded": "1995"
+  },
+  {
+    "symbol": "ECL",
+    "name": "Ecolab",
+    "founded": "1923"
+  },
+  {
+    "symbol": "EIX",
+    "name": "Edison International",
+    "founded": "1886"
+  },
+  {
+    "symbol": "EW",
+    "name": "Edwards Lifesciences",
+    "founded": "1958"
+  },
+  {
+    "symbol": "EA",
+    "name": "Electronic Arts",
+    "founded": "1982"
+  },
+  {
+    "symbol": "ELV",
+    "name": "Elevance Health",
+    "founded": "2014 (1946)"
+  },
+  {
+    "symbol": "LLY",
+    "name": "Eli Lilly and Company",
+    "founded": "1876"
+  },
+  {
+    "symbol": "EMR",
+    "name": "Emerson Electric",
+    "founded": "1890"
+  },
+  {
+    "symbol": "ENPH",
+    "name": "Enphase",
+    "founded": "2006"
+  },
+  {
+    "symbol": "ETR",
+    "name": "Entergy",
+    "founded": "1913"
+  },
+  {
+    "symbol": "EOG",
+    "name": "EOG Resources",
+    "founded": "1999"
+  },
+  {
+    "symbol": "EPAM",
+    "name": "EPAM Systems",
+    "founded": "1993"
+  },
+  {
+    "symbol": "EQT",
+    "name": "EQT",
+    "founded": "1888"
+  },
+  {
+    "symbol": "EFX",
+    "name": "Equifax",
+    "founded": "1899"
+  },
+  {
+    "symbol": "EQIX",
+    "name": "Equinix",
+    "founded": "1998"
+  },
+  {
+    "symbol": "EQR",
+    "name": "Equity Residential",
+    "founded": "1969"
+  },
+  {
+    "symbol": "ESS",
+    "name": "Essex Property Trust",
+    "founded": "1971"
+  },
+  {
+    "symbol": "EL",
+    "name": "Estée Lauder Companies (The)",
+    "founded": "1946"
+  },
+  {
+    "symbol": "ETSY",
+    "name": "Etsy",
+    "founded": "2005"
+  },
+  {
+    "symbol": "RE",
+    "name": "Everest Re",
+    "founded": "1973"
+  },
+  {
+    "symbol": "EVRG",
+    "name": "Evergy",
+    "founded": "1909"
+  },
+  {
+    "symbol": "ES",
+    "name": "Eversource",
+    "founded": "1966"
+  },
+  {
+    "symbol": "EXC",
+    "name": "Exelon",
+    "founded": "2000"
+  },
+  {
+    "symbol": "EXPE",
+    "name": "Expedia Group",
+    "founded": "1996"
+  },
+  {
+    "symbol": "EXPD",
+    "name": "Expeditors International",
+    "founded": "1979"
+  },
+  {
+    "symbol": "EXR",
+    "name": "Extra Space Storage",
+    "founded": "1977"
+  },
+  {
+    "symbol": "XOM",
+    "name": "ExxonMobil",
+    "founded": "1999"
+  },
+  {
+    "symbol": "FFIV",
+    "name": "F5, Inc.",
+    "founded": "1996"
+  },
+  {
+    "symbol": "FDS",
+    "name": "FactSet",
+    "founded": "1978"
+  },
+  {
+    "symbol": "FICO",
+    "name": "Fair Isaac",
+    "founded": "1956"
+  },
+  {
+    "symbol": "FAST",
+    "name": "Fastenal",
+    "founded": "1967"
+  },
+  {
+    "symbol": "FRT",
+    "name": "Federal Realty",
+    "founded": "1962"
+  },
+  {
+    "symbol": "FDX",
+    "name": "FedEx",
+    "founded": "1971"
+  },
+  {
+    "symbol": "FITB",
+    "name": "Fifth Third Bank",
+    "founded": "1858"
+  },
+  {
+    "symbol": "FSLR",
+    "name": "First Solar",
+    "founded": "1999"
+  },
+  {
+    "symbol": "FE",
+    "name": "FirstEnergy",
+    "founded": "1997"
+  },
+  {
+    "symbol": "FIS",
+    "name": "FIS",
+    "founded": "1968"
+  },
+  {
+    "symbol": "FISV",
+    "name": "Fiserv",
+    "founded": "1984"
+  },
+  {
+    "symbol": "FLT",
+    "name": "Fleetcor",
+    "founded": "2000"
+  },
+  {
+    "symbol": "FMC",
+    "name": "FMC Corporation",
+    "founded": "1883"
+  },
+  {
+    "symbol": "F",
+    "name": "Ford Motor Company",
+    "founded": "1903"
+  },
+  {
+    "symbol": "FTNT",
+    "name": "Fortinet",
+    "founded": "2000"
+  },
+  {
+    "symbol": "FTV",
+    "name": "Fortive",
+    "founded": "2016"
+  },
+  {
+    "symbol": "FOXA",
+    "name": "Fox Corporation (Class A)",
+    "founded": "2019"
+  },
+  {
+    "symbol": "FOX",
+    "name": "Fox Corporation (Class B)",
+    "founded": "2019"
+  },
+  {
+    "symbol": "BEN",
+    "name": "Franklin Templeton",
+    "founded": "1947"
+  },
+  {
+    "symbol": "FCX",
+    "name": "Freeport-McMoRan",
+    "founded": "1912"
+  },
+  {
+    "symbol": "GRMN",
+    "name": "Garmin",
+    "founded": "1989"
+  },
+  {
+    "symbol": "IT",
+    "name": "Gartner",
+    "founded": "1979"
+  },
+  {
+    "symbol": "GEHC",
+    "name": "GE HealthCare",
+    "founded": "1994"
+  },
+  {
+    "symbol": "GEN",
+    "name": "Gen Digital",
+    "founded": "1982"
+  },
+  {
+    "symbol": "GNRC",
+    "name": "Generac",
+    "founded": "1959"
+  },
+  {
+    "symbol": "GD",
+    "name": "General Dynamics",
+    "founded": "1899"
+  },
+  {
+    "symbol": "GE",
+    "name": "General Electric",
+    "founded": "1892"
+  },
+  {
+    "symbol": "GIS",
+    "name": "General Mills",
+    "founded": "1856"
+  },
+  {
+    "symbol": "GM",
+    "name": "General Motors",
+    "founded": "1908"
+  },
+  {
+    "symbol": "GPC",
+    "name": "Genuine Parts Company",
+    "founded": "1925"
+  },
+  {
+    "symbol": "GILD",
+    "name": "Gilead Sciences",
+    "founded": "1987"
+  },
+  {
+    "symbol": "GL",
+    "name": "Globe Life",
+    "founded": "1900"
+  },
+  {
+    "symbol": "GPN",
+    "name": "Global Payments",
+    "founded": "2000"
+  },
+  {
+    "symbol": "GS",
+    "name": "Goldman Sachs",
+    "founded": "1869"
+  },
+  {
+    "symbol": "HAL",
+    "name": "Halliburton",
+    "founded": "1919"
+  },
+  {
+    "symbol": "HIG",
+    "name": "Hartford (The)",
+    "founded": "1810"
+  },
+  {
+    "symbol": "HAS",
+    "name": "Hasbro",
+    "founded": "1923"
+  },
+  {
+    "symbol": "HCA",
+    "name": "HCA Healthcare",
+    "founded": "1968"
+  },
+  {
+    "symbol": "PEAK",
+    "name": "Healthpeak",
+    "founded": "1985"
+  },
+  {
+    "symbol": "HSIC",
+    "name": "Henry Schein",
+    "founded": "1932"
+  },
+  {
+    "symbol": "HSY",
+    "name": "Hershey's",
+    "founded": "1894"
+  },
+  {
+    "symbol": "HES",
+    "name": "Hess Corporation",
+    "founded": "1919"
+  },
+  {
+    "symbol": "HPE",
+    "name": "Hewlett Packard Enterprise",
+    "founded": "2015"
+  },
+  {
+    "symbol": "HLT",
+    "name": "Hilton Worldwide",
+    "founded": "1919"
+  },
+  {
+    "symbol": "HOLX",
+    "name": "Hologic",
+    "founded": "1985"
+  },
+  {
+    "symbol": "HD",
+    "name": "Home Depot (The)",
+    "founded": "1978"
+  },
+  {
+    "symbol": "HON",
+    "name": "Honeywell",
+    "founded": "1906"
+  },
+  {
+    "symbol": "HRL",
+    "name": "Hormel Foods",
+    "founded": "1891"
+  },
+  {
+    "symbol": "HST",
+    "name": "Host Hotels & Resorts",
+    "founded": "1993"
+  },
+  {
+    "symbol": "HWM",
+    "name": "Howmet Aerospace",
+    "founded": "2016"
+  },
+  {
+    "symbol": "HPQ",
+    "name": "HP Inc.",
+    "founded": "1939 (2015)"
+  },
+  {
+    "symbol": "HUM",
+    "name": "Humana",
+    "founded": "1961"
+  },
+  {
+    "symbol": "HBAN",
+    "name": "Huntington Bancshares",
+    "founded": "1866"
+  },
+  {
+    "symbol": "HII",
+    "name": "Huntington Ingalls Industries",
+    "founded": "2011"
+  },
+  {
+    "symbol": "IBM",
+    "name": "IBM",
+    "founded": "1911"
+  },
+  {
+    "symbol": "IEX",
+    "name": "IDEX Corporation",
+    "founded": "1988"
+  },
+  {
+    "symbol": "IDXX",
+    "name": "Idexx Laboratories",
+    "founded": "1983"
+  },
+  {
+    "symbol": "ITW",
+    "name": "Illinois Tool Works",
+    "founded": "1912"
+  },
+  {
+    "symbol": "ILMN",
+    "name": "Illumina",
+    "founded": "1998"
+  },
+  {
+    "symbol": "INCY",
+    "name": "Incyte",
+    "founded": "1991"
+  },
+  {
+    "symbol": "IR",
+    "name": "Ingersoll Rand",
+    "founded": "1859"
+  },
+  {
+    "symbol": "PODD",
+    "name": "Insulet",
+    "founded": "2000"
   },
   {
     "symbol": "INTC",
-    "name": "Intel Corporation",
-    "price": "29.80",
-    "change": "+0.85",
-    "change_porcent": "+2.94%",
-    "volume": "28.134M",
-    "market_capitalization": "128.675B"
+    "name": "Intel",
+    "founded": "1968"
   },
   {
-    "symbol": "PLUG",
-    "name": "Plug Power Inc.",
-    "price": "7.85",
-    "change": "+0.37",
-    "change_porcent": "+4.95%",
-    "volume": "22.683M",
-    "market_capitalization": "4.935B"
+    "symbol": "ICE",
+    "name": "Intercontinental Exchange",
+    "founded": "2000"
+  },
+  {
+    "symbol": "IFF",
+    "name": "International Flavors & Fragrances",
+    "founded": "1958 (1889)"
+  },
+  {
+    "symbol": "IP",
+    "name": "International Paper",
+    "founded": "1898"
+  },
+  {
+    "symbol": "IPG",
+    "name": "Interpublic Group of Companies (The)",
+    "founded": "1961 (1930)"
+  },
+  {
+    "symbol": "INTU",
+    "name": "Intuit",
+    "founded": "1983"
+  },
+  {
+    "symbol": "ISRG",
+    "name": "Intuitive Surgical",
+    "founded": "1995"
+  },
+  {
+    "symbol": "IVZ",
+    "name": "Invesco",
+    "founded": "1935"
+  },
+  {
+    "symbol": "INVH",
+    "name": "Invitation Homes",
+    "founded": "2012"
+  },
+  {
+    "symbol": "IQV",
+    "name": "IQVIA",
+    "founded": "1982"
+  },
+  {
+    "symbol": "IRM",
+    "name": "Iron Mountain",
+    "founded": "1951"
+  },
+  {
+    "symbol": "JBHT",
+    "name": "J.B. Hunt",
+    "founded": "1961"
+  },
+  {
+    "symbol": "JKHY",
+    "name": "Jack Henry & Associates",
+    "founded": "1976"
+  },
+  {
+    "symbol": "J",
+    "name": "Jacobs Solutions",
+    "founded": "1947"
+  },
+  {
+    "symbol": "JNJ",
+    "name": "Johnson & Johnson",
+    "founded": "1886"
+  },
+  {
+    "symbol": "JCI",
+    "name": "Johnson Controls",
+    "founded": "1885"
+  },
+  {
+    "symbol": "JPM",
+    "name": "JPMorgan Chase",
+    "founded": "2000 (1799 / 1871)"
+  },
+  {
+    "symbol": "JNPR",
+    "name": "Juniper Networks",
+    "founded": "1996"
+  },
+  {
+    "symbol": "K",
+    "name": "Kellogg's",
+    "founded": "1906"
+  },
+  {
+    "symbol": "KDP",
+    "name": "Keurig Dr Pepper",
+    "founded": "1981"
   },
   {
     "symbol": "KEY",
     "name": "KeyCorp",
-    "price": "9.59",
-    "change": "+0.60",
-    "change_porcent": "+6.67%",
-    "volume": "22.165M",
-    "market_capitalization": "9.298B"
+    "founded": "1825"
   },
   {
-    "symbol": "RIVN",
-    "name": "Rivian Automotive, Inc.",
-    "price": "13.44",
-    "change": "+0.53",
-    "change_porcent": "+4.11%",
-    "volume": "22.5M",
-    "market_capitalization": "12.625B"
+    "symbol": "KEYS",
+    "name": "Keysight",
+    "founded": "2014 (1939)"
+  },
+  {
+    "symbol": "KMB",
+    "name": "Kimberly-Clark",
+    "founded": "1872"
+  },
+  {
+    "symbol": "KIM",
+    "name": "Kimco Realty",
+    "founded": "1958"
+  },
+  {
+    "symbol": "KMI",
+    "name": "Kinder Morgan",
+    "founded": "1997"
+  },
+  {
+    "symbol": "KLAC",
+    "name": "KLA Corporation",
+    "founded": "1975/1977 (1997)"
+  },
+  {
+    "symbol": "KHC",
+    "name": "Kraft Heinz",
+    "founded": "2015 (1869)"
+  },
+  {
+    "symbol": "KR",
+    "name": "Kroger",
+    "founded": "1883"
+  },
+  {
+    "symbol": "LHX",
+    "name": "L3Harris",
+    "founded": "2019 (1895)"
+  },
+  {
+    "symbol": "LH",
+    "name": "LabCorp",
+    "founded": "1978"
+  },
+  {
+    "symbol": "LRCX",
+    "name": "Lam Research",
+    "founded": "1980"
+  },
+  {
+    "symbol": "LW",
+    "name": "Lamb Weston",
+    "founded": "2016 (1950)"
+  },
+  {
+    "symbol": "LVS",
+    "name": "Las Vegas Sands",
+    "founded": "1988"
+  },
+  {
+    "symbol": "LDOS",
+    "name": "Leidos",
+    "founded": "1969"
+  },
+  {
+    "symbol": "LEN",
+    "name": "Lennar",
+    "founded": "1954"
+  },
+  {
+    "symbol": "LNC",
+    "name": "Lincoln Financial",
+    "founded": "1905"
+  },
+  {
+    "symbol": "LIN",
+    "name": "Linde plc",
+    "founded": "1879"
+  },
+  {
+    "symbol": "LYV",
+    "name": "Live Nation Entertainment",
+    "founded": "2010"
+  },
+  {
+    "symbol": "LKQ",
+    "name": "LKQ Corporation",
+    "founded": "1998"
+  },
+  {
+    "symbol": "LMT",
+    "name": "Lockheed Martin",
+    "founded": "1995"
+  },
+  {
+    "symbol": "L",
+    "name": "Loews Corporation",
+    "founded": "1959"
+  },
+  {
+    "symbol": "LOW",
+    "name": "Lowe's",
+    "founded": "1904/1946/1959"
+  },
+  {
+    "symbol": "LYB",
+    "name": "LyondellBasell",
+    "founded": "2007"
+  },
+  {
+    "symbol": "MTB",
+    "name": "M&T Bank",
+    "founded": "1856"
+  },
+  {
+    "symbol": "MRO",
+    "name": "Marathon Oil",
+    "founded": "1887"
+  },
+  {
+    "symbol": "MPC",
+    "name": "Marathon Petroleum",
+    "founded": "2009 (1887)"
+  },
+  {
+    "symbol": "MKTX",
+    "name": "MarketAxess",
+    "founded": "2000"
+  },
+  {
+    "symbol": "MAR",
+    "name": "Marriott International",
+    "founded": "1927"
+  },
+  {
+    "symbol": "MMC",
+    "name": "Marsh McLennan",
+    "founded": "1905"
+  },
+  {
+    "symbol": "MLM",
+    "name": "Martin Marietta Materials",
+    "founded": "1993"
+  },
+  {
+    "symbol": "MAS",
+    "name": "Masco",
+    "founded": "1929"
+  },
+  {
+    "symbol": "MA",
+    "name": "Mastercard",
+    "founded": "1966"
+  },
+  {
+    "symbol": "MTCH",
+    "name": "Match Group",
+    "founded": "1986"
+  },
+  {
+    "symbol": "MKC",
+    "name": "McCormick & Company",
+    "founded": "1889"
+  },
+  {
+    "symbol": "MCD",
+    "name": "McDonald's",
+    "founded": "1940"
+  },
+  {
+    "symbol": "MCK",
+    "name": "McKesson",
+    "founded": "1833"
+  },
+  {
+    "symbol": "MDT",
+    "name": "Medtronic",
+    "founded": "1949"
+  },
+  {
+    "symbol": "MRK",
+    "name": "Merck & Co.",
+    "founded": "1891"
+  },
+  {
+    "symbol": "META",
+    "name": "Meta Platforms",
+    "founded": "2004"
+  },
+  {
+    "symbol": "MET",
+    "name": "MetLife",
+    "founded": "1868"
+  },
+  {
+    "symbol": "MTD",
+    "name": "Mettler Toledo",
+    "founded": "1945"
+  },
+  {
+    "symbol": "MGM",
+    "name": "MGM Resorts",
+    "founded": "1986"
+  },
+  {
+    "symbol": "MCHP",
+    "name": "Microchip Technology",
+    "founded": "1989"
+  },
+  {
+    "symbol": "MU",
+    "name": "Micron Technology",
+    "founded": "1978"
+  },
+  {
+    "symbol": "MSFT",
+    "name": "Microsoft",
+    "founded": "1975"
+  },
+  {
+    "symbol": "MAA",
+    "name": "Mid-America Apartment Communities",
+    "founded": "1977"
+  },
+  {
+    "symbol": "MRNA",
+    "name": "Moderna",
+    "founded": "2010"
+  },
+  {
+    "symbol": "MHK",
+    "name": "Mohawk Industries",
+    "founded": "1878"
+  },
+  {
+    "symbol": "MOH",
+    "name": "Molina Healthcare",
+    "founded": "1980"
+  },
+  {
+    "symbol": "TAP",
+    "name": "Molson Coors Beverage Company",
+    "founded": "2005 (Molson 1786, Coors 1873)"
+  },
+  {
+    "symbol": "MDLZ",
+    "name": "Mondelez International",
+    "founded": "2012"
+  },
+  {
+    "symbol": "MPWR",
+    "name": "Monolithic Power Systems",
+    "founded": "1997"
+  },
+  {
+    "symbol": "MNST",
+    "name": "Monster Beverage",
+    "founded": "2012 (1935)"
+  },
+  {
+    "symbol": "MCO",
+    "name": "Moody's Corporation",
+    "founded": "1909"
+  },
+  {
+    "symbol": "MS",
+    "name": "Morgan Stanley",
+    "founded": "1935"
+  },
+  {
+    "symbol": "MOS",
+    "name": "Mosaic Company (The)",
+    "founded": "2004 (1865 / 1909)"
+  },
+  {
+    "symbol": "MSI",
+    "name": "Motorola Solutions",
+    "founded": "1928 (2011)"
+  },
+  {
+    "symbol": "MSCI",
+    "name": "MSCI",
+    "founded": "1969"
+  },
+  {
+    "symbol": "NDAQ",
+    "name": "Nasdaq, Inc.",
+    "founded": "1971"
+  },
+  {
+    "symbol": "NTAP",
+    "name": "NetApp",
+    "founded": "1992"
+  },
+  {
+    "symbol": "NFLX",
+    "name": "Netflix",
+    "founded": "1997"
+  },
+  {
+    "symbol": "NWL",
+    "name": "Newell Brands",
+    "founded": "1903"
+  },
+  {
+    "symbol": "NEM",
+    "name": "Newmont",
+    "founded": "1921"
+  },
+  {
+    "symbol": "NWSA",
+    "name": "News Corp (Class A)",
+    "founded": "2013 (1980)"
+  },
+  {
+    "symbol": "NWS",
+    "name": "News Corp (Class B)",
+    "founded": "2013 (1980)"
+  },
+  {
+    "symbol": "NEE",
+    "name": "NextEra Energy",
+    "founded": "1984 (1925)"
+  },
+  {
+    "symbol": "NKE",
+    "name": "Nike, Inc.",
+    "founded": "1964"
+  },
+  {
+    "symbol": "NI",
+    "name": "NiSource",
+    "founded": "1912"
+  },
+  {
+    "symbol": "NDSN",
+    "name": "Nordson Corporation",
+    "founded": "1935"
+  },
+  {
+    "symbol": "NSC",
+    "name": "Norfolk Southern Railway",
+    "founded": "1881/1894 (1980)"
+  },
+  {
+    "symbol": "NTRS",
+    "name": "Northern Trust",
+    "founded": "1889"
+  },
+  {
+    "symbol": "NOC",
+    "name": "Northrop Grumman",
+    "founded": "1994 (Northrop 1939, Grumman 1930)"
+  },
+  {
+    "symbol": "NCLH",
+    "name": "Norwegian Cruise Line Holdings",
+    "founded": "2011 (1966)"
+  },
+  {
+    "symbol": "NRG",
+    "name": "NRG Energy",
+    "founded": "1992"
+  },
+  {
+    "symbol": "NUE",
+    "name": "Nucor",
+    "founded": "1940"
+  },
+  {
+    "symbol": "NVDA",
+    "name": "Nvidia",
+    "founded": "1993"
+  },
+  {
+    "symbol": "NVR",
+    "name": "NVR, Inc.",
+    "founded": "1980"
+  },
+  {
+    "symbol": "NXPI",
+    "name": "NXP Semiconductors",
+    "founded": "1953"
+  },
+  {
+    "symbol": "ORLY",
+    "name": "O'Reilly Auto Parts",
+    "founded": "1957"
+  },
+  {
+    "symbol": "OXY",
+    "name": "Occidental Petroleum",
+    "founded": "1920"
+  },
+  {
+    "symbol": "ODFL",
+    "name": "Old Dominion",
+    "founded": "1934"
+  },
+  {
+    "symbol": "OMC",
+    "name": "Omnicom Group",
+    "founded": "1986"
+  },
+  {
+    "symbol": "ON",
+    "name": "ON Semiconductor",
+    "founded": "1999"
   },
   {
     "symbol": "OKE",
-    "name": "ONEOK, Inc.",
-    "price": "57.95",
-    "change": "-5.77",
-    "change_porcent": "-9.06%",
-    "volume": "20.65M",
-    "market_capitalization": "25.929B"
+    "name": "ONEOK",
+    "founded": "1906"
+  },
+  {
+    "symbol": "ORCL",
+    "name": "Oracle Corporation",
+    "founded": "1977"
+  },
+  {
+    "symbol": "OGN",
+    "name": "Organon & Co.",
+    "founded": "2021"
+  },
+  {
+    "symbol": "OTIS",
+    "name": "Otis Worldwide",
+    "founded": "2020 (1853)"
+  },
+  {
+    "symbol": "PCAR",
+    "name": "Paccar",
+    "founded": "1905"
+  },
+  {
+    "symbol": "PKG",
+    "name": "Packaging Corporation of America",
+    "founded": "1959"
+  },
+  {
+    "symbol": "PARA",
+    "name": "Paramount Global",
+    "founded": "2019 (1952)"
+  },
+  {
+    "symbol": "PH",
+    "name": "Parker Hannifin",
+    "founded": "1917"
+  },
+  {
+    "symbol": "PAYX",
+    "name": "Paychex",
+    "founded": "1971"
+  },
+  {
+    "symbol": "PAYC",
+    "name": "Paycom",
+    "founded": "1998"
+  },
+  {
+    "symbol": "PYPL",
+    "name": "PayPal",
+    "founded": "1998"
+  },
+  {
+    "symbol": "PNR",
+    "name": "Pentair",
+    "founded": "1966"
+  },
+  {
+    "symbol": "PEP",
+    "name": "PepsiCo",
+    "founded": "1898"
+  },
+  {
+    "symbol": "PFE",
+    "name": "Pfizer",
+    "founded": "1849"
+  },
+  {
+    "symbol": "PCG",
+    "name": "PG&E Corporation",
+    "founded": "1905"
+  },
+  {
+    "symbol": "PM",
+    "name": "Philip Morris International",
+    "founded": "2008 (1847)"
+  },
+  {
+    "symbol": "PSX",
+    "name": "Phillips 66",
+    "founded": "2012 (1917)"
+  },
+  {
+    "symbol": "PNW",
+    "name": "Pinnacle West",
+    "founded": "1985"
+  },
+  {
+    "symbol": "PXD",
+    "name": "Pioneer Natural Resources",
+    "founded": "1997"
+  },
+  {
+    "symbol": "PNC",
+    "name": "PNC Financial Services",
+    "founded": "1845"
+  },
+  {
+    "symbol": "POOL",
+    "name": "Pool Corporation",
+    "founded": "1993"
+  },
+  {
+    "symbol": "PPG",
+    "name": "PPG Industries",
+    "founded": "1883"
+  },
+  {
+    "symbol": "PPL",
+    "name": "PPL Corporation",
+    "founded": "1920"
+  },
+  {
+    "symbol": "PFG",
+    "name": "Principal Financial Group",
+    "founded": "1879"
+  },
+  {
+    "symbol": "PG",
+    "name": "Procter & Gamble",
+    "founded": "1837"
+  },
+  {
+    "symbol": "PGR",
+    "name": "Progressive Corporation",
+    "founded": "1937"
+  },
+  {
+    "symbol": "PLD",
+    "name": "Prologis",
+    "founded": "1983"
+  },
+  {
+    "symbol": "PRU",
+    "name": "Prudential Financial",
+    "founded": "1875"
+  },
+  {
+    "symbol": "PEG",
+    "name": "Public Service Enterprise Group",
+    "founded": "1903"
+  },
+  {
+    "symbol": "PTC",
+    "name": "PTC",
+    "founded": "1985"
+  },
+  {
+    "symbol": "PSA",
+    "name": "Public Storage",
+    "founded": "1972"
+  },
+  {
+    "symbol": "PHM",
+    "name": "PulteGroup",
+    "founded": "1956"
+  },
+  {
+    "symbol": "QRVO",
+    "name": "Qorvo",
+    "founded": "2015"
+  },
+  {
+    "symbol": "PWR",
+    "name": "Quanta Services",
+    "founded": "1997"
+  },
+  {
+    "symbol": "QCOM",
+    "name": "Qualcomm",
+    "founded": "1985"
+  },
+  {
+    "symbol": "DGX",
+    "name": "Quest Diagnostics",
+    "founded": "1967"
+  },
+  {
+    "symbol": "RL",
+    "name": "Ralph Lauren Corporation",
+    "founded": "1967"
+  },
+  {
+    "symbol": "RJF",
+    "name": "Raymond James",
+    "founded": "1962"
+  },
+  {
+    "symbol": "RTX",
+    "name": "Raytheon Technologies",
+    "founded": "1922"
+  },
+  {
+    "symbol": "O",
+    "name": "Realty Income",
+    "founded": "1969"
+  },
+  {
+    "symbol": "REG",
+    "name": "Regency Centers",
+    "founded": "1963"
+  },
+  {
+    "symbol": "REGN",
+    "name": "Regeneron",
+    "founded": "1988"
+  },
+  {
+    "symbol": "RF",
+    "name": "Regions Financial Corporation",
+    "founded": "1971"
+  },
+  {
+    "symbol": "RSG",
+    "name": "Republic Services",
+    "founded": "1998 (1981)"
+  },
+  {
+    "symbol": "RMD",
+    "name": "ResMed",
+    "founded": "1989"
+  },
+  {
+    "symbol": "RVTY",
+    "name": "Revvity",
+    "founded": "1937"
+  },
+  {
+    "symbol": "RHI",
+    "name": "Robert Half",
+    "founded": "1948"
+  },
+  {
+    "symbol": "ROK",
+    "name": "Rockwell Automation",
+    "founded": "1903"
+  },
+  {
+    "symbol": "ROL",
+    "name": "Rollins, Inc.",
+    "founded": "1948"
+  },
+  {
+    "symbol": "ROP",
+    "name": "Roper Technologies",
+    "founded": "1981"
+  },
+  {
+    "symbol": "ROST",
+    "name": "Ross Stores",
+    "founded": "1982"
+  },
+  {
+    "symbol": "RCL",
+    "name": "Royal Caribbean Group",
+    "founded": "1997"
+  },
+  {
+    "symbol": "SPGI",
+    "name": "S&P Global",
+    "founded": "1917"
+  },
+  {
+    "symbol": "CRM",
+    "name": "Salesforce",
+    "founded": "1999"
+  },
+  {
+    "symbol": "SBAC",
+    "name": "SBA Communications",
+    "founded": "1989"
+  },
+  {
+    "symbol": "SLB",
+    "name": "Schlumberger",
+    "founded": "1926"
+  },
+  {
+    "symbol": "STX",
+    "name": "Seagate Technology",
+    "founded": "1979"
+  },
+  {
+    "symbol": "SEE",
+    "name": "Sealed Air",
+    "founded": "1960"
+  },
+  {
+    "symbol": "SRE",
+    "name": "Sempra Energy",
+    "founded": "1998"
+  },
+  {
+    "symbol": "NOW",
+    "name": "ServiceNow",
+    "founded": "2003"
+  },
+  {
+    "symbol": "SHW",
+    "name": "Sherwin-Williams",
+    "founded": "1866"
+  },
+  {
+    "symbol": "SPG",
+    "name": "Simon Property Group",
+    "founded": "2003"
+  },
+  {
+    "symbol": "SWKS",
+    "name": "Skyworks Solutions",
+    "founded": "2002"
+  },
+  {
+    "symbol": "SJM",
+    "name": "J.M. Smucker Company (The)",
+    "founded": "1897"
+  },
+  {
+    "symbol": "SNA",
+    "name": "Snap-on",
+    "founded": "1920"
+  },
+  {
+    "symbol": "SEDG",
+    "name": "SolarEdge",
+    "founded": "2006"
+  },
+  {
+    "symbol": "SO",
+    "name": "Southern Company",
+    "founded": "1945"
+  },
+  {
+    "symbol": "LUV",
+    "name": "Southwest Airlines",
+    "founded": "1967"
+  },
+  {
+    "symbol": "SWK",
+    "name": "Stanley Black & Decker",
+    "founded": "1843"
+  },
+  {
+    "symbol": "SBUX",
+    "name": "Starbucks",
+    "founded": "1971"
+  },
+  {
+    "symbol": "STT",
+    "name": "State Street Corporation",
+    "founded": "1792"
+  },
+  {
+    "symbol": "STLD",
+    "name": "Steel Dynamics",
+    "founded": "1993"
+  },
+  {
+    "symbol": "STE",
+    "name": "Steris",
+    "founded": "1985"
+  },
+  {
+    "symbol": "SYK",
+    "name": "Stryker Corporation",
+    "founded": "1941"
+  },
+  {
+    "symbol": "SYF",
+    "name": "Synchrony Financial",
+    "founded": "2003"
+  },
+  {
+    "symbol": "SNPS",
+    "name": "Synopsys",
+    "founded": "1986"
+  },
+  {
+    "symbol": "SYY",
+    "name": "Sysco",
+    "founded": "1969"
+  },
+  {
+    "symbol": "TMUS",
+    "name": "T-Mobile US",
+    "founded": "1994"
+  },
+  {
+    "symbol": "TROW",
+    "name": "T. Rowe Price",
+    "founded": "1937"
+  },
+  {
+    "symbol": "TTWO",
+    "name": "Take-Two Interactive",
+    "founded": "1993"
+  },
+  {
+    "symbol": "TPR",
+    "name": "Tapestry, Inc.",
+    "founded": "2017"
+  },
+  {
+    "symbol": "TRGP",
+    "name": "Targa Resources",
+    "founded": "2005"
+  },
+  {
+    "symbol": "TGT",
+    "name": "Target Corporation",
+    "founded": "1902"
+  },
+  {
+    "symbol": "TEL",
+    "name": "TE Connectivity",
+    "founded": "2007"
+  },
+  {
+    "symbol": "TDY",
+    "name": "Teledyne Technologies",
+    "founded": "1960"
+  },
+  {
+    "symbol": "TFX",
+    "name": "Teleflex",
+    "founded": "1943"
+  },
+  {
+    "symbol": "TER",
+    "name": "Teradyne",
+    "founded": "1960"
+  },
+  {
+    "symbol": "TSLA",
+    "name": "Tesla, Inc.",
+    "founded": "2003"
+  },
+  {
+    "symbol": "TXN",
+    "name": "Texas Instruments",
+    "founded": "1930"
+  },
+  {
+    "symbol": "TXT",
+    "name": "Textron",
+    "founded": "1923"
+  },
+  {
+    "symbol": "TMO",
+    "name": "Thermo Fisher Scientific",
+    "founded": "2006 (1902)"
+  },
+  {
+    "symbol": "TJX",
+    "name": "TJX Companies",
+    "founded": "1987"
+  },
+  {
+    "symbol": "TSCO",
+    "name": "Tractor Supply",
+    "founded": "1938"
+  },
+  {
+    "symbol": "TT",
+    "name": "Trane Technologies",
+    "founded": "1871"
+  },
+  {
+    "symbol": "TDG",
+    "name": "TransDigm Group",
+    "founded": "1993"
+  },
+  {
+    "symbol": "TRV",
+    "name": "Travelers Companies (The)",
+    "founded": "1853"
+  },
+  {
+    "symbol": "TRMB",
+    "name": "Trimble Inc.",
+    "founded": "1978"
+  },
+  {
+    "symbol": "TFC",
+    "name": "Truist",
+    "founded": "1872"
+  },
+  {
+    "symbol": "TYL",
+    "name": "Tyler Technologies",
+    "founded": "1966"
+  },
+  {
+    "symbol": "TSN",
+    "name": "Tyson Foods",
+    "founded": "1935"
+  },
+  {
+    "symbol": "USB",
+    "name": "U.S. Bank",
+    "founded": "1968"
+  },
+  {
+    "symbol": "UDR",
+    "name": "UDR, Inc.",
+    "founded": "1972"
+  },
+  {
+    "symbol": "ULTA",
+    "name": "Ulta Beauty",
+    "founded": "1990"
+  },
+  {
+    "symbol": "UNP",
+    "name": "Union Pacific Corporation",
+    "founded": "1862"
+  },
+  {
+    "symbol": "UAL",
+    "name": "United Airlines Holdings",
+    "founded": "1967"
+  },
+  {
+    "symbol": "UPS",
+    "name": "United Parcel Service",
+    "founded": "1907"
+  },
+  {
+    "symbol": "URI",
+    "name": "United Rentals",
+    "founded": "1997"
+  },
+  {
+    "symbol": "UNH",
+    "name": "UnitedHealth Group",
+    "founded": "1977"
+  },
+  {
+    "symbol": "UHS",
+    "name": "Universal Health Services",
+    "founded": "1979"
+  },
+  {
+    "symbol": "VLO",
+    "name": "Valero Energy",
+    "founded": "1980"
+  },
+  {
+    "symbol": "VTR",
+    "name": "Ventas",
+    "founded": "1998"
+  },
+  {
+    "symbol": "VRSN",
+    "name": "Verisign",
+    "founded": "1995"
+  },
+  {
+    "symbol": "VRSK",
+    "name": "Verisk",
+    "founded": "1971"
+  },
+  {
+    "symbol": "VZ",
+    "name": "Verizon",
+    "founded": "1983 (1877)"
+  },
+  {
+    "symbol": "VRTX",
+    "name": "Vertex Pharmaceuticals",
+    "founded": "1989"
+  },
+  {
+    "symbol": "VFC",
+    "name": "VF Corporation",
+    "founded": "1899"
+  },
+  {
+    "symbol": "VTRS",
+    "name": "Viatris",
+    "founded": "1961"
+  },
+  {
+    "symbol": "VICI",
+    "name": "Vici Properties",
+    "founded": "2017"
+  },
+  {
+    "symbol": "V",
+    "name": "Visa Inc.",
+    "founded": "1958"
+  },
+  {
+    "symbol": "VMC",
+    "name": "Vulcan Materials Company",
+    "founded": "1909"
+  },
+  {
+    "symbol": "WAB",
+    "name": "Wabtec",
+    "founded": "1999 (1869)"
+  },
+  {
+    "symbol": "WBA",
+    "name": "Walgreens Boots Alliance",
+    "founded": "2014"
+  },
+  {
+    "symbol": "WMT",
+    "name": "Walmart",
+    "founded": "1962"
+  },
+  {
+    "symbol": "WBD",
+    "name": "Warner Bros. Discovery",
+    "founded": "2022"
+  },
+  {
+    "symbol": "WM",
+    "name": "Waste Management",
+    "founded": "1968"
+  },
+  {
+    "symbol": "WAT",
+    "name": "Waters Corporation",
+    "founded": "1958"
+  },
+  {
+    "symbol": "WEC",
+    "name": "WEC Energy Group",
+    "founded": "1896"
   },
   {
     "symbol": "WFC",
-    "name": "Wells Fargo & Company",
-    "price": "38.77",
-    "change": "+1.28",
-    "change_porcent": "+3.41%",
-    "volume": "24.369M",
-    "market_capitalization": "148.539B"
+    "name": "Wells Fargo",
+    "founded": "1852"
   },
   {
-    "symbol": "BABA",
-    "name": "Alibaba Group Holding Limited",
-    "price": "88.34",
-    "change": "+3.00",
-    "change_porcent": "+3.52%",
-    "volume": "21.259M",
-    "market_capitalization": "228.58B"
+    "symbol": "WELL",
+    "name": "Welltower",
+    "founded": "1970"
+  },
+  {
+    "symbol": "WST",
+    "name": "West Pharmaceutical Services",
+    "founded": "1923"
+  },
+  {
+    "symbol": "WDC",
+    "name": "Western Digital",
+    "founded": "1970"
+  },
+  {
+    "symbol": "WRK",
+    "name": "WestRock",
+    "founded": "2015"
+  },
+  {
+    "symbol": "WY",
+    "name": "Weyerhaeuser",
+    "founded": "1900"
+  },
+  {
+    "symbol": "WHR",
+    "name": "Whirlpool Corporation",
+    "founded": "1911"
+  },
+  {
+    "symbol": "WMB",
+    "name": "Williams Companies",
+    "founded": "1908"
+  },
+  {
+    "symbol": "WTW",
+    "name": "Willis Towers Watson",
+    "founded": "2016"
+  },
+  {
+    "symbol": "GWW",
+    "name": "W. W. Grainger",
+    "founded": "1927"
+  },
+  {
+    "symbol": "WYNN",
+    "name": "Wynn Resorts",
+    "founded": "2002"
+  },
+  {
+    "symbol": "XEL",
+    "name": "Xcel Energy",
+    "founded": "1909"
+  },
+  {
+    "symbol": "XYL",
+    "name": "Xylem Inc.",
+    "founded": "2011"
+  },
+  {
+    "symbol": "YUM",
+    "name": "Yum! Brands",
+    "founded": "1997"
+  },
+  {
+    "symbol": "ZBRA",
+    "name": "Zebra Technologies",
+    "founded": "1969"
+  },
+  {
+    "symbol": "ZBH",
+    "name": "Zimmer Biomet",
+    "founded": "1927"
+  },
+  {
+    "symbol": "ZION",
+    "name": "Zions Bancorporation",
+    "founded": "1873"
+  },
+  {
+    "symbol": "ZTS",
+    "name": "Zoetis",
+    "founded": "1952"
   }
 ]

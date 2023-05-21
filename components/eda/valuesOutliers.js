@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
-import DescribeData from "./describeData";
-import CandleData from "./candleData";
-import LineData from "./lineData";
+import DescribeData from "./DescribeData";
+import CandleData from "./CandleData";
+import LineData from "./LineData";
 // Google Chart
 import { Chart } from "react-google-charts";
 
-import Spinner from "../../components/utilities/spinner";
+import Spinner from "../utilities/Spinner";
 
 var objectDataOpen = [];
 var objectDataHigh = [];
 var objectDataLow = [];
 var objectDataClose = [];
 var objectDataVolume = [];
+var objectDataDividends = [];
+var objectDataStock = [];
 
 export default function ValuesOutliners(props) {
   const [valuesOutlinersOpen, setValuesOutlinersOpen] = useState(null);
@@ -19,9 +21,12 @@ export default function ValuesOutliners(props) {
   const [valuesOutlinersLow, setValuesOutlinersLow] = useState(null);
   const [valuesOutlinersClose, setValuesOutlinersClose] = useState(null);
   const [valuesOutlinersVolume, setValuesOutlinersVolume] = useState(null);
+  const [valuesOutlinersDividends, setValuesOutlinersDividends] =
+    useState(null);
+  const [valuesOutlinersStock, setValuesOutlinersStock] = useState(null);
 
   const [mainData, setMainData] = useState(null);
-  const [symbol, setSymbol] = useState(null);
+  const [name, setName] = useState(null);
 
   useEffect(() => {
     setValuesOutlinersOpen(null);
@@ -29,10 +34,12 @@ export default function ValuesOutliners(props) {
     setValuesOutlinersLow(null);
     setValuesOutlinersClose(null);
     setValuesOutlinersVolume(null);
+    setValuesOutlinersDividends(null);
+    setValuesOutlinersStock(null);
 
-    if (props.var !== undefined) {
-      setSymbol(props.symbol);
+    if (props.var !== null && props.name !== null) {
       setMainData(props.var);
+      setName(props.name);
 
       objectDataOpen = [];
       objectDataOpen.push(["Open", "Value"]);
@@ -44,25 +51,48 @@ export default function ValuesOutliners(props) {
       objectDataClose.push(["Close", "Value"]);
       objectDataVolume = [];
       objectDataVolume.push(["Volume", "Value"]);
+      objectDataDividends = [];
+      objectDataDividends.push(["Dividends", "Value"]);
+      objectDataStock = [];
+      objectDataStock.push(["Stock Splits", "Value"]);
 
-      for (const item in props.var) {
-        objectDataOpen.push([item, props.var[item]["1. open"]]);
-        objectDataHigh.push([item, props.var[item]["2. high"]]);
-        objectDataLow.push([item, props.var[item]["3. low"]]);
-        objectDataClose.push([item, props.var[item]["4. close"]]);
-        objectDataVolume.push([item, props.var[item]["5. volume"]]);
+      for (const item in props.var.main_data) {
+        var date = props.var.main_data[item]["Date"].split("T");
+        objectDataOpen.push([
+          date[0],
+          props.var.main_data[item]["Open"].toFixed(4)
+        ]);
+        objectDataHigh.push([
+          date[0],
+          props.var.main_data[item]["High"].toFixed(4)
+        ]);
+        objectDataLow.push([
+          date[0],
+          props.var.main_data[item]["Low"].toFixed(4)
+        ]);
+        objectDataClose.push([
+          date[0],
+          props.var.main_data[item]["Close"].toFixed(4)
+        ]);
+        objectDataVolume.push([date[0], props.var.main_data[item]["Volume"]]);
+        objectDataDividends.push([
+          date[0],
+          props.var.main_data[item]["Dividends"]
+        ]);
+        objectDataStock.push([
+          date[0],
+          props.var.main_data[item]["Stock Splits"]
+        ]);
       }
       setValuesOutlinersOpen(objectDataOpen);
       setValuesOutlinersHigh(objectDataHigh);
       setValuesOutlinersLow(objectDataLow);
       setValuesOutlinersClose(objectDataClose);
       setValuesOutlinersVolume(objectDataVolume);
+      setValuesOutlinersDividends(objectDataDividends);
+      setValuesOutlinersStock(objectDataStock);
     }
   }, [props]);
-
-  function finishCharge() {
-    props.methodCharge();
-  }
 
   const optionsOpen = {
     title: "Open",
@@ -100,6 +130,23 @@ export default function ValuesOutliners(props) {
     title: "Volume",
     legend: { position: "none" },
     colors: ["#763CAD"],
+    chartArea: { width: 321 },
+    bar: { gap: 0 }
+  };
+
+  const optionsDividends = {
+    title: "Dividends",
+    legend: { position: "none" },
+    colors: ["#763CAD"],
+    chartArea: { width: 321 },
+    bar: { gap: 0 }
+  };
+
+  const optionsStock = {
+    title: "Stock Splits",
+    legend: { position: "none" },
+    colors: ["#763CAD"],
+    chartArea: { width: 321 },
     bar: { gap: 0 }
   };
 
@@ -110,7 +157,9 @@ export default function ValuesOutliners(props) {
         valuesOutlinersHigh !== null &&
         valuesOutlinersLow !== null &&
         valuesOutlinersClose !== null &&
-        valuesOutlinersVolume !== null ? (
+        valuesOutlinersVolume !== null &&
+        valuesOutlinersDividends !== null &&
+        valuesOutlinersStock !== null ? (
           <div className="card">
             <h5>Paso 3: Detección de valores atípicos.</h5>
             <p style={{ fontWeight: "bold" }}>
@@ -164,24 +213,52 @@ export default function ValuesOutliners(props) {
               </div>
             </div>
 
-            <Chart
-              chartType="Histogram"
-              width="100%"
-              height="100%"
-              data={valuesOutlinersVolume}
-              options={optionsVolume}
-            />
+            <div className="grid">
+              <div className="col-6">
+                <Chart
+                  chartType="Histogram"
+                  width="100%"
+                  height="400px"
+                  data={valuesOutlinersVolume}
+                  options={optionsVolume}
+                />
+              </div>
+              <div className="col-6">
+                <Chart
+                  chartType="Histogram"
+                  width="100%"
+                  height="400px"
+                  data={valuesOutlinersDividends}
+                  options={optionsDividends}
+                />
+              </div>
+            </div>
 
-            <p className="pt-3">
+            <div className="grid">
+              <div className="col-6">
+                <Chart
+                  chartType="Histogram"
+                  width="100%"
+                  height="400px"
+                  data={valuesOutlinersStock}
+                  options={optionsStock}
+                />
+              </div>
+            </div>
+
+            <p>
               En el histograma se observa que Volume tiene valores sesgados a la
-              izquierda.
+              izquierda. Las variables Dividens y Stock Splits presentan valores
+              en 'cero'.
             </p>
 
-            <DescribeData value={symbol} method={finishCharge} />
+            <DescribeData var={mainData} />
             <CandleData var={mainData} />
-            <LineData var={mainData} value={symbol} />
+            <LineData var={mainData} name={name} />
           </div>
-        ) : null}
+        ) : (
+          <Spinner layout="small" />
+        )}
       </div>
     </div>
   );

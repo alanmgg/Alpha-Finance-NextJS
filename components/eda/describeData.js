@@ -1,72 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-// API
-import { getDescribeData } from "./../../api/eda";
-// JSON
-// import DescribeDataJson from "./../../config/describeData.json";
 
 var objectData = [];
 
 export default function DescribeData(props) {
-  const [describeDataCharge, setDescribeDataCharge] = useState(null);
+  const [describeData, setDescribeData] = useState(null);
 
   useEffect(() => {
-    if (props.value !== null && props.value !== undefined) {
-      getDescribeData(props.value, loadDescribeHandler, loadErrorHandler);
-
-      // JSON
-      // objectData = [];
-
-      // for (const item in DescribeDataJson.data) {
-      //   objectData.push({
-      //     index: DescribeDataJson.data[item].index,
-      //     open: DescribeDataJson.data[item].open,
-      //     high: DescribeDataJson.data[item].high,
-      //     low: DescribeDataJson.data[item].low,
-      //     close: DescribeDataJson.data[item].close,
-      //     volume: DescribeDataJson.data[item].volume
-      //   });
-      // }
-      // setDescribeDataCharge(objectData);
-      //
-    }
-  }, [props, props.value]);
-
-  async function loadDescribeHandler(response) {
-    if (response.ok) {
-      var responseDescribe = await response.json();
+    if (props.var !== null) {
       objectData = [];
 
-      for (const item in responseDescribe.data) {
+      for (const item in props.var.describe) {
         objectData.push({
-          index: responseDescribe.data[item].index,
-          open: responseDescribe.data[item].open,
-          high: responseDescribe.data[item].high,
-          low: responseDescribe.data[item].low,
-          close: responseDescribe.data[item].close,
-          volume: responseDescribe.data[item].volume
+          index: props.var.describe[item]["index"],
+          open: props.var.describe[item]["Open"].toFixed(4),
+          high: props.var.describe[item]["High"].toFixed(4),
+          low: props.var.describe[item]["Low"].toFixed(4),
+          close: props.var.describe[item]["Close"].toFixed(4),
+          volume: props.var.describe[item]["Volume"].toFixed(4),
+          dividends: props.var.describe[item]["Dividends"].toFixed(4),
+          stockSplits: props.var.describe[item]["Stock Splits"].toFixed(4)
         });
       }
-      setDescribeDataCharge(objectData);
-      props.method();
-      return;
+      setDescribeData(objectData);
     }
-    if (response.status === 400) {
-      const error = await response.text();
-      throw new Error(error);
-    } else if (response.status === 401) {
-      const error = await response.json();
-    } else if (response.status === 404) {
-      const error = await response.json();
-    }
-    throw new Error("Network response was not ok");
-  }
-
-  function loadErrorHandler(error) {}
+  }, [props]);
 
   return (
-    <div className="pt-5">
+    <div className="pt-3">
       <p style={{ fontWeight: "bold" }}>
         2) Resumen estadístico de variables numéricas.
       </p>
@@ -74,18 +36,37 @@ export default function DescribeData(props) {
         Se sacan estadísticas que muestra un resumen de las variables numéricas.
       </p>
 
-      <DataTable value={describeDataCharge} rows={5}>
+      <DataTable value={describeData} rows={5}>
         <Column
           field="index"
           header=""
-          style={{ width: "25%", fontWeight: "bold" }}
+          style={{ width: "10%", fontWeight: "bold" }}
         />
-        <Column field="open" header="Open" style={{ width: "20%" }} />
-        <Column field="high" header="High" style={{ width: "20%" }} />
-        <Column field="low" header="Low" style={{ width: "20%" }} />
-        <Column field="close" header="Close" style={{ width: "20%" }} />
+        <Column field="open" header="Open" style={{ width: "15%" }} />
+        <Column field="high" header="High" style={{ width: "15%" }} />
+        <Column field="low" header="Low" style={{ width: "15%" }} />
+        <Column field="close" header="Close" style={{ width: "15%" }} />
         <Column field="volume" header="Volume" style={{ width: "25%" }} />
+        <Column field="dividends" header="Dividends" style={{ width: "10%" }} />
+        <Column
+          field="stockSplits"
+          header="Stock Splits"
+          style={{ width: "10%" }}
+        />
       </DataTable>
+
+      <ul className="pt-3">
+        <li>
+          Se incluye un recuento, media, desviación, valor mínimo, valor máximo,
+          percentil inferior (25%), 50% y percentil superior (75%).
+        </li>
+        <li>Por defecto, el percentil 50 es lo mismo que la mediana.</li>
+        <li>
+          Se observa que para cada variable, el recuento también ayuda a
+          identificar variables con valores nulos o vacios. Estos son: Dividends
+          y Stock Splits.
+        </li>
+      </ul>
     </div>
   );
 }

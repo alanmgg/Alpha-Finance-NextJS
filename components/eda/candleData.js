@@ -35,22 +35,33 @@ export default function CandleData(props) {
     objectDataClose = ["Close", 0];
     objectDataVolume = ["Volume", 0];
 
-    if (props.var !== undefined) {
-      for (const item in props.var) {
-        if (Number(props.var[item]["1. open"]) > maxValueOpen) {
-          maxValueOpen = Number(props.var[item]["1. open"]);
+    if (props.var !== null) {
+      for (const item in props.var.main_data) {
+        if (
+          Number(props.var.main_data[item]["Open"].toFixed(4)) > maxValueOpen
+        ) {
+          maxValueOpen = Number(props.var.main_data[item]["Open"].toFixed(4));
         }
-        if (Number(props.var[item]["2. high"]) > maxValueHigh) {
-          maxValueHigh = Number(props.var[item]["2. high"]);
+        if (
+          Number(props.var.main_data[item]["High"].toFixed(4)) > maxValueHigh
+        ) {
+          maxValueHigh = Number(props.var.main_data[item]["High"].toFixed(4));
         }
-        if (Number(props.var[item]["3. low"]) > maxValueLow) {
-          maxValueLow = Number(props.var[item]["3. low"]);
+        if (Number(props.var.main_data[item]["Low"].toFixed(4)) > maxValueLow) {
+          maxValueLow = Number(props.var.main_data[item]["Low"].toFixed(4));
         }
-        if (Number(props.var[item]["4. close"]) > maxValueClose) {
-          maxValueClose = Number(props.var[item]["4. close"]);
+        if (
+          Number(props.var.main_data[item]["Close"].toFixed(4)) > maxValueClose
+        ) {
+          maxValueClose = Number(props.var.main_data[item]["Close"].toFixed(4));
         }
-        if (Number(props.var[item]["5. volume"]) > maxValueVolume) {
-          maxValueVolume = Number(props.var[item]["5. volume"]);
+        if (
+          Number(props.var.main_data[item]["Volume"].toFixed(4)) >
+          maxValueVolume
+        ) {
+          maxValueVolume = Number(
+            props.var.main_data[item]["Volume"].toFixed(4)
+          );
         }
       }
 
@@ -60,21 +71,32 @@ export default function CandleData(props) {
       let minValueClose = maxValueClose;
       let minValueVolume = maxValueVolume;
 
-      for (const item in props.var) {
-        if (Number(props.var[item]["1. open"]) < minValueOpen) {
-          minValueOpen = Number(props.var[item]["1. open"]);
+      for (const item in props.var.main_data) {
+        if (
+          Number(props.var.main_data[item]["Open"].toFixed(4)) < minValueOpen
+        ) {
+          minValueOpen = Number(props.var.main_data[item]["Open"].toFixed(4));
         }
-        if (Number(props.var[item]["2. high"]) < minValueHigh) {
-          minValueHigh = Number(props.var[item]["2. high"]);
+        if (
+          Number(props.var.main_data[item]["High"].toFixed(4)) < minValueHigh
+        ) {
+          minValueHigh = Number(props.var.main_data[item]["High"].toFixed(4));
         }
-        if (Number(props.var[item]["3. low"]) < minValueLow) {
-          minValueLow = Number(props.var[item]["3. low"]);
+        if (Number(props.var.main_data[item]["Low"].toFixed(4)) < minValueLow) {
+          minValueLow = Number(props.var.main_data[item]["Low"].toFixed(4));
         }
-        if (Number(props.var[item]["4. close"]) < minValueClose) {
-          minValueClose = Number(props.var[item]["4. close"]);
+        if (
+          Number(props.var.main_data[item]["Close"].toFixed(4)) < minValueClose
+        ) {
+          minValueClose = Number(props.var.main_data[item]["Close"].toFixed(4));
         }
-        if (Number(props.var[item]["5. volume"]) < minValueVolume) {
-          minValueVolume = Number(props.var[item]["5. volume"]);
+        if (
+          Number(props.var.main_data[item]["Volume"].toFixed(4)) <
+          minValueVolume
+        ) {
+          minValueVolume = Number(
+            props.var.main_data[item]["Volume"].toFixed(4)
+          );
         }
       }
 
@@ -82,7 +104,7 @@ export default function CandleData(props) {
       let topHigh = maxValueHigh + 50;
       let topLow = maxValueLow + 50;
       let topClose = maxValueClose + 50;
-      let topVolume = maxValueVolume + 2500;
+      let topVolume = maxValueVolume + 3500;
 
       objectDataOpen.push(minValueOpen, maxValueOpen, topOpen);
       objectDataHigh.push(minValueHigh, maxValueHigh, topHigh);
@@ -110,7 +132,7 @@ export default function CandleData(props) {
   };
 
   return (
-    <div className="pt-5 pl-0 pr-0">
+    <div className="pt-3 pl-0 pr-0">
       <p style={{ fontWeight: "bold" }}>
         3) Diagramas para detectar posibles valores atípicos.
       </p>

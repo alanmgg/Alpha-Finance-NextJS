@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { Timeline } from "primereact/timeline";
 import { Card } from "primereact/card";
@@ -7,16 +8,15 @@ import { Button } from "primereact/button";
 import { LayoutContext } from "./../../../layout/context/layoutcontext";
 import styles from "./../../uikit/button/index.module.scss";
 // API
-import { getMainData } from "../../../api/eda";
+import { getEdaData } from "../../../api/algorithms";
 // JSON
-// import MainDataJson from "./../../../config/mainData.json";
+// import EDAJson from "./../../../config/EDA.json";
 
-import TableMainData from "../../../components/eda/tablemaindata";
-import DescripcionData from "../../../components/eda/descripcionData";
-import NullData from "../../../components/eda/nullData";
-import ValuesOutliners from "../../../components/eda/valuesOutliers";
-import MatrizData from "../../../components/eda/matrizData";
-import Spinner from "../../../components/utilities/spinner";
+import TableMainData from "../../../components/eda/TableMainData";
+import DescripcionData from "../../../components/eda/DescripcionData";
+import NullData from "../../../components/eda/NullData";
+import ValuesOutliners from "../../../components/eda/ValuesOutliers";
+import MatrizData from "../../../components/eda/MatrizData";
 
 var customEvents = [];
 
@@ -25,7 +25,6 @@ export default function ProcessEda() {
   const router = useRouter();
   const { symbol, name, menu } = router.query;
 
-  const [loadSpinner, setLoadSpinner] = useState(true);
   const [mainData, setMainData] = useState(null);
   const [countTask, setCountTask] = useState(0);
   const [eventsTask, setEventsTask] = useState([]);
@@ -38,37 +37,42 @@ export default function ProcessEda() {
     customEvents = [];
     customEvents.push({
       status: "Contexto",
-      subTitle: "API de Alpha Vantage",
+      subTitle: "API de Yahoo Finance",
       description:
-        "Alpha Vantage ofrece una amplia variedad de datos de mercado sobre acciones, bonos, divisas y criptomonedas, todos accesibles a través de su API.",
-      icon: "pi pi-shopping-cart",
-      color: "#9C27B0"
+        "Yahoo Finance ofrece una amplia variedad de datos de mercado sobre acciones, bonos, divisas y criptomonedas. También proporciona informes de noticias con varios puntos de vista sobre diferentes mercados de todo el mundo, todos accesibles a través de la biblioteca yfinance.",
+      icon: "pi pi-credit-card",
+      color: "#25171A"
     });
     customEvents.push({
       status: "Objetivo",
-      subTitle: "Todos los datos actualizados al día de hoy",
+      subTitle: "Análisis exploratorio de datos",
       description:
-        "Hacer un análisis exploratorio de datos con base en información obtenida de Alpha Vantage",
-      icon: "pi pi-desktop",
-      color: "#673AB7"
+        "Hacer un análisis exploratorio de datos con base en información obtenida de Yahoo Finance.",
+      icon: "pi pi-bolt",
+      color: "#4B244A"
+    });
+    customEvents.push({
+      status: "Fuente de datos",
+      subTitle: "Datos actualizados al dia de hoy",
+      description:
+        "De Yahoo Finance se utiliza el Ticker -Etiqueta de cotización- de la acción bursatil.",
+      icon: "pi pi-code",
+      color: "#533A7B"
     });
 
-    setLoadSpinner(true);
     setCountTask(0);
     setEventsTask(customEvents);
-    getMainData(symbol, loadMainDataHandler, loadErrorHandler);
+    getEdaData(symbol, loadMainDataHandler, loadErrorHandler);
 
     // JSON
-    // setMainData(MainDataJson["Weekly Time Series"]);
-    // setLoadSpinner(false);
+    // setMainData(EDAJson);
     //
   }, []);
 
   async function loadMainDataHandler(response) {
     if (response.ok) {
       var responseMainData = await response.json();
-      setMainData(responseMainData["Weekly Time Series"]);
-      setLoadSpinner(false);
+      setMainData(responseMainData);
       return;
     }
     if (response.status === 400) {
@@ -103,11 +107,6 @@ export default function ProcessEda() {
     );
   }
 
-  function finishCharge() {
-    console.log("Entre");
-    setLoadSpinner(false);
-  }
-
   function nextTask(count) {
     switch (count) {
       case 0:
@@ -118,11 +117,10 @@ export default function ProcessEda() {
           description:
             "Al tener una estructura adecuada, se pueden identificar patrones y relaciones que de otra manera podrían haber pasado desapercibidos.",
           icon: "pi pi-book",
-          color: "#FF9800"
+          color: "#6969B3"
         });
         setEventsTask(customEvents);
         setCountTask(count + 1);
-        setLoadSpinner(true);
         break;
       case 1:
         customEvents.push({
@@ -131,11 +129,10 @@ export default function ProcessEda() {
           description:
             "Esto es relevante porque los valores faltantes pueden afectar la precisión de los modelos de minería de datos y los resultados obtenidos a partir de ellos.",
           icon: "pi pi-exclamation-circle",
-          color: "#607D8B"
+          color: "#25171A"
         });
         setEventsTask(customEvents);
         setCountTask(count + 1);
-        setLoadSpinner(true);
         break;
       case 2:
         customEvents.push({
@@ -145,11 +142,10 @@ export default function ProcessEda() {
           description:
             "La distribución se refiere a cómo se distribuyen los valores en una variable o con qué frecuencia ocurren.",
           icon: "pi pi-chart-bar",
-          color: "#9C27B0"
+          color: "#4B244A"
         });
         setEventsTask(customEvents);
         setCountTask(count + 1);
-        setLoadSpinner(true);
         break;
       case 3:
         customEvents.push({
@@ -158,7 +154,7 @@ export default function ProcessEda() {
           description:
             "Una matriz de correlaciones es útil para analizar la relación entre las variables numéricas.",
           icon: "pi pi-map",
-          color: "#673AB7"
+          color: "#533A7B"
         });
         setEventsTask(customEvents);
         setCountTask(count + 1);
@@ -170,10 +166,14 @@ export default function ProcessEda() {
 
   return (
     <div>
+      <Head>
+        <title>Alpha Finance | EDA</title>
+      </Head>
+
       <div className="grid">
         <div className="col-5">
           <div className="card timeline-demo">
-            <h5>Análisis exploratorio de datos</h5>
+            <h5>Análisis Exploratorio de Datos</h5>
             <Timeline
               value={eventsTask}
               align="alternate"
@@ -192,29 +192,15 @@ export default function ProcessEda() {
               </h5>
             </div>
 
-            {mainData !== null && countTask >= 0 ? (
-              <TableMainData var={mainData} />
-            ) : null}
-
-            {countTask >= 1 ? (
-              <DescripcionData var={mainData} methodCharge={finishCharge} />
-            ) : null}
-
-            {countTask >= 2 ? <NullData methodCharge={finishCharge} /> : null}
-
+            {countTask >= 0 ? <TableMainData var={mainData} /> : null}
+            {countTask >= 1 ? <DescripcionData var={mainData} /> : null}
+            {countTask >= 2 ? <NullData var={mainData} /> : null}
             {countTask >= 3 ? (
-              <ValuesOutliners
-                symbol={symbol}
-                var={mainData}
-                methodCharge={finishCharge}
-              />
+              <ValuesOutliners var={mainData} name={name} />
             ) : null}
+            {countTask >= 4 ? <MatrizData var={mainData} /> : null}
 
-            {countTask >= 4 ? <MatrizData value={symbol} /> : null}
-
-            {loadSpinner === true ? <Spinner layout="small" /> : null}
-
-            {loadSpinner === false && countTask >= 0 && countTask <= 3 ? (
+            {countTask >= 0 && countTask <= 3 ? (
               <div
                 style={{
                   display: "flex",
@@ -239,7 +225,7 @@ export default function ProcessEda() {
               </div>
             ) : null}
 
-            {loadSpinner === false && countTask >= 4 ? (
+            {countTask >= 4 ? (
               <div
                 style={{
                   display: "flex",

@@ -6,40 +6,39 @@ import { Chart } from "react-google-charts";
 var objectData = [["Day", "Open", "Close"]];
 
 export default function LineData(props) {
-  const [symbol, setSymbol] = useState(null);
   const [dataValue, setDataValue] = useState(null);
+  const [name, setName] = useState(null);
 
   useEffect(() => {
-    setSymbol(null);
     setDataValue(null);
-  }, []);
+    setName(null);
 
-  useEffect(() => {
-    if (props.var !== undefined) {
-      setSymbol(props.value);
+    if (props.var !== null && props.name !== null) {
       objectData = [["Day", "Open", "Close"]];
 
-      for (const item in props.var) {
+      for (const item in props.var.main_data) {
+        var date = props.var.main_data[item]["Date"].split("T");
         objectData.push([
-          item,
-          Number(props.var[item]["1. open"]),
-          Number(props.var[item]["4. close"])
+          date[0],
+          Number(props.var.main_data[item]["Open"].toFixed(4)),
+          Number(props.var.main_data[item]["Close"].toFixed(4))
         ]);
       }
       setDataValue(objectData);
+      setName(props.name);
     }
   }, [props]);
 
   var options = {
     colors: ["#763CAD", "#D02525"],
     chart: {
-      title: symbol,
+      title: name,
       subtitle: "(USD)"
     }
   };
 
   return (
-    <div className="pt-5 pl-0 pr-0 pb-0">
+    <div className="pt-5 pl-0 pr-0">
       <p style={{ fontWeight: "bold" }}>
         4) Se genera una gráfica para variables categóricas.
       </p>

@@ -1,33 +1,54 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Spinner from "../utilities/Spinner";
 
 export default function NullData(props) {
+  const [nullData, setNullData] = useState(null);
+
   useEffect(() => {
-    props.methodCharge();
+    if (props.var !== null) {
+      setNullData(props.var.is_null);
+    }
   }, [props]);
 
   return (
     <div className="grid pt-5">
-      <div className="col-12">
-        <div className="card">
-          <h5>Paso 2: Identificación de datos faltantes.</h5>
-          <p>Regresa la suma de todos los valores nulos en cada variable:</p>
-          <pre className="app-code">
-            <code>
-              {`Open            0`}
-              <br />
-              {`High            0`}
-              <br />
-              {`Low             0`}
-              <br />
-              {`Close           0`}
-              <br />
-              {`Volume          0`}
-              <br />
-              {`dtype: int64`}
-            </code>
-          </pre>
+      {nullData !== null ? (
+        <div className="col-12">
+          <div className="card">
+            <h5>Paso 2: Identificación de datos faltantes.</h5>
+            <p>Regresa la suma de todos los valores nulos en cada variable:</p>
+            <pre className="app-code">
+              <code>
+                {`Open            `}
+                {nullData.open}
+                <br />
+                {`High            `}
+                {nullData.high}
+                <br />
+                {`Low             `}
+                {nullData.low}
+                <br />
+                {`Close           `}
+                {nullData.close}
+                <br />
+                {`Volume          `}
+                {nullData.volume}
+                <br />
+                {`Dividends       `}
+                {nullData.dividends}
+                <br />
+                {`Stock Splits    `}
+                {nullData["stock splits"]}
+                <br />
+                {`dtype: `}
+                {nullData.dtype}
+              </code>
+            </pre>
+          </div>
         </div>
-      </div>
+      ) : (
+        <Spinner layout="small" />
+      )}
     </div>
   );
 }
