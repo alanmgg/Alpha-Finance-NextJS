@@ -6,8 +6,8 @@ import { getCompanies } from "./../api/dashboard";
 // JSON
 // import Companies from "./../config/Companies.json";
 
-import TableCompanies from "../components/dashboard/tablecompanies";
-import Spinner from "../components/utilities/spinner";
+import TableCompanies from "../components/dashboard/TableCompanies";
+import Spinner from "../components/utilities/Spinner";
 
 export default function Dashboard() {
   const [companies, setCompanies] = useState(null);

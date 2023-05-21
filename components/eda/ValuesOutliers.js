@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import DescribeData from "./describedata";
-import CandleData from "./candledata";
-import LineData from "./linedata";
+import DescribeData from "./DescribeData";
+import CandleData from "./CandleData";
+import LineData from "./LineData";
 // Google Chart
 import { Chart } from "react-google-charts";
 
-import Spinner from "../utilities/spinner";
+import Spinner from "../utilities/Spinner";
 
 var objectDataOpen = [];
 var objectDataHigh = [];

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import Spinner from "../utilities/spinner";
+import Spinner from "./../utilities/Spinner";
 
 var objectData = [];
 

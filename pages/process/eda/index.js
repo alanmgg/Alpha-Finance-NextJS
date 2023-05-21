@@ -12,11 +12,11 @@ import { getEdaData } from "./../../../api/algorithms";
 // JSON
 // import EDAJson from "./../../../config/EDA.json";
 
-import TableMainData from "./../../../components/eda/tablemaindata";
-import DescripcionData from "../../../components/eda/descripciondata";
-import NullData from "../../../components/eda/nulldata";
-import ValuesOutliners from "../../../components/eda/valuesoutliers";
-import MatrizData from "../../../components/eda/matrizdata";
+import TableMainData from "./../../../components/eda/TableMainData";
+import DescripcionData from "../../../components/eda/DescripcionData";
+import NullData from "../../../components/eda/NullData";
+import ValuesOutliners from "../../../components/eda/ValuesOutliers";
+import MatrizData from "../../../components/eda/MatrizData";
 
 var customEvents = [];
 

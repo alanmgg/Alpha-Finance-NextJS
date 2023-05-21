@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Spinner from "../utilities/spinner";
+import Spinner from "../utilities/Spinner";
 
 export default function NullData(props) {
   const [nullData, setNullData] = useState(null);
