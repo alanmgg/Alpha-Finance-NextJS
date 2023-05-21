@@ -249,7 +249,7 @@ export default function ValuesOutliners(props) {
             <p>
               En el histograma se observa que Volume tiene valores sesgados a la
               izquierda. Las variables Dividens y Stock Splits presentan valores
-              en "cero".
+              en <strong>cero</strong>.
             </p>
 
             <DescribeData var={mainData} />
