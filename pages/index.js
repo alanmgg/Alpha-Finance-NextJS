@@ -6,9 +6,8 @@ import { getCompanies } from "./../api/dashboard";
 // JSON
 // import Companies from "./../config/Companies.json";
 
-// import Minicards from "../components/dashboard/minicards";
-import TableCompanies from "../components/dashboard/TableCompanies";
-import Spinner from "../components/utilities/spinner";
+import TableCompanies from "./../components/dashboard/TableCompanies";
+import Spinner from "./../components/utilities/Spinner";
 
 export default function Dashboard() {
   const [companies, setCompanies] = useState(null);
@@ -28,6 +27,7 @@ export default function Dashboard() {
       // setCompanies(Companies);
       //table
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function loadCompaniesHandler(response) {
@@ -76,7 +76,6 @@ export default function Dashboard() {
         <Spinner />
       ) : (
         <div>
-          {/* <Minicards var={companies} /> */}
           <TableCompanies var={companies} />
         </div>
       )}

@@ -8,15 +8,15 @@ import { Button } from "primereact/button";
 import { LayoutContext } from "./../../../layout/context/layoutcontext";
 import styles from "./../../uikit/button/index.module.scss";
 // API
-import { getEdaData } from "../../../api/algorithms";
+import { getEdaData } from "./../../../api/algorithms";
 // JSON
 // import EDAJson from "./../../../config/EDA.json";
 
-import TableMainData from "../../../components/eda/TableMainData";
-import DescripcionData from "../../../components/eda/DescripcionData";
-import NullData from "../../../components/eda/NullData";
-import ValuesOutliners from "../../../components/eda/ValuesOutliers";
-import MatrizData from "../../../components/eda/MatrizData";
+import TableMainData from "./../../../components/eda/TableMainData";
+import DescripcionData from "./../../../components/eda/DescripcionData";
+import NullData from "./../../../components/eda/NullData";
+import ValuesOutliners from "./../../../components/eda/ValuesOutliers";
+import MatrizData from "./../../../components/eda/MatrizData";
 
 var customEvents = [];
 
