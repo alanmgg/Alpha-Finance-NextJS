@@ -1,6 +1,6 @@
 {
-  "name": "md-dashboard",
-  "version": "1.0.1",
+  "name": "AlphaFinance",
+  "version": "1.0.5",
   "private": false,
   "scripts": {
     "dev": "next dev",

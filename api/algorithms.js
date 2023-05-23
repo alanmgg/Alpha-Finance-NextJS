@@ -29,3 +29,18 @@ export function getAcpData(
     .then(responseHandler)
     .catch(errorHandler);
 }
+
+export function getForecastAdData(
+  symbol,
+  responseHandler = handleResponse,
+  errorHandler = handleError
+) {
+  let endpoint_url =
+    "https://alphafinanceapi.herokuapp.com/forecast-ad?symbol=" + symbol;
+
+  return fetch(endpoint_url, {
+    method: "GET"
+  })
+    .then(responseHandler)
+    .catch(errorHandler);
+}

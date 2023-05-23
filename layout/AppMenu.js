@@ -27,12 +27,13 @@ const AppMenu = () => {
           icon: "pi pi-fw pi-bars",
           to: "/process/acp",
           query: { symbol: "NFLX", name: "Netflix", menu: "no" }
+        },
+        {
+          label: "Pronóstico con árboles de decisión",
+          icon: "pi pi-fw pi-share-alt",
+          to: "/process/forecastad",
+          query: { symbol: "NFLX", name: "Netflix", menu: "no" }
         }
-        // {
-        //   label: "Pronóstico con árboles de decisión",
-        //   icon: "pi pi-fw pi-share-alt",
-        //   to: "/uikit/tree"
-        // },
         // {
         //   label: "Pronóstico con bosques aleatorios",
         //   icon: "pi pi-fw pi-circle",
@@ -198,7 +199,8 @@ const AppMenu = () => {
         {
           label: "Documentación",
           icon: "pi pi-fw pi-question",
-          to: "/documentation"
+          to: "https://alphafinancedocumentation.vercel.app/",
+          target: "_blank"
         },
         {
           label: "Ver código",

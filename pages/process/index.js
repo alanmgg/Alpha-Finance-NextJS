@@ -96,18 +96,25 @@ export default function Process() {
             windowSize.width > 590 ? "col-3 xl:col-3" : "col-12 xl:col-12"
           }
         >
-          <div
-            className="card"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              cursor: "pointer",
-              height: "15vh"
+          <Link
+            href={{
+              pathname: "/process/forecastad",
+              query: { symbol: symbol, name: name, menu: "no" }
             }}
           >
-            <h5>Pronóstico con árboles de decisión</h5>
-          </div>
+            <div
+              className="card"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                height: "15vh"
+              }}
+            >
+              <h5>Pronóstico con árboles de decisión</h5>
+            </div>
+          </Link>
         </div>
 
         <div
@@ -126,21 +133,6 @@ export default function Process() {
             }}
           >
             <h5>Pronóstico con bosques aleatorios</h5>
-          </div>
-        </div>
-
-        <div className="col-12 xl:col-12">
-          <div
-            className="card"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              cursor: "pointer",
-              height: "15vh"
-            }}
-          >
-            <h5>Clasificación con árboles de decisión y bosques aleatorios</h5>
           </div>
         </div>
       </div>
@@ -192,6 +184,41 @@ export default function Process() {
             >
               <img
                 src="https://devopedia.org/images/article/139/9153.1547301619.png"
+                alt="process-acp"
+                width={windowSize.width > 590 ? "500" : "250"}
+              />
+            </div>
+            <br />
+
+            <h5>¿Qué es el pronóstico con árboles de decisión?</h5>
+            <p style={{ textAlign: "justify" }}>
+              El pronóstico con árboles de decisión es una técnica utilizada en
+              el campo del aprendizaje automático y la inteligencia artificial
+              para predecir o clasificar valores futuros en función de datos
+              históricos y características relevantes. Un árbol de decisión es
+              una estructura de datos en forma de árbol en la que cada nodo
+              interno representa una característica o atributo, cada rama
+              representa una posible respuesta o valor para esa característica,
+              y cada hoja representa una predicción o clasificación final.
+            </p>
+            <p style={{ textAlign: "justify" }}>
+              En el contexto del pronóstico, se utiliza un árbol de decisión
+              para realizar predicciones o clasificaciones sobre un conjunto de
+              datos dado. Para construir un árbol de decisión, se utiliza un
+              algoritmo que divide iterativamente los datos en función de las
+              características más relevantes para realizar la predicción. Estas
+              divisiones se basan en criterios como la ganancia de información o
+              la reducción de la impureza en los datos.
+            </p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+            >
+              <img
+                src="https://fhernanb.github.io/libro_mod_pred/images/fit_unfit.png"
                 alt="process-acp"
                 width={windowSize.width > 590 ? "500" : "250"}
               />
