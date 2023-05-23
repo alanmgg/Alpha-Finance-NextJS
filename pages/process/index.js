@@ -122,18 +122,25 @@ export default function Process() {
             windowSize.width > 590 ? "col-3 xl:col-3" : "col-12 xl:col-12"
           }
         >
-          <div
-            className="card"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              cursor: "pointer",
-              height: "15vh"
+          <Link
+            href={{
+              pathname: "/process/forecastba",
+              query: { symbol: symbol, name: name, menu: "no" }
             }}
           >
-            <h5>Pronóstico con bosques aleatorios</h5>
-          </div>
+            <div
+              className="card"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                height: "15vh"
+              }}
+            >
+              <h5>Pronóstico con bosques aleatorios</h5>
+            </div>
+          </Link>
         </div>
       </div>
 
@@ -219,7 +226,36 @@ export default function Process() {
             >
               <img
                 src="https://fhernanb.github.io/libro_mod_pred/images/fit_unfit.png"
-                alt="process-acp"
+                alt="process-forecast-ad"
+                width={windowSize.width > 590 ? "500" : "250"}
+              />
+            </div>
+            <br />
+
+            <h5>¿Qué es el pronóstico con bosques aleatorios?</h5>
+            <p style={{ textAlign: "justify" }}>
+              es una técnica de aprendizaje automático que utiliza conjuntos de
+              árboles de decisión para hacer predicciones o clasificaciones. En
+              lugar de utilizar un solo árbol de decisión, los bosques
+              aleatorios combinan múltiples árboles de decisión para mejorar la
+              precisión y la estabilidad de las predicciones.
+            </p>
+            <p style={{ textAlign: "justify" }}>
+              La idea principal detrás de los bosques aleatorios es la
+              combinación de la predicción de múltiples modelos débiles, que son
+              los árboles de decisión individuales, para obtener una predicción
+              más robusta y generalizada.
+            </p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+            >
+              <img
+                src="https://www.tibco.com/sites/tibco/files/media_entity/2021-05/random-forest-diagram.svg"
+                alt="process-forecast-ba"
                 width={windowSize.width > 590 ? "500" : "250"}
               />
             </div>

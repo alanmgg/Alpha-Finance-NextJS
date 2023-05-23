@@ -8,19 +8,19 @@ import { Button } from "primereact/button";
 import { LayoutContext } from "./../../../layout/context/layoutcontext";
 import styles from "./../../uikit/button/index.module.scss";
 // API
-import { getForecastAdData } from "./../../../api/algorithms";
+import { getForecastBaData } from "./../../../api/algorithms";
 // JSON
-// import ForecastADJson from "./../../../config/ForecastAD.json";
+// import ForecastBAJson from "./../../../config/ForecastBA.json";
 
-import TableMainData from "../../../components/forecastad/TableMainData";
-import NullData from "../../../components/forecastad/NullData";
-import LineDataActions from "../../../components/forecastad/LineDataActions";
-import Aplication from "../../../components/forecastad/Aplication";
-import LineDataPronostico from "../../../components/forecastad/LineDataPronostico";
+import TableMainData from "../../../components/forecastba/TableMainData";
+import NullData from "../../../components/forecastba/NullData";
+import LineDataActions from "../../../components/forecastba/LineDataActions";
+import Aplication from "../../../components/forecastba/Aplication";
+import LineDataPronostico from "../../../components/forecastba/LineDataPronostico";
 
 var customEvents = [];
 
-export default function ForecastAD() {
+export default function ForecastBA() {
   const { onMenuToggleProcess } = useContext(LayoutContext);
   const router = useRouter();
   const { symbol, name, menu } = router.query;
@@ -67,10 +67,10 @@ export default function ForecastAD() {
 
     setCountTask(0);
     setEventsTask(customEvents);
-    getForecastAdData(symbol, loadMainDataHandler, loadErrorHandler);
+    getForecastBaData(symbol, loadMainDataHandler, loadErrorHandler);
 
     // JSON
-    // setMainData(ForecastADJson);
+    // setMainData(ForecastBAJson);
     //
 
     // Screen resize
@@ -187,7 +187,7 @@ export default function ForecastAD() {
   return (
     <div>
       <Head>
-        <title>Alpha Finance | Forecast AD</title>
+        <title>Alpha Finance | Forecast BA</title>
       </Head>
 
       <div className="grid">
@@ -197,7 +197,7 @@ export default function ForecastAD() {
           }
         >
           <div className="card timeline-demo">
-            <h5>Pronóstico con árboles de decisión</h5>
+            <h5>Pronóstico con bosques aleatorios</h5>
             <Timeline
               value={eventsTask}
               align="alternate"

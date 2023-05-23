@@ -33,12 +33,13 @@ const AppMenu = () => {
           icon: "pi pi-fw pi-share-alt",
           to: "/process/forecastad",
           query: { symbol: "NFLX", name: "Netflix", menu: "no" }
+        },
+        {
+          label: "Pronóstico con bosques aleatorios",
+          icon: "pi pi-fw pi-circle",
+          to: "/process/forecastba",
+          query: { symbol: "NFLX", name: "Netflix", menu: "no" }
         }
-        // {
-        //   label: "Pronóstico con bosques aleatorios",
-        //   icon: "pi pi-fw pi-circle",
-        //   to: "/uikit/misc"
-        // }
       ]
     },
 

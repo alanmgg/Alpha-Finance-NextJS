@@ -44,3 +44,18 @@ export function getForecastAdData(
     .then(responseHandler)
     .catch(errorHandler);
 }
+
+export function getForecastBaData(
+  symbol,
+  responseHandler = handleResponse,
+  errorHandler = handleError
+) {
+  let endpoint_url =
+    "https://alphafinanceapi.herokuapp.com/forecast-ba?symbol=" + symbol;
+
+  return fetch(endpoint_url, {
+    method: "GET"
+  })
+    .then(responseHandler)
+    .catch(errorHandler);
+}
