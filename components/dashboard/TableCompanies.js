@@ -86,18 +86,8 @@ export default function TableCompanies(props) {
               sortable
               style={{ width: "35%" }}
             />
-            <Column
-              field="symbol"
-              header="Simbolo"
-              sortable
-              style={{ width: "35%" }}
-            />
-            <Column
-              field="founded"
-              header="Fundada"
-              sortable
-              style={{ width: "35%" }}
-            />
+            <Column field="symbol" header="Simbolo" style={{ width: "35%" }} />
+            <Column field="founded" header="Fundada" style={{ width: "35%" }} />
             <Column
               header="Vista"
               style={{ width: "25%" }}

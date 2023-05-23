@@ -46,18 +46,8 @@ export default function AplicationXTest(props) {
           header="0"
           style={{ width: "25%", fontSize: 12 }}
         />
-        <Column
-          field="uno"
-          header="1"
-          sortable
-          style={{ width: "25%", fontSize: 12 }}
-        />
-        <Column
-          field="dos"
-          header="2"
-          sortable
-          style={{ width: "25%", fontSize: 12 }}
-        />
+        <Column field="uno" header="1" style={{ width: "25%", fontSize: 12 }} />
+        <Column field="dos" header="2" style={{ width: "25%", fontSize: 12 }} />
       </DataTable>
     </div>
   );

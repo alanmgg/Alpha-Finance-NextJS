@@ -52,7 +52,6 @@ export default function Aplication(props) {
               <Column
                 field="index"
                 header=""
-                sortable
                 style={{
                   width: "15%",
                   fontWeight: "bold",
@@ -63,19 +62,16 @@ export default function Aplication(props) {
               <Column
                 field="cero"
                 header="0"
-                sortable
                 style={{ width: "25%", fontSize: 12 }}
               />
               <Column
                 field="uno"
                 header="1"
-                sortable
                 style={{ width: "25%", fontSize: 12 }}
               />
               <Column
                 field="dos"
                 header="2"
-                sortable
                 style={{ width: "25%", fontSize: 12 }}
               />
             </DataTable>

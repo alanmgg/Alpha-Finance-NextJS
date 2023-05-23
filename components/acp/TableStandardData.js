@@ -45,49 +45,41 @@ export default function TableStandardData(props) {
               <Column
                 field="index"
                 header=""
-                sortable
                 style={{ width: "20%", fontWeight: "bold", fontSize: 12 }}
               />
               <Column
                 field="open"
                 header="Open"
-                sortable
                 style={{ width: "15%", fontSize: 12 }}
               />
               <Column
                 field="high"
                 header="High"
-                sortable
                 style={{ width: "15%", fontSize: 12 }}
               />
               <Column
                 field="low"
                 header="Low"
-                sortable
                 style={{ width: "15%", fontSize: 12 }}
               />
               <Column
                 field="close"
                 header="Close"
-                sortable
                 style={{ width: "15%", fontSize: 12 }}
               />
               <Column
                 field="volume"
                 header="Volume"
-                sortable
                 style={{ width: "25%", fontSize: 12 }}
               />
               <Column
                 field="dividends"
                 header="Dividends"
-                sortable
                 style={{ width: "10%", fontSize: 12 }}
               />
               <Column
                 field="stockSplits"
                 header="Stock Splits"
-                sortable
                 style={{ width: "10%", fontSize: 12 }}
               />
             </DataTable>
