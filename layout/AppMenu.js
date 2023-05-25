@@ -39,6 +39,12 @@ const AppMenu = () => {
           icon: "pi pi-fw pi-circle",
           to: "/process/forecastba",
           query: { symbol: "NFLX", name: "Netflix", menu: "no" }
+        },
+        {
+          label: "Clasificación múltiple",
+          icon: "pi pi-fw pi-folder-open",
+          to: "/process/classification",
+          query: { menu: "no" }
         }
       ]
     },
