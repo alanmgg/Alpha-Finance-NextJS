@@ -4,21 +4,21 @@ import { Column } from "primereact/column";
 
 var objectData = [];
 
-export default function MatrizClassification(props) {
+export default function MatrizClassificationBA(props) {
   const [mainData, setMainData] = useState(null);
 
   useEffect(() => {
     if (props.var !== null) {
       objectData = [];
 
-      for (const item in props.var.matriz_clasificacion_1) {
+      for (const item in props.var.matriz_clasificacion_2) {
         objectData.push({
-          actual: props.var.matriz_clasificacion_1[item]["Actual"],
-          one: props.var.matriz_clasificacion_1[item]["1.0"],
-          two: props.var.matriz_clasificacion_1[item]["2.0"],
-          three: props.var.matriz_clasificacion_1[item]["3.0"],
-          four: props.var.matriz_clasificacion_1[item]["4.0"],
-          five: props.var.matriz_clasificacion_1[item]["5.0"]
+          reales: props.var.matriz_clasificacion_2[item]["Reales"],
+          one: props.var.matriz_clasificacion_2[item]["1.0"],
+          two: props.var.matriz_clasificacion_2[item]["2.0"],
+          three: props.var.matriz_clasificacion_2[item]["3.0"],
+          four: props.var.matriz_clasificacion_2[item]["4.0"],
+          five: props.var.matriz_clasificacion_2[item]["5.0"]
         });
       }
       setMainData(objectData);
@@ -29,8 +29,8 @@ export default function MatrizClassification(props) {
     <div className="pt-2">
       <DataTable value={mainData} rows={5} responsiveLayout="scroll">
         <Column
-          field="actual"
-          header="Actual"
+          field="reales"
+          header="Reales"
           style={{ width: "10%", fontSize: 12, fontWeight: "bold" }}
         />
         <Column

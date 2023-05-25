@@ -16,6 +16,8 @@ import TableMainData from "../../../components/classification/TableMainData";
 import MatrizData from "../../../components/classification/MatrizData";
 import Variables from "../../../components/classification/Variables";
 import ModeloOne from "../../../components/classification/ModeloOne";
+import ModeloTwo from "../../../components/classification/ModeloTwo";
+import Validation from "../../../components/classification/Validation";
 
 var customEvents = [];
 
@@ -160,12 +162,23 @@ export default function ForecastBA() {
         break;
       case 3:
         customEvents.push({
-          status: "Conformación del modelo de pronóstico",
-          subTitle: "Gráfica del pronóstico y la importancia",
+          status: "Modelo 2",
+          subTitle: "Bosques aleatorios (BA).",
           description:
-            "Se muestra el modelo final y la gráfica del pronóstico terminada.",
+            "Se aplicará el algoritmo de bosques aleatorios a nuestra dataset.",
           icon: "pi pi-map",
           color: "#533A7B"
+        });
+        setEventsTask(customEvents);
+        setCountTask(count + 1);
+        break;
+      case 4:
+        customEvents.push({
+          status: "Validación",
+          subTitle: "",
+          description: "Se validan los modelos para conocer la mejor opción.",
+          icon: "pi pi-map",
+          color: "#25171A"
         });
         setEventsTask(customEvents);
         setCountTask(count + 1);
@@ -259,9 +272,10 @@ export default function ForecastBA() {
             {countTask >= 1 ? <MatrizData var={mainData} /> : null}
             {countTask >= 2 ? <Variables var={mainData} /> : null}
             {countTask >= 3 ? <ModeloOne var={mainData} /> : null}
-            {/* {countTask >= 4 ? <LineDataPronostico var={mainData} /> : null} */}
+            {countTask >= 4 ? <ModeloTwo var={mainData} /> : null}
+            {countTask >= 5 ? <Validation var={mainData} /> : null}
 
-            {countTask >= 0 && countTask <= 3 ? (
+            {countTask >= 0 && countTask <= 4 ? (
               <div
                 style={{
                   display: "flex",
@@ -286,7 +300,7 @@ export default function ForecastBA() {
               </div>
             ) : null}
 
-            {countTask >= 4 ? (
+            {countTask >= 5 ? (
               <div
                 style={{
                   display: "flex",

@@ -35,7 +35,7 @@ export default function TableMainData(props) {
 
   return (
     <div className="grid pt-5">
-      {mainData !== null && tableData ? (
+      {mainData !== null && tableData !== null ? (
         <div className="col-12 xl:col-12">
           <div className="card">
             <DataTable

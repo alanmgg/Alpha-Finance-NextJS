@@ -28,7 +28,7 @@ export default function DescribeData(props) {
 
   return (
     <div className="pt-1">
-      <DataTable value={mainData} rows={5} paginator responsiveLayout="scroll">
+      <DataTable value={mainData} rows={8} responsiveLayout="scroll">
         <Column
           field="index"
           header=""

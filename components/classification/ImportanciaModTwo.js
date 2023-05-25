@@ -4,19 +4,19 @@ import { Column } from "primereact/column";
 
 var objectData = [];
 
-export default function ImportanciaModOne(props) {
+export default function ImportanciaModTwo(props) {
   const [mainData, setMainData] = useState(null);
 
   useEffect(() => {
     if (props.var !== null) {
       objectData = [];
 
-      for (const item in props.var.importancia_mod_1) {
+      for (const item in props.var.importancia_mod_2) {
         objectData.push({
-          index: props.var.importancia_mod_1[item]["index"],
-          variable: props.var.importancia_mod_1[item]["Variable"],
+          index: props.var.importancia_mod_2[item]["index"],
+          variable: props.var.importancia_mod_2[item]["Variable"],
           importancia:
-            props.var.importancia_mod_1[item]["Importancia"].toFixed(4)
+            props.var.importancia_mod_2[item]["Importancia"].toFixed(4)
         });
       }
       setMainData(objectData);
