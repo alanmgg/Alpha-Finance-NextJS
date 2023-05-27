@@ -142,7 +142,7 @@ export default function FilesContent(props) {
                 {file !== null
                   ? file.map((item, idx) => {
                       return (
-                        <tr>
+                        <tr key={idx}>
                           <th scope="row">{idx + 1}</th>
                           <td>{item.name}</td>
                           <td>{item.size}</td>
