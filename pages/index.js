@@ -106,38 +106,13 @@ export default function Dashboard() {
   return (
     <div>
       <Head>
-        <title>Alpha Finance</title>
+        <title>Alpha Mining</title>
       </Head>
       {companies === null ? (
         <Spinner />
       ) : (
         <div>
           <div className="grid">
-            {nameUser !== null && closeButton !== true ? (
-              <div className="col-12 xl:col-12">
-                <div
-                  className="px-4 py-5 shadow-2 flex flex-column md:flex-row md:align-items-center justify-content-between mb-1"
-                  style={{
-                    background:
-                      "linear-gradient(0deg, rgba(0, 123, 255, 0.5), rgba(0, 123, 255, 0.5)), linear-gradient(92.54deg, #1C80CF 47.88%, #FFFFFF 100.01%)"
-                  }}
-                >
-                  <p style={{ color: "#FFFFFF" }}>
-                    ¡Hola, {nameUser}! Que bueno verte de vuelta.
-                  </p>
-                  <div className="mt-4 mr-auto md:mt-0 md:mr-0">
-                    <p
-                      className="p-button font-bold px-4 py-1 p-button-warning p-button-rounded p-button-raised"
-                      style={{ fontWeight: "bold" }}
-                      onClick={() => closeFButton()}
-                    >
-                      X
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ) : null}
-
             <div
               className={
                 windowSize.width > 590 ? "col-6 xl:col-6" : "col-12 xl:col-12"
@@ -148,6 +123,7 @@ export default function Dashboard() {
                   pathname: "/process/classification",
                   query: { menu: "no" }
                 }}
+                style={{ textDecoration: "none" }}
               >
                 <div
                   className="card"
@@ -156,7 +132,9 @@ export default function Dashboard() {
                     justifyContent: "center",
                     alignItems: "center",
                     cursor: "pointer",
-                    height: "10vh"
+                    height: "10vh",
+                    borderColor: "#F1F1F1",
+                    boxShadow: "2px 2px 4px #F1F1F1"
                   }}
                 >
                   <h5>Clasificación múltiple</h5>
@@ -173,6 +151,7 @@ export default function Dashboard() {
                 href={{
                   pathname: "/"
                 }}
+                style={{ textDecoration: "none" }}
               >
                 <div
                   className="card"
@@ -181,7 +160,9 @@ export default function Dashboard() {
                     justifyContent: "center",
                     alignItems: "center",
                     cursor: "pointer",
-                    height: "10vh"
+                    height: "10vh",
+                    borderColor: "#F1F1F1",
+                    boxShadow: "2px 2px 4px #F1F1F1"
                   }}
                 >
                   <h5>Clustering particional y clasificación</h5>

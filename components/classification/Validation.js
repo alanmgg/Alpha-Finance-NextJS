@@ -19,7 +19,7 @@ export default function Validation(props) {
     <div className="grid pt-5">
       {mainData !== null && validation !== null && auc !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div>
             <h5>Validación de los modelos.</h5>
             <p>Se muestra la confianza de cada modelo.</p>
 

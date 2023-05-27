@@ -37,60 +37,57 @@ export default function TableMainData(props) {
     <div className="grid pt-5">
       {mainData !== null && tableData !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
-            <DataTable
-              value={mainData}
-              rows={5}
-              paginator
-              responsiveLayout="scroll"
-            >
-              <Column
-                field="index"
-                header=""
-                style={{ width: "10%", fontSize: 12, fontWeight: "bold" }}
-              />
-              <Column
-                field="age"
-                header="Age"
-                style={{ width: "15%", fontSize: 12 }}
-              />
-              <Column
-                field="sex"
-                header="Sex"
-                style={{ width: "15%", fontSize: 12 }}
-              />
-              <Column
-                field="bp"
-                header="BP"
-                style={{ width: "15%", fontSize: 12 }}
-              />
-              <Column
-                field="cholesterol"
-                header="Cholesterol"
-                style={{ width: "15%", fontSize: 12 }}
-              />
-              <Column
-                field="natok"
-                header="Na_to_K"
-                style={{ width: "15%", fontSize: 12 }}
-              />
-              <Column
-                field="drug"
-                header="Drug"
-                style={{ width: "15%", fontSize: 12 }}
-              />
-            </DataTable>
+          <DataTable
+            value={mainData}
+            rows={5}
+            paginator
+            responsiveLayout="scroll"
+          >
+            <Column
+              field="index"
+              header=""
+              style={{ width: "10%", fontSize: 12, fontWeight: "bold" }}
+            />
+            <Column
+              field="age"
+              header="Age"
+              style={{ width: "15%", fontSize: 12 }}
+            />
+            <Column
+              field="sex"
+              header="Sex"
+              style={{ width: "15%", fontSize: 12 }}
+            />
+            <Column
+              field="bp"
+              header="BP"
+              style={{ width: "15%", fontSize: 12 }}
+            />
+            <Column
+              field="cholesterol"
+              header="Cholesterol"
+              style={{ width: "15%", fontSize: 12 }}
+            />
+            <Column
+              field="natok"
+              header="Na_to_K"
+              style={{ width: "15%", fontSize: 12 }}
+            />
+            <Column
+              field="drug"
+              header="Drug"
+              style={{ width: "15%", fontSize: 12 }}
+            />
+          </DataTable>
 
-            <p className="pt-3">
-              Aplicando ingeniería de datos para poder manipularlos más
-              adelante.
-            </p>
+          <p className="pt-3">
+            Aplicando ingeniería de datos para poder manipularlos más adelante.
+          </p>
 
-            <TableChangeData var={tableData} />
-            <NullData var={tableData} />
-            <GroupBy var={tableData} />
-            <DescribeData var={tableData} />
-          </div>
+          <TableChangeData var={tableData} />
+          <NullData var={tableData} />
+          <GroupBy var={tableData} />
+          <DescribeData var={tableData} />
         </div>
       ) : (
         <div className="col-12 xl:col-12">

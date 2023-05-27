@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "chart.js": "4.2.1",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
@@ -18,13 +19,14 @@
     "primeflex": "3.3.0",
     "primeicons": "^6.0.1",
     "primereact": "9.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.0",
     "react-plotly.js": "^2.6.0",
     "react-router-dom": "^6.11.1",
     "react-spinners": "^0.13.8",
-    "react-toastify": "^9.1.2"
+    "react-toastify": "^9.1.2",
+    "reactstrap": "^9.1.10"
   },
   "devDependencies": {
     "sass": "^1.58.3"

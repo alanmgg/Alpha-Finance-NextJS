@@ -33,55 +33,53 @@ export default function TableMainData(props) {
     <div className="grid pt-5">
       {mainData !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
-            <DataTable
-              value={mainData}
-              rows={5}
-              paginator
-              responsiveLayout="scroll"
-            >
-              <Column
-                field="date"
-                header="Fecha"
-                style={{ width: "20%", fontSize: 12 }}
-              />
-              <Column
-                field="open"
-                header="Open"
-                style={{ width: "15%", fontSize: 12 }}
-              />
-              <Column
-                field="high"
-                header="High"
-                style={{ width: "15%", fontSize: 12 }}
-              />
-              <Column
-                field="low"
-                header="Low"
-                style={{ width: "15%", fontSize: 12 }}
-              />
-              <Column
-                field="close"
-                header="Close"
-                style={{ width: "15%", fontSize: 12 }}
-              />
-              <Column
-                field="volume"
-                header="Volume"
-                style={{ width: "25%", fontSize: 12 }}
-              />
-              <Column
-                field="dividends"
-                header="Dividends"
-                style={{ width: "10%", fontSize: 12 }}
-              />
-              <Column
-                field="stockSplits"
-                header="Stock Splits"
-                style={{ width: "10%", fontSize: 12 }}
-              />
-            </DataTable>
-          </div>
+          <DataTable
+            value={mainData}
+            rows={5}
+            paginator
+            responsiveLayout="scroll"
+          >
+            <Column
+              field="date"
+              header="Fecha"
+              style={{ width: "20%", fontSize: 12 }}
+            />
+            <Column
+              field="open"
+              header="Open"
+              style={{ width: "15%", fontSize: 12 }}
+            />
+            <Column
+              field="high"
+              header="High"
+              style={{ width: "15%", fontSize: 12 }}
+            />
+            <Column
+              field="low"
+              header="Low"
+              style={{ width: "15%", fontSize: 12 }}
+            />
+            <Column
+              field="close"
+              header="Close"
+              style={{ width: "15%", fontSize: 12 }}
+            />
+            <Column
+              field="volume"
+              header="Volume"
+              style={{ width: "25%", fontSize: 12 }}
+            />
+            <Column
+              field="dividends"
+              header="Dividends"
+              style={{ width: "10%", fontSize: 12 }}
+            />
+            <Column
+              field="stockSplits"
+              header="Stock Splits"
+              style={{ width: "10%", fontSize: 12 }}
+            />
+          </DataTable>
 
           <h6>Descripción.</h6>
           <ul>

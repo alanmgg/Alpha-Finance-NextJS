@@ -182,7 +182,7 @@ export default function ValuesOutliners(props) {
         valuesOutlinersVolume !== null &&
         valuesOutlinersDividends !== null &&
         valuesOutlinersStock !== null ? (
-          <div className="card">
+          <div>
             <h5>Paso 3: Detección de valores atípicos.</h5>
             <p style={{ fontWeight: "bold" }}>
               1) Distribución de variables numéricas.

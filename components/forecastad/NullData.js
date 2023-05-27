@@ -18,7 +18,7 @@ export default function NullData(props) {
     <div className="grid pt-5">
       {nullData !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div>
             <h5>Descripción de la estructura de los datos.</h5>
             <pre className="app-code" style={{ fontSize: 12 }}>
               <code>

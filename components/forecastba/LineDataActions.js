@@ -49,7 +49,7 @@ export default function LineDataActions(props) {
     <div className="grid pt-5">
       {mainDataDrop !== null && dataValue !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div>
             <h5>Gráfica de los precios de las acciones.</h5>
 
             <Chart

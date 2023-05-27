@@ -91,6 +91,7 @@ const AppMenuitem = (props) => {
           className={classNames(item.class, "p-ripple")}
           target={item.target}
           tabIndex="0"
+          style={{ textDecoration: "none" }}
         >
           <i className={classNames("layout-menuitem-icon", item.icon)}></i>
           <span className="layout-menuitem-text">{item.label}</span>
@@ -111,6 +112,7 @@ const AppMenuitem = (props) => {
             "active-route": isActiveRoute
           })}
           tabIndex={0}
+          style={{ textDecoration: "none" }}
         >
           <i className={classNames("layout-menuitem-icon", item.icon)}></i>
           <span className="layout-menuitem-text">{item.label}</span>

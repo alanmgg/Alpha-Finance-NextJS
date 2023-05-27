@@ -35,7 +35,7 @@ export default function ModeloTwo(props) {
       textClassification !== null &&
       variables !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div>
             <h5>Modelo 2: Bosques aleatorios (BA).</h5>
             <p>Se muestra a continuación la variable predictoria: </p>
 

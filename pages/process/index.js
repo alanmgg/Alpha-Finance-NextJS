@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { LayoutContext } from "./../../layout/context/layoutcontext";
@@ -38,6 +39,10 @@ export default function Process() {
 
   return (
     <div>
+      <Head>
+        <title>Alpha Mining</title>
+      </Head>
+
       <div className="grid">
         <div
           className={
@@ -49,6 +54,7 @@ export default function Process() {
               pathname: "/process/eda",
               query: { symbol: symbol, name: name, menu: "no" }
             }}
+            style={{ textDecoration: "none" }}
           >
             <div
               className="card"
@@ -57,7 +63,9 @@ export default function Process() {
                 justifyContent: "center",
                 alignItems: "center",
                 cursor: "pointer",
-                height: "15vh"
+                height: "15vh",
+                borderColor: "#F1F1F1",
+                boxShadow: "2px 2px 4px #F1F1F1"
               }}
             >
               <h5>Análisis Exploratorio de Datos</h5>
@@ -75,6 +83,7 @@ export default function Process() {
               pathname: "/process/acp",
               query: { symbol: symbol, name: name, menu: "no" }
             }}
+            style={{ textDecoration: "none" }}
           >
             <div
               className="card"
@@ -83,7 +92,9 @@ export default function Process() {
                 justifyContent: "center",
                 alignItems: "center",
                 cursor: "pointer",
-                height: "15vh"
+                height: "15vh",
+                borderColor: "#F1F1F1",
+                boxShadow: "2px 2px 4px #F1F1F1"
               }}
             >
               <h5>Análisis de Componentes Principales</h5>
@@ -101,6 +112,7 @@ export default function Process() {
               pathname: "/process/forecastad",
               query: { symbol: symbol, name: name, menu: "no" }
             }}
+            style={{ textDecoration: "none" }}
           >
             <div
               className="card"
@@ -109,7 +121,9 @@ export default function Process() {
                 justifyContent: "center",
                 alignItems: "center",
                 cursor: "pointer",
-                height: "15vh"
+                height: "15vh",
+                borderColor: "#F1F1F1",
+                boxShadow: "2px 2px 4px #F1F1F1"
               }}
             >
               <h5>Pronóstico con árboles de decisión</h5>
@@ -127,6 +141,7 @@ export default function Process() {
               pathname: "/process/forecastba",
               query: { symbol: symbol, name: name, menu: "no" }
             }}
+            style={{ textDecoration: "none" }}
           >
             <div
               className="card"
@@ -135,7 +150,9 @@ export default function Process() {
                 justifyContent: "center",
                 alignItems: "center",
                 cursor: "pointer",
-                height: "15vh"
+                height: "15vh",
+                borderColor: "#F1F1F1",
+                boxShadow: "2px 2px 4px #F1F1F1"
               }}
             >
               <h5>Pronóstico con bosques aleatorios</h5>
@@ -146,7 +163,10 @@ export default function Process() {
 
       <div className="grid pt-2">
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div
+            className="card"
+            style={{ borderColor: "#F1F1F1", boxShadow: "2px 2px 4px #F1F1F1" }}
+          >
             <h5>¿Qué es el análisis exploratorio de datos?</h5>
             <p style={{ textAlign: "justify" }}>
               Es una técnica utilizada en la minería de datos que consiste en

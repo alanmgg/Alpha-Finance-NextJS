@@ -30,7 +30,7 @@ export default function VarianzaData(props) {
       textComponents !== null &&
       varianzaComponents !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div>
             <h5>Paso 5: Se decide el número de componentes principales.</h5>
             <ul>
               <li>

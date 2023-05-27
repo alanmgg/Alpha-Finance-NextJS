@@ -33,7 +33,7 @@ export default function Variables(props) {
     <div className="grid pt-5">
       {mainData !== null && tableData ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div>
             <h5>Definición de las variables predictoras y variable clase.</h5>
             <p>Variables predictorias.</p>
             <DataTable

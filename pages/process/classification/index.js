@@ -191,7 +191,7 @@ export default function ForecastBA() {
   return (
     <div>
       <Head>
-        <title>Alpha Finance | Classification</title>
+        <title>Alpha Mining | Classification</title>
       </Head>
 
       <div className="grid">
@@ -200,7 +200,10 @@ export default function ForecastBA() {
             windowSize.width > 590 ? "col-5 xl:col-5" : "col-12 xl:col-12"
           }
         >
-          <div className="card timeline-demo">
+          <div
+            className="card timeline-demo"
+            style={{ borderColor: "#F1F1F1", boxShadow: "2px 2px 4px #F1F1F1" }}
+          >
             <h5>Clasificación múltiple</h5>
             <Timeline
               value={eventsTask}
@@ -217,7 +220,10 @@ export default function ForecastBA() {
             windowSize.width > 590 ? "col-7 xl:col-7" : "col-12 xl:col-12"
           }
         >
-          <div className="card">
+          <div
+            className="card"
+            style={{ borderColor: "#F1F1F1", boxShadow: "2px 2px 4px #F1F1F1" }}
+          >
             <div>
               <h5>Contexto.</h5>
               <p>

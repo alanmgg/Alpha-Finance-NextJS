@@ -33,7 +33,7 @@ export default function TableStandardData(props) {
     <div className="grid pt-5">
       {mainData !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div>
             <h5>Paso 2: Se hace una estandarización de los datos.</h5>
 
             <DataTable

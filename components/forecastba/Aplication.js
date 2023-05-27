@@ -35,7 +35,7 @@ export default function Aplication(props) {
     <div className="grid pt-5">
       {mainData !== null && xData !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div>
             <h5>Aplicación del algoritmo</h5>
             <p>
               Se seleccionan las variables predictoras (X) y la variable a

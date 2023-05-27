@@ -38,7 +38,7 @@ export default function MatrizComponents(props) {
     <div className="grid pt-5">
       {textComponents !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div>
             <h5>
               Pasos 3 y 4: Se calcula la matriz de covarianzas o correlaciones,
               y se calculan los componentes (eigen-vectores) y la varianza

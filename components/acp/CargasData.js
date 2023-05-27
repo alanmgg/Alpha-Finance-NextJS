@@ -54,7 +54,7 @@ export default function CargasData(props) {
     <div className="grid pt-5">
       {mainData !== null && textComponents !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div>
             <h5>Paso 6: Se examina la proporción de relevancias (cargas).</h5>
             <p>
               La importancia de cada variable se refleja en la magnitud de los

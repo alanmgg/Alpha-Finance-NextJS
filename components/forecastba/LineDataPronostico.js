@@ -45,7 +45,7 @@ export default function LineDataPronostico(props) {
     <div className="grid pt-5">
       {mainData !== null && dataValue !== null && variables !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div>
             <h5>Conformación del modelo de pronóstico.</h5>
             <ul>
               <li>

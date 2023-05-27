@@ -42,7 +42,11 @@ const AppTopbar = forwardRef((props, ref) => {
 
   return (
     <div className="layout-topbar">
-      <Link href="/" className="layout-topbar-logo">
+      <Link
+        href="/"
+        className="layout-topbar-logo"
+        style={{ textDecoration: "none" }}
+      >
         <img
           src={`/layout/images/logo-${
             layoutConfig.colorScheme !== "light" ? "white" : "dark"
@@ -52,7 +56,7 @@ const AppTopbar = forwardRef((props, ref) => {
           widt={"true"}
           alt="logo"
         />
-        <span>Alpha Finance</span>
+        <span>Alpha Mining</span>
       </Link>
 
       <button
@@ -84,12 +88,19 @@ const AppTopbar = forwardRef((props, ref) => {
           <span>Calendar</span>
         </button> */}
 
+        <Link href="/profile" style={{ textDecoration: "none" }}>
+          <button type="button" className="p-link layout-topbar-button">
+            <i className="pi pi-user"></i>
+            <span>Perfil</span>
+          </button>
+        </Link>
+
         <button
           type="button"
           className="p-link layout-topbar-button"
           onClick={() => logoutUser()}
         >
-          <i className="pi pi-user"></i>
+          <i className="pi pi-sign-in"></i>
           <span>Cerrar sesión</span>
         </button>
 

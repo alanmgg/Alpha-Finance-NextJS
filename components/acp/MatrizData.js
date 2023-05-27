@@ -150,7 +150,7 @@ export default function MatrizData(props) {
     <div className="grid pt-5">
       <div className="col-12 xl:col-12">
         {corrData !== null ? (
-          <div className="card">
+          <div>
             <h5>
               Paso 1: Hay evidencia de variables posiblemente correlacionadas.
             </h5>

@@ -63,7 +63,10 @@ export default function TableCompanies(props) {
   return (
     <div className="grid">
       <div className="col-12 xl:col-12">
-        <div className="card">
+        <div
+          className="card"
+          style={{ borderColor: "#F1F1F1", boxShadow: "2px 2px 4px #F1F1F1" }}
+        >
           <h5>Empresas</h5>
           <InputText
             inputid="companie1"

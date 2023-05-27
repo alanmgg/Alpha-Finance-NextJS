@@ -35,7 +35,7 @@ export default function ModeloOne(props) {
       textClassification !== null &&
       variables !== null ? (
         <div className="col-12 xl:col-12">
-          <div className="card">
+          <div>
             <h5>Modelo 1: Árboles de decisión (AD).</h5>
             <p>Se muestra a continuación la variable predictoria: </p>
 
