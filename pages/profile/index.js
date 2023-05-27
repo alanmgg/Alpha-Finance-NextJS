@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 import FilesContent from "../../components/profile/FilesContent";
 
 export default function Profile() {
@@ -12,7 +13,6 @@ export default function Profile() {
   useEffect(() => {
     const sessionClient = localStorage.getItem("logClient");
     var objectJSON = JSON.parse(sessionClient);
-    console.log(objectJSON);
     setUser(objectJSON);
 
     // Screen resize
@@ -35,6 +35,10 @@ export default function Profile() {
 
   return (
     <div>
+      <Head>
+        <title>Alpha Mining | Perfil de usuario</title>
+      </Head>
+
       {user !== null ? (
         <div className="grid">
           {windowSize.width > 590 ? (
@@ -81,7 +85,7 @@ export default function Profile() {
             </div>
           </div>
 
-          <FilesContent />
+          <FilesContent var={user} />
         </div>
       ) : null}
     </div>

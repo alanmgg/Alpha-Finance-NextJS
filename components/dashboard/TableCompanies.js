@@ -102,7 +102,7 @@ export default function TableCompanies(props) {
                       query: { symbol: data.symbol, name: data.name }
                     }}
                   >
-                    <Button icon="pi pi-search" type="button" text />
+                    <Button severity="info" icon="pi pi-search" type="button" />
                   </Link>
                 </>
               )}
