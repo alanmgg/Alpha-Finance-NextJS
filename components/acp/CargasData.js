@@ -48,6 +48,8 @@ export default function CargasData(props) {
       setTextComponents(text);
       setMainData(props.var);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

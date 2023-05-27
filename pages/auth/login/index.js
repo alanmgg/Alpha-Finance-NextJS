@@ -111,8 +111,9 @@ export default function LoginPage() {
   return (
     <div className={containerClassName}>
       <Head>
-        <title>Alpha Finance | Inicio de sesión</title>
+        <title>Alpha Mining | Inicio de sesión</title>
       </Head>
+
       <div className="flex flex-column align-items-center justify-content-center">
         <img
           src={`/layout/images/logo-${
@@ -143,6 +144,7 @@ export default function LoginPage() {
               <Link
                 href="/auth/register"
                 className="text-600 font-medium font-bold"
+                style={{ textDecoration: "none" }}
               >
                 {" "}
                 Registrate

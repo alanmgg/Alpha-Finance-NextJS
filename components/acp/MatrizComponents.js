@@ -32,6 +32,8 @@ export default function MatrizComponents(props) {
       text = text.slice(0, -1) + "]";
       setTextComponents(text);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

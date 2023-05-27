@@ -22,6 +22,8 @@ export default function VarianzaData(props) {
       setVarianzaComponents(props.var.num_varianza);
       setMainData(props.var);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

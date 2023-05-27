@@ -110,8 +110,9 @@ export default function RegisterPage() {
   return (
     <div className={containerClassName}>
       <Head>
-        <title>Alpha Finance | Registro de usuarios</title>
+        <title>Alpha Mining | Registro de usuarios</title>
       </Head>
+
       <div className="flex flex-column align-items-center justify-content-center">
         <img
           src={`/layout/images/logo-${
@@ -142,6 +143,7 @@ export default function RegisterPage() {
               <Link
                 href="/auth/login"
                 className="text-600 font-medium font-bold"
+                style={{ textDecoration: "none" }}
               >
                 {" "}
                 Inicia sesión
