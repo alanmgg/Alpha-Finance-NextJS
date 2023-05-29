@@ -18,7 +18,7 @@ export default function ValoresMod(props) {
           one: props.var.valores_mod_1[item]["1"],
           two: props.var.valores_mod_1[item]["2"],
           three: props.var.valores_mod_1[item]["3"],
-          four: props.var.valores_mod_1[item]["4"].toFixed(3)
+          four: props.var.valores_mod_1[item]["4"]
         });
       }
       setVariablesY(objectData);
@@ -37,27 +37,16 @@ export default function ValoresMod(props) {
           field="index"
           header=""
           style={{
-            width: "10%",
+            width: "5%",
             fontWeight: "bold",
-            fontSize: 12
+            fontSize: 12,
+            textAlign: "center"
           }}
         />
         <Column
           field="zero"
           header="0"
-          style={{ width: "15%", fontSize: 12 }}
-        />
-        <Column field="one" header="1" style={{ width: "15%", fontSize: 12 }} />
-        <Column field="two" header="2" style={{ width: "15%", fontSize: 12 }} />
-        <Column
-          field="three"
-          header="3"
-          style={{ width: "15%", fontSize: 12 }}
-        />
-        <Column
-          field="four"
-          header="4"
-          style={{ width: "15%", fontSize: 12 }}
+          style={{ width: "20%", fontSize: 12 }}
         />
       </DataTable>
     </div>

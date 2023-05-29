@@ -147,7 +147,8 @@ export default function Dashboard() {
             >
               <Link
                 href={{
-                  pathname: "/"
+                  pathname: "/process/clustering",
+                  query: { menu: "no" }
                 }}
                 style={{ textDecoration: "none" }}
               >

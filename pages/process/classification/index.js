@@ -8,9 +8,9 @@ import { Button } from "primereact/button";
 import { LayoutContext } from "./../../../layout/context/layoutcontext";
 import styles from "./../../uikit/button/index.module.scss";
 // API
-import { getForecastBaData } from "./../../../api/algorithms";
+import { getClasificationData } from "./../../../api/algorithms";
 // JSON
-import ClassificationADBAJson from "./../../../config/ClassificationADBA.json";
+// import ClassificationADBAJson from "./../../../config/ClassificationADBA.json";
 
 import TableMainData from "../../../components/classification/TableMainData";
 import MatrizData from "../../../components/classification/MatrizData";
@@ -60,10 +60,10 @@ export default function ForecastBA() {
 
     setCountTask(0);
     setEventsTask(customEvents);
-    // getForecastBaData(symbol, loadMainDataHandler, loadErrorHandler);
+    getClasificationData(loadMainDataHandler, loadErrorHandler);
 
     // JSON
-    setMainData(ClassificationADBAJson);
+    // setMainData(ClassificationADBAJson);
     //
 
     // Screen resize

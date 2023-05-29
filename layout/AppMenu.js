@@ -45,6 +45,12 @@ const AppMenu = () => {
           icon: "pi pi-fw pi-folder-open",
           to: "/process/classification",
           query: { menu: "no" }
+        },
+        {
+          label: "Clustering particional",
+          icon: "pi pi-fw pi-desktop",
+          to: "/process/clustering",
+          query: { menu: "no" }
         }
       ]
     },
