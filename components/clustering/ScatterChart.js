@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 // Plotly
-import Plot from "react-plotly.js";
+import dynamic from "next/dynamic";
+const PlotlyChart = dynamic(() => import("react-plotly.js"), { ssr: false });
 
 var objectDataX = [];
 var objectDataY = [];
@@ -52,7 +53,7 @@ export default function ScatterChart(props) {
       }}
       className="mt-3"
     >
-      <Plot
+      <PlotlyChart
         data={dataValue}
         layout={{
           autosize: true,
