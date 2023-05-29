@@ -42,6 +42,7 @@ export default function DynamicInputs(props) {
                 <p htmlFor={`input-${index}`}>{label}</p>
 
                 <InputText
+                  key={index}
                   inputid="email1"
                   type="text"
                   placeholder="..."
