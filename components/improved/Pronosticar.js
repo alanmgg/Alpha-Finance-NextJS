@@ -37,12 +37,11 @@ export default function DynamicInputs(props) {
     <div div className="grid">
       {columnas !== undefined
         ? columnas.map((label, index) => (
-            <div className="col-6 xl:col-6">
-              <div key={index}>
+            <div className="col-6 xl:col-6" key={index}>
+              <div>
                 <p htmlFor={`input-${index}`}>{label}</p>
 
                 <InputText
-                  key={index}
                   inputid="email1"
                   type="text"
                   placeholder="..."
