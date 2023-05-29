@@ -140,7 +140,7 @@ export default function FilesContent(props) {
                   <>
                     <Link
                       href={{
-                        pathname: "/process/edaimproved",
+                        pathname: "/process-improved",
                         query: { user: user.id_user, name: data.name }
                       }}
                     >
