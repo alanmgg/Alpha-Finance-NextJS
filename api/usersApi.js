@@ -5,7 +5,7 @@ export function createUser(
   responseHandler = handleResponse,
   errorHandler = handleError
 ) {
-  let endpoint_url = "https://alphafinanceapi.herokuapp.com/users";
+  let endpoint_url = "https://alphaminingapi.herokuapp.com/users";
 
   const text_config = {
     name: form.name,
@@ -30,7 +30,7 @@ export function authUser(
   errorHandler = handleError
 ) {
   let endpoint_url =
-    "https://alphafinanceapi.herokuapp.com/users/" +
+    "https://alphaminingapi.herokuapp.com/users/" +
     form.email +
     "/" +
     form.password;

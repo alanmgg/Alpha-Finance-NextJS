@@ -48,15 +48,13 @@ export default function Profile() {
                 style={{
                   display: "flex",
                   justifyContent: "center",
-                  alignItems: "center",
-                  borderColor: "#F1F1F1",
-                  boxShadow: "2px 2px 4px #F1F1F1"
+                  alignItems: "center"
                 }}
               >
                 <img
                   src="https://cdn.icon-icons.com/icons2/714/PNG/512/user_icon-icons.com_62212.png"
                   alt="user-icon"
-                  width="80"
+                  width="88"
                 />
               </div>
             </div>
@@ -67,13 +65,7 @@ export default function Profile() {
               windowSize.width > 590 ? "col-10 xl:col-10" : "col-12 xl:col-12"
             }
           >
-            <div
-              className="card"
-              style={{
-                borderColor: "#F1F1F1",
-                boxShadow: "2px 2px 4px #F1F1F1"
-              }}
-            >
+            <div className="card">
               <h5>
                 {user.name} {user.last_name}
               </h5>

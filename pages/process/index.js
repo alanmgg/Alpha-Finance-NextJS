@@ -63,9 +63,7 @@ export default function Process() {
                 justifyContent: "center",
                 alignItems: "center",
                 cursor: "pointer",
-                height: "15vh",
-                borderColor: "#F1F1F1",
-                boxShadow: "2px 2px 4px #F1F1F1"
+                height: "15vh"
               }}
             >
               <h5>Análisis Exploratorio de Datos</h5>
@@ -92,9 +90,7 @@ export default function Process() {
                 justifyContent: "center",
                 alignItems: "center",
                 cursor: "pointer",
-                height: "15vh",
-                borderColor: "#F1F1F1",
-                boxShadow: "2px 2px 4px #F1F1F1"
+                height: "15vh"
               }}
             >
               <h5>Análisis de Componentes Principales</h5>
@@ -121,9 +117,7 @@ export default function Process() {
                 justifyContent: "center",
                 alignItems: "center",
                 cursor: "pointer",
-                height: "15vh",
-                borderColor: "#F1F1F1",
-                boxShadow: "2px 2px 4px #F1F1F1"
+                height: "15vh"
               }}
             >
               <h5>Pronóstico con árboles de decisión</h5>
@@ -150,9 +144,7 @@ export default function Process() {
                 justifyContent: "center",
                 alignItems: "center",
                 cursor: "pointer",
-                height: "15vh",
-                borderColor: "#F1F1F1",
-                boxShadow: "2px 2px 4px #F1F1F1"
+                height: "15vh"
               }}
             >
               <h5>Pronóstico con bosques aleatorios</h5>
@@ -163,10 +155,7 @@ export default function Process() {
 
       <div className="grid pt-2">
         <div className="col-12 xl:col-12">
-          <div
-            className="card"
-            style={{ borderColor: "#F1F1F1", boxShadow: "2px 2px 4px #F1F1F1" }}
-          >
+          <div className="card">
             <h5>¿Qué es el análisis exploratorio de datos?</h5>
             <p style={{ textAlign: "justify" }}>
               Es una técnica utilizada en la minería de datos que consiste en
@@ -184,7 +173,7 @@ export default function Process() {
               }}
             >
               <img
-                src="https://www.masterdatascienceucm.com/wp-content/uploads/2020/08/proceso-mineria-de-datos.png.webp"
+                src="https://i0.wp.com/gonzalezgouveia.com/wp-content/uploads/2020/04/fasesEDAR.png?resize=1080%2C828&ssl=1"
                 alt="process-eda"
                 width={windowSize.width > 590 ? "500" : "250"}
               />
@@ -210,7 +199,7 @@ export default function Process() {
               }}
             >
               <img
-                src="https://devopedia.org/images/article/139/9153.1547301619.png"
+                src="https://www.ovhcloud.com/sites/default/files/styles/large_screens_1x/public/2022-04/whatis_data-mining.webp"
                 alt="process-acp"
                 width={windowSize.width > 590 ? "500" : "250"}
               />
@@ -245,7 +234,7 @@ export default function Process() {
               }}
             >
               <img
-                src="https://fhernanb.github.io/libro_mod_pred/images/fit_unfit.png"
+                src="https://www.plandemejora.com/wp-content/uploads/ejemplo-1-1.png"
                 alt="process-forecast-ad"
                 width={windowSize.width > 590 ? "500" : "250"}
               />

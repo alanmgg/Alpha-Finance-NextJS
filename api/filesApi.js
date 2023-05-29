@@ -5,8 +5,7 @@ export function getFilesApi(
   responseHandler = handleResponse,
   errorHandler = handleError
 ) {
-  let endpoint_url =
-    "https://alphafinanceapi.herokuapp.com/get-files/" + idUser;
+  let endpoint_url = "https://alphaminingapi.herokuapp.com/get-files/" + idUser;
 
   return fetch(endpoint_url, {
     method: "GET"
@@ -22,7 +21,7 @@ export function deleteFileApi(
   errorHandler = handleError
 ) {
   let endpoint_url =
-    "https://alphafinanceapi.herokuapp.com/delete-file/" +
+    "https://alphaminingapi.herokuapp.com/delete-file/" +
     idUser +
     "/" +
     filename;
@@ -41,7 +40,7 @@ export function uploadFileApi(
   errorHandler = handleError
 ) {
   let endpoint_url =
-    "https://alphafinanceapi.herokuapp.com/upload-file/" + idUser;
+    "https://alphaminingapi.herokuapp.com/upload-file/" + idUser;
   var data = new FormData();
   data.append("file", file);
   return fetch(endpoint_url, {

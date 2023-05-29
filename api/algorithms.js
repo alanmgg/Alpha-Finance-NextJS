@@ -6,7 +6,7 @@ export function getEdaData(
   errorHandler = handleError
 ) {
   let endpoint_url =
-    "https://alphafinanceapi.herokuapp.com/eda?symbol=" + symbol;
+    "https://alphaminingapi.herokuapp.com/eda?symbol=" + symbol;
 
   return fetch(endpoint_url, {
     method: "GET"
@@ -21,7 +21,7 @@ export function getAcpData(
   errorHandler = handleError
 ) {
   let endpoint_url =
-    "https://alphafinanceapi.herokuapp.com/acp?symbol=" + symbol;
+    "https://alphaminingapi.herokuapp.com/acp?symbol=" + symbol;
 
   return fetch(endpoint_url, {
     method: "GET"
@@ -36,7 +36,7 @@ export function getForecastAdData(
   errorHandler = handleError
 ) {
   let endpoint_url =
-    "https://alphafinanceapi.herokuapp.com/forecast-ad?symbol=" + symbol;
+    "https://alphaminingapi.herokuapp.com/forecast-ad?symbol=" + symbol;
 
   return fetch(endpoint_url, {
     method: "GET"
@@ -51,7 +51,7 @@ export function getForecastBaData(
   errorHandler = handleError
 ) {
   let endpoint_url =
-    "https://alphafinanceapi.herokuapp.com/forecast-ba?symbol=" + symbol;
+    "https://alphaminingapi.herokuapp.com/forecast-ba?symbol=" + symbol;
 
   return fetch(endpoint_url, {
     method: "GET"

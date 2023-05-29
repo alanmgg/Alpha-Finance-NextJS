@@ -132,9 +132,7 @@ export default function Dashboard() {
                     justifyContent: "center",
                     alignItems: "center",
                     cursor: "pointer",
-                    height: "10vh",
-                    borderColor: "#F1F1F1",
-                    boxShadow: "2px 2px 4px #F1F1F1"
+                    height: "10vh"
                   }}
                 >
                   <h5>Clasificación múltiple</h5>
@@ -160,9 +158,7 @@ export default function Dashboard() {
                     justifyContent: "center",
                     alignItems: "center",
                     cursor: "pointer",
-                    height: "10vh",
-                    borderColor: "#F1F1F1",
-                    boxShadow: "2px 2px 4px #F1F1F1"
+                    height: "10vh"
                   }}
                 >
                   <h5>Clustering particional y clasificación</h5>

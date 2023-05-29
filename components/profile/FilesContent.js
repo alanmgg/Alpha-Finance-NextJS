@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { DataTable } from "primereact/datatable";
+import { Column } from "primereact/column";
 import { Input, Table } from "reactstrap";
 import { Button } from "primereact/button";
 import Spinner from "./../utilities/Spinner";
@@ -28,14 +30,9 @@ export default function FilesContent(props) {
     }
   }, [props]);
 
-  function deleteFile(idx) {
+  function deleteFile(name) {
     setLoadSpinner(true);
-    deleteFileApi(
-      user.id_user,
-      file[idx].name,
-      loadDeleteFileHandler,
-      loadErrorHandler
-    );
+    deleteFileApi(user.id_user, name, loadDeleteFileHandler, loadErrorHandler);
   }
 
   function handleFileChange(file) {
@@ -111,10 +108,7 @@ export default function FilesContent(props) {
   return (
     <div className="col-12 xl:col-12">
       {file !== null && user !== null ? (
-        <div
-          className="card"
-          style={{ borderColor: "#F1F1F1", boxShadow: "2px 2px 4px #F1F1F1" }}
-        >
+        <div className="card">
           {saveFile === true ? (
             <Input
               type="file"
@@ -124,78 +118,66 @@ export default function FilesContent(props) {
             />
           ) : null}
 
-          <Table hover className="mt-3" size="sm" responsive>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Tamaño</th>
-                <th>Tipo</th>
-                <th>Modificación más reciente</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-
-            {loadSpinner === false ? (
-              <tbody>
-                {file !== null
-                  ? file.map((item, idx) => {
-                      return (
-                        <tr key={idx}>
-                          <th scope="row">{idx + 1}</th>
-                          <td>{item.name}</td>
-                          <td>{item.size}</td>
-                          <td>{item.type}</td>
-                          <td>{item.date}</td>
-                          <td>
-                            <Link
-                              href={{
-                                pathname: "/process/edaimproved",
-                                query: {
-                                  user: user.id_user,
-                                  filename: item.name
-                                }
-                              }}
-                            >
-                              <Button severity="info" icon="pi pi-search" />
-                            </Link>
-                          </td>
-                          <td>
-                            {loadSpinner === false ? (
-                              <Button
-                                severity="danger"
-                                icon="pi pi-trash"
-                                onClick={() => deleteFile(idx)}
-                              />
-                            ) : (
-                              <Button
-                                severity="danger"
-                                icon="pi pi-trash"
-                                onClick={() => deleteFile(idx)}
-                                disabled
-                              />
-                            )}
-                          </td>
-                        </tr>
-                      );
-                    })
-                  : null}
-              </tbody>
-            ) : null}
-          </Table>
+          {loadSpinner === false ? (
+            <DataTable
+              value={file}
+              rows={5}
+              responsiveLayout="scroll"
+              className="mt-3"
+            >
+              <Column field="name" header="Nombre" style={{ width: "20%" }} />
+              <Column field="size" header="Tamaño" style={{ width: "20%" }} />
+              <Column field="type" header="Tipo" style={{ width: "20%" }} />
+              <Column
+                field="date"
+                header="Modificación más reciente"
+                style={{ width: "25%" }}
+              />
+              <Column
+                header=""
+                style={{ width: "10%" }}
+                body={(data) => (
+                  <>
+                    <Link
+                      href={{
+                        pathname: "/process/edaimproved",
+                        query: { user: user.id_user, name: data.name }
+                      }}
+                    >
+                      <Button
+                        severity="info"
+                        icon="pi pi-search"
+                        type="button"
+                      />
+                    </Link>
+                  </>
+                )}
+              />
+              <Column
+                header=""
+                style={{ width: "10%" }}
+                body={(data) => (
+                  <>
+                    <Button
+                      severity="danger"
+                      icon="pi pi-trash"
+                      onClick={() => deleteFile(data.name)}
+                    />
+                  </>
+                )}
+              />
+            </DataTable>
+          ) : (
+            <div className="col-12 xl:col-12 mt-3">
+              <Spinner layout="small" />
+            </div>
+          )}
         </div>
       ) : (
         <div className="col-12 xl:col-12">
           <Spinner layout="small" />
         </div>
       )}
-
-      {loadSpinner !== false ? (
-        <div className="col-12 xl:col-12">
-          <Spinner layout="small" />
-        </div>
-      ) : null}
     </div>
   );
 }

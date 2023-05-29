@@ -1,3 +1,4 @@
+import PrimeReact from "primereact/api";
 import Router, { useRouter } from "next/router";
 import Link from "next/link";
 import { classNames } from "primereact/utils";
@@ -5,18 +6,33 @@ import React, {
   forwardRef,
   useContext,
   useImperativeHandle,
-  useRef
+  useRef,
+  useState
 } from "react";
 import { LayoutContext } from "./context/layoutcontext";
 // Notifications
 import { toast } from "react-toastify";
 
 const AppTopbar = forwardRef((props, ref) => {
-  const { layoutConfig, layoutState, onMenuToggle, showProfileSidebar } =
-    useContext(LayoutContext);
+  const {
+    layoutConfig,
+    setLayoutConfig,
+    layoutState,
+    onMenuToggle,
+    showProfileSidebar
+  } = useContext(LayoutContext);
   const menubuttonRef = useRef(null);
   const topbarmenuRef = useRef(null);
   const topbarmenubuttonRef = useRef(null);
+
+  const [themeDark, setThemeDark] = useState(false);
+
+  function changeThemeA(theme, colorScheme) {
+    PrimeReact.changeTheme(layoutConfig.theme, theme, "theme-css", () => {
+      setLayoutConfig((prevState) => ({ ...prevState, theme, colorScheme }));
+    });
+    setThemeDark(!themeDark);
+  }
 
   const router = useRouter();
 
@@ -94,6 +110,26 @@ const AppTopbar = forwardRef((props, ref) => {
             <span>Perfil</span>
           </button>
         </Link>
+
+        {themeDark === false ? (
+          <button
+            type="button"
+            className="p-link layout-topbar-button"
+            onClick={() => changeThemeA("lara-dark-teal", "dark")}
+          >
+            <i className="pi pi-moon"></i>
+            <span>Modo oscuro</span>
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="p-link layout-topbar-button"
+            onClick={() => changeThemeA("lara-light-teal", "light")}
+          >
+            <i className="pi pi-sun"></i>
+            <span>Modo claro</span>
+          </button>
+        )}
 
         <button
           type="button"

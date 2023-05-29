@@ -30,7 +30,7 @@ export default function CargasComponents(props) {
 
   return (
     <div className="pt-3">
-      <DataTable value={mainData} rows={7} paginator responsiveLayout="scroll">
+      <DataTable value={mainData} rows={7} responsiveLayout="scroll">
         <Column
           field="index"
           header=""

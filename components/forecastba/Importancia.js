@@ -24,12 +24,7 @@ export default function Importancia(props) {
 
   return (
     <div>
-      <DataTable
-        value={importancia}
-        rows={5}
-        paginator
-        responsiveLayout="scroll"
-      >
+      <DataTable value={importancia} rows={5} responsiveLayout="scroll">
         <Column
           field="index"
           header=""
