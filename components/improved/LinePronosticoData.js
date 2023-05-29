@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
 
-export default function LineVarianzaData(props) {
+export default function LinePronosticoData(props) {
   const [dataValue, setDataValue] = useState(null);
 
   useEffect(() => {
     setDataValue(null);
 
     if (props.var !== null) {
-      const newData = [["x", "Varianza"]];
+      const newData = [["x", "Real", "Estimado"]];
 
-      for (const item in props.var.varianza) {
-        const value = Number(props.var.varianza[item]["0"].toFixed(4));
-        newData.push([item, value]);
+      for (const item in props.var.y_test) {
+        const value = Number(props.var.y_test[item]["0"].toFixed(4));
+        const value2 = Number(props.var.y_pronostico[item]["0"].toFixed(4));
+        newData.push([item, value, value2]);
       }
 
       setDataValue(newData);
@@ -22,8 +23,7 @@ export default function LineVarianzaData(props) {
   var options = {
     colors: ["#763CAD", "#D02525"],
     chart: {
-      title: "Número de componentes",
-      subtitle: "Varianza acumulada"
+      title: "Pronóstico"
     }
   };
 

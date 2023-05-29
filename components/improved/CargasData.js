@@ -3,13 +3,13 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import Spinner from "../utilities/Spinner";
 
-export default function TableMainData(props) {
+export default function CargasData(props) {
   const [mainData, setMainData] = useState(null);
   const [columns, setColumns] = useState([]);
 
   useEffect(() => {
     if (props.var !== null) {
-      const objectData = props.var.describe.map((item) => {
+      const objectData = props.var.cargas_components.map((item) => {
         const jsonData = {};
         Object.keys(item).forEach((itemKey) => {
           jsonData[itemKey] = item[itemKey];

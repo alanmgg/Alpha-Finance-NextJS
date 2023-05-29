@@ -78,7 +78,8 @@ export default function Process() {
         >
           <Link
             href={{
-              pathname: "/"
+              pathname: "/process-improved/acp",
+              query: { user: user, name: name, menu: "no" }
             }}
             style={{ textDecoration: "none" }}
           >
@@ -104,7 +105,8 @@ export default function Process() {
         >
           <Link
             href={{
-              pathname: "/"
+              pathname: "/process-improved/forecastad",
+              query: { user: user, name: name, menu: "no" }
             }}
             style={{ textDecoration: "none" }}
           >
@@ -130,7 +132,8 @@ export default function Process() {
         >
           <Link
             href={{
-              pathname: "/"
+              pathname: "/process-improved/forecastba",
+              query: { user: user, name: name, menu: "no" }
             }}
             style={{ textDecoration: "none" }}
           >

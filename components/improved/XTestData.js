@@ -3,13 +3,13 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import Spinner from "../utilities/Spinner";
 
-export default function TableMainData(props) {
+export default function XTestData(props) {
   const [mainData, setMainData] = useState(null);
   const [columns, setColumns] = useState([]);
 
   useEffect(() => {
     if (props.var !== null) {
-      const objectData = props.var.describe.map((item) => {
+      const objectData = props.var.x_test.map((item) => {
         const jsonData = {};
         Object.keys(item).forEach((itemKey) => {
           jsonData[itemKey] = item[itemKey];
@@ -44,7 +44,12 @@ export default function TableMainData(props) {
     <div className="grid">
       {mainData !== null ? (
         <div className="col-12 xl:col-12">
-          <DataTable value={mainData} responsiveLayout="scroll">
+          <DataTable
+            value={mainData}
+            rows={5}
+            paginator
+            responsiveLayout="scroll"
+          >
             {columns}
           </DataTable>
         </div>

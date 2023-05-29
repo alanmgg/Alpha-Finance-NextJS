@@ -5,12 +5,11 @@ import Spinner from "../utilities/Spinner";
 
 export default function CorrData(props) {
   const [mainData, setMainData] = useState(null);
-  const [tableData, setTableData] = useState(null);
   const [columns, setColumns] = useState([]);
 
   useEffect(() => {
     if (props.var !== null) {
-      const objectData = props.var.corr.map((item) => {
+      const objectData = props.var.corr_data.map((item) => {
         const jsonData = {};
         Object.keys(item).forEach((itemKey) => {
           jsonData[itemKey] = item[itemKey];
@@ -18,7 +17,6 @@ export default function CorrData(props) {
         return jsonData;
       });
 
-      setTableData(props.var);
       setMainData(objectData);
     }
   }, [props]);

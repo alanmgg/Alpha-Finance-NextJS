@@ -204,7 +204,7 @@ export default function ProcessAcp() {
   return (
     <div>
       <Head>
-        <title>Alpha Finance | Mining</title>
+        <title>Alpha Mining | ACP</title>
       </Head>
 
       <div className="grid">

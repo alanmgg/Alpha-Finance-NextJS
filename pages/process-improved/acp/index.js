@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -8,18 +8,20 @@ import { Button } from "primereact/button";
 import { LayoutContext } from "./../../../layout/context/layoutcontext";
 import styles from "./../../uikit/button/index.module.scss";
 // API
-import { getEdaImprovedData } from "./../../../api/algorithmsImproved";
+import { getAcpImprovedData } from "./../../../api/algorithmsImproved";
 
 import TableMainData from "../../../components/improved/TableMainData";
-import DescripcionData from "../../../components/improved/DescriptionData";
-import NullData from "../../../components/improved/NullData";
-import DescribeData from "../../../components/improved/DescribeData";
 import CorrData from "../../../components/improved/CorrData";
-// import MatrizData from "../../../components/improved/MatrizData";
+import MatrizEstandarizada from "../../../components/improved/MatrizEstandarizada";
+import PCAComponents from "../../../components/improved/PCAComponents";
+import VarianzaData from "../../../components/improved/VarianzaData";
+import LineVarianzaData from "../../../components/improved/LineVarianzaData";
+import Cargas from "../../../components/improved/Cargas";
+import CargasData from "../../../components/improved/CargasData";
 
 var customEvents = [];
 
-export default function ProcessEda() {
+export default function ProcessAcp() {
   const { onMenuToggleProcess } = useContext(LayoutContext);
   const router = useRouter();
   const { user, name, menu } = router.query;
@@ -41,9 +43,9 @@ export default function ProcessEda() {
     customEvents = [];
     customEvents.push({
       status: "Objetivo",
-      subTitle: "Análisis exploratorio de datos",
+      subTitle: "Análisis de componentes principales",
       description:
-        "Hacer un análisis exploratorio de datos con base en información obtenida de " +
+        "Hacer un análisis de componentes principales con base en información obtenida de " +
         name,
       icon: "pi pi-bolt",
       color: "#4B244A"
@@ -59,7 +61,7 @@ export default function ProcessEda() {
 
     setCountTask(0);
     setEventsTask(customEvents);
-    getEdaImprovedData(user, name, loadMainDataHandler, loadErrorHandler);
+    getAcpImprovedData(user, name, loadMainDataHandler, loadErrorHandler);
 
     // Screen resize
     const handleResize = () => {
@@ -121,11 +123,11 @@ export default function ProcessEda() {
     switch (count) {
       case 0:
         customEvents.push({
-          status: "Paso 1: Descripción de la estructura de los datos",
-          subTitle:
-            "Forma (dimensiones) del DataFrame y tipos de datos (variables)",
+          status:
+            "Paso 1: Hay evidencia de variables posiblemente correlacionadas",
+          subTitle: "",
           description:
-            "Al tener una estructura adecuada, se pueden identificar patrones y relaciones que de otra manera podrían haber pasado desapercibidos.",
+            "Se utiliza esta transformación para convertir un conjunto de variables, posiblemente correlacionadas, en un conjunto reducido de variables que ya no guardan correlación.",
           icon: "pi pi-book",
           color: "#6969B3"
         });
@@ -134,10 +136,11 @@ export default function ProcessEda() {
         break;
       case 1:
         customEvents.push({
-          status: "Paso 2: Identificación de datos faltantes",
-          subTitle: "Se obtiene la suma de valores nulos",
+          status: "Paso 2: Se hace una estandarización de los datos",
+          subTitle:
+            "Transformar los datos a escalas comparables puede evitar este problema",
           description:
-            "Esto es relevante porque los valores faltantes pueden afectar la precisión de los modelos de minería de datos y los resultados obtenidos a partir de ellos.",
+            "El objetivo de este paso es estandarizar (escalar o normalizar) el rango de las variables iniciales, para que cada una de éstas contribuya por igual en el análisis.",
           icon: "pi pi-exclamation-circle",
           color: "#25171A"
         });
@@ -146,11 +149,12 @@ export default function ProcessEda() {
         break;
       case 2:
         customEvents.push({
-          status: "Paso 3: Detección de valores atípicos",
+          status:
+            "Pasos 3 y 4: Se calcula la matriz de covarianzas o correlaciones, y se calculan los componentes (eigen-vectores) y la varianza (eigen-valores)",
           subTitle:
-            "Se utilizan histogramas que agrupan los números en rangos.",
+            "Esto se hace a partir de la matriz de covarianzas o correlaciones.",
           description:
-            "La distribución se refiere a cómo se distribuyen los valores en una variable o con qué frecuencia ocurren.",
+            "El objetivo es comprender cómo las variables del conjunto de datos varían con respecto a la media entre sí.",
           icon: "pi pi-chart-bar",
           color: "#4B244A"
         });
@@ -159,12 +163,24 @@ export default function ProcessEda() {
         break;
       case 3:
         customEvents.push({
-          status: "Paso 4: Identificación de relaciones entre pares variables",
-          subTitle: "Matriz de correlaciones.",
+          status: "Paso 5: Se decide el número de componentes principales",
+          subTitle: "",
           description:
-            "Una matriz de correlaciones es útil para analizar la relación entre las variables numéricas.",
+            "Se decide el número de componentes mediante una evaluación de las varianzas.",
           icon: "pi pi-map",
           color: "#533A7B"
+        });
+        setEventsTask(customEvents);
+        setCountTask(count + 1);
+        break;
+      case 4:
+        customEvents.push({
+          status: "Paso 6: Se examina la proporción de relevancias (cargas)",
+          subTitle: "",
+          description:
+            "La importancia de cada variable se refleja en la magnitud de los valores en los componentes (mayor magnitud es sinónimo de mayor importancia).",
+          icon: "pi pi-map",
+          color: "#6969B3"
         });
         setEventsTask(customEvents);
         setCountTask(count + 1);
@@ -177,7 +193,7 @@ export default function ProcessEda() {
   return (
     <div>
       <Head>
-        <title>Alpha Mining | EDA</title>
+        <title>Alpha Mining | ACP</title>
       </Head>
 
       <div className="grid">
@@ -187,7 +203,7 @@ export default function ProcessEda() {
           }
         >
           <div className="card timeline-demo">
-            <h5>Análisis Exploratorio de Datos</h5>
+            <h5>Análisis de Componentes Principales</h5>
             <Timeline
               value={eventsTask}
               align="alternate"
@@ -212,78 +228,76 @@ export default function ProcessEda() {
 
             {countTask >= 1 ? (
               <div className="pt-5">
-                <h5>Paso 1: Descripción de la estructura de los datos.</h5>
-                <p>
-                  La cantidad de filas y columnas que tiene el conjunto de
-                  datos:
-                </p>
-
-                <DescripcionData var={mainData} />
-
-                <p>
-                  Se observa que los datos son numéricos (flotante y entero).
-                </p>
-              </div>
-            ) : null}
-
-            {countTask >= 2 ? (
-              <div className="pt-5">
-                <h5>Paso 2: Identificación de datos faltantes.</h5>
-                <p>
-                  Regresa la suma de todos los valores nulos en cada variable:
-                </p>
-
-                <NullData var={mainData} />
-              </div>
-            ) : null}
-
-            {countTask >= 3 ? (
-              <div className="pt-5">
-                <h5>Paso 3: Detección de valores atípicos.</h5>
-                <p>
-                  Se pueden utilizar gráficos para tener una idea general de las
-                  distribuciones de los datos, y se sacan estadísticas para
-                  resumir los datos. Estas dos estrategias son recomendables y
-                  se complementan.
-                </p>
-                <p>
-                  Se sacan estadísticas que muestra un resumen de las variables
-                  numéricas.
-                </p>
-
-                <DescribeData var={mainData} />
-
-                <ul>
-                  <li>
-                    Se incluye un recuento, media, desviación, valor mínimo,
-                    valor máximo, percentil inferior (25%), 50% y percentil
-                    superior (75%).
-                  </li>
-                  <li>
-                    Por defecto, el percentil 50 es lo mismo que la mediana.
-                  </li>
-                  <li>
-                    Se observa que para cada variable, el recuento también ayuda
-                    a identificar variables con valores nulos o vacios.
-                  </li>
-                </ul>
-              </div>
-            ) : null}
-
-            {countTask >= 4 ? (
-              <div className="pt-5">
                 <h5>
-                  Paso 4: Identificación de relaciones entre pares variables.
+                  Paso 1: Hay evidencia de variables posiblemente
+                  correlacionadas.
                 </h5>
-                <p>
-                  Regresa la suma de todos los valores nulos en cada variable:
-                </p>
 
                 <CorrData var={mainData} />
               </div>
             ) : null}
 
-            {countTask >= 0 && countTask <= 3 ? (
+            {countTask >= 2 ? (
+              <div className="pt-5">
+                <h5>Paso 2: Se hace una estandarización de los datos.</h5>
+
+                <MatrizEstandarizada var={mainData} />
+              </div>
+            ) : null}
+
+            {countTask >= 3 ? (
+              <div className="pt-5">
+                <h5>
+                  Pasos 3 y 4: Se calcula la matriz de covarianzas o
+                  correlaciones, y se calculan los componentes (eigen-vectores)
+                  y la varianza (eigen-valores).
+                </h5>
+
+                <PCAComponents var={mainData} />
+              </div>
+            ) : null}
+
+            {countTask >= 4 ? (
+              <div className="pt-5">
+                <h5>Paso 5: Se decide el número de componentes principales.</h5>
+                <ul>
+                  <li>
+                    Se calcula el porcentaje de relevancia, es decir, entre el
+                    75 y 90% de varianza total.
+                  </li>
+                  <li>
+                    Se identifica mediante una gráfica el grupo de componentes
+                    con mayor varianza.
+                  </li>
+                </ul>
+
+                <VarianzaData var={mainData} />
+                <LineVarianzaData var={mainData} />
+              </div>
+            ) : null}
+
+            {countTask >= 5 ? (
+              <div className="pt-5">
+                <h5>
+                  Paso 6: Se examina la proporción de relevancias (cargas).
+                </h5>
+                <p>
+                  La importancia de cada variable se refleja en la magnitud de
+                  los valores en los componentes (mayor magnitud es sinónimo de
+                  mayor importancia).
+                </p>
+                <p>
+                  Se revisan los valores absolutos de los componentes
+                  principales seleccionados. Cuanto mayor sea el valor absoluto,
+                  más importante es esa variable en el componente principal.
+                </p>
+
+                <Cargas var={mainData} />
+                <CargasData var={mainData} />
+              </div>
+            ) : null}
+
+            {countTask >= 0 && countTask <= 4 ? (
               <div
                 style={{
                   display: "flex",
@@ -308,7 +322,7 @@ export default function ProcessEda() {
               </div>
             ) : null}
 
-            {countTask >= 4 ? (
+            {countTask >= 5 ? (
               <div
                 style={{
                   display: "flex",
