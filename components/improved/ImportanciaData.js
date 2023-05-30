@@ -8,8 +8,28 @@ export default function ImportanciaData(props) {
   const [columns, setColumns] = useState([]);
 
   useEffect(() => {
-    if (props.var !== null) {
+    if (props.var !== null && props.var.importancia) {
       const objectData = props.var.importancia.map((item) => {
+        const jsonData = {};
+        Object.keys(item).forEach((itemKey) => {
+          jsonData[itemKey] = item[itemKey];
+        });
+        return jsonData;
+      });
+
+      setMainData(objectData);
+    } else if (props.var !== null && props.var.importancia_mod_1) {
+      const objectData = props.var.importancia_mod_1.map((item) => {
+        const jsonData = {};
+        Object.keys(item).forEach((itemKey) => {
+          jsonData[itemKey] = item[itemKey];
+        });
+        return jsonData;
+      });
+
+      setMainData(objectData);
+    } else if (props.var !== null && props.var.importancia_mod_2) {
+      const objectData = props.var.importancia_mod_2.map((item) => {
         const jsonData = {};
         Object.keys(item).forEach((itemKey) => {
           jsonData[itemKey] = item[itemKey];

@@ -153,3 +153,53 @@ export function getForecastBaPronosticImprovedData(
     .then(responseHandler)
     .catch(errorHandler);
 }
+
+export function getClassificationImprovedData(
+  idUser,
+  fileName,
+  columnName,
+  responseHandler = handleResponse,
+  errorHandler = handleError
+) {
+  let endpoint_url =
+    "https://alphaminingapi.herokuapp.com/classification-ad-ba-improved/" +
+    idUser +
+    "/" +
+    fileName +
+    "/" +
+    columnName;
+
+  return fetch(endpoint_url, {
+    method: "GET"
+  })
+    .then(responseHandler)
+    .catch(errorHandler);
+}
+
+export function getClassificationPronosticImprovedData(
+  idUser,
+  fileName,
+  columnName,
+  objectColumn,
+  responseHandler = handleResponse,
+  errorHandler = handleError
+) {
+  let endpoint_url =
+    "https://alphaminingapi.herokuapp.com/classification-ad-ba-pronostic-improved/" +
+    idUser +
+    "/" +
+    fileName;
+
+  const text_config = {
+    column_dependient: columnName,
+    column: objectColumn
+  };
+
+  return fetch(endpoint_url, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(text_config)
+  })
+    .then(responseHandler)
+    .catch(errorHandler);
+}

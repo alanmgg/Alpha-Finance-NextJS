@@ -154,12 +154,13 @@ export default function Process() {
 
         <div
           className={
-            windowSize.width > 590 ? "col-6 xl:col-6" : "col-12 xl:col-12"
+            windowSize.width > 590 ? "col-12 xl:col-12" : "col-12 xl:col-12"
           }
         >
           <Link
             href={{
-              pathname: "/"
+              pathname: "/process-improved/classification",
+              query: { user: user, name: name, menu: "no" }
             }}
             style={{ textDecoration: "none" }}
           >
@@ -174,32 +175,6 @@ export default function Process() {
               }}
             >
               <h5>Clasificación multiple</h5>
-            </div>
-          </Link>
-        </div>
-
-        <div
-          className={
-            windowSize.width > 590 ? "col-6 xl:col-6" : "col-12 xl:col-12"
-          }
-        >
-          <Link
-            href={{
-              pathname: "/"
-            }}
-            style={{ textDecoration: "none" }}
-          >
-            <div
-              className="card"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                cursor: "pointer",
-                height: windowSize.width > 590 ? "25vh" : "15vh"
-              }}
-            >
-              <h5>Clustering particional y clasificación</h5>
             </div>
           </Link>
         </div>

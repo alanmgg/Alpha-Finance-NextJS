@@ -3,13 +3,13 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import Spinner from "../utilities/Spinner";
 
-export default function ValoresData(props) {
+export default function MatrizClassification(props) {
   const [mainData, setMainData] = useState(null);
   const [columns, setColumns] = useState([]);
 
   useEffect(() => {
-    if (props.var !== null && props.var.valores) {
-      const objectData = props.var.valores.map((item) => {
+    if (props.var !== null && props.var.matriz_clasificacion_1) {
+      const objectData = props.var.matriz_clasificacion_1.map((item) => {
         const jsonData = {};
         Object.keys(item).forEach((itemKey) => {
           jsonData[itemKey] = item[itemKey];
@@ -18,18 +18,8 @@ export default function ValoresData(props) {
       });
 
       setMainData(objectData);
-    } else if (props.var !== null && props.var.valores_mod_1) {
-      const objectData = props.var.valores_mod_1.map((item) => {
-        const jsonData = {};
-        Object.keys(item).forEach((itemKey) => {
-          jsonData[itemKey] = item[itemKey];
-        });
-        return jsonData;
-      });
-
-      setMainData(objectData);
-    } else if (props.var !== null && props.var.valores_mod_2) {
-      const objectData = props.var.valores_mod_2.map((item) => {
+    } else if (props.var !== null && props.var.matriz_clasificacion_2) {
+      const objectData = props.var.matriz_clasificacion_2.map((item) => {
         const jsonData = {};
         Object.keys(item).forEach((itemKey) => {
           jsonData[itemKey] = item[itemKey];
@@ -64,12 +54,7 @@ export default function ValoresData(props) {
     <div className="grid">
       {mainData !== null ? (
         <div className="col-12 xl:col-12">
-          <DataTable
-            value={mainData}
-            rows={5}
-            paginator
-            responsiveLayout="scroll"
-          >
+          <DataTable value={mainData} responsiveLayout="scroll">
             {columns}
           </DataTable>
         </div>

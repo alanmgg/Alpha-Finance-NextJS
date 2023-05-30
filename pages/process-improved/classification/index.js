@@ -10,27 +10,26 @@ import styles from "./../../uikit/button/index.module.scss";
 // API
 import {
   getMainImprovedData,
-  getForecastAdImprovedData,
-  getForecastAdPronosticImprovedData
+  getClassificationImprovedData,
+  getClassificationPronosticImprovedData
 } from "./../../../api/algorithmsImproved";
 
 import TableMainDataForecast from "../../../components/improved/TableMainDataForecast";
 import TableMainData from "../../../components/improved/TableMainData";
 import NullData from "../../../components/improved/NullData";
+import GroupBy from "../../../components/improved/GroupBy";
 import DescribeData from "../../../components/improved/DescribeData";
+import CorrData from "../../../components/improved/CorrData";
 import XData from "../../../components/improved/XData";
 import YData from "../../../components/improved/YData";
-import XTestData from "../../../components/improved/XTestData";
-import YPronosticoData from "../../../components/improved/YPronosticoData";
 import ValoresData from "../../../components/improved/ValoresData";
-import Variables from "../../../components/improved/Variables";
-import LinePronosticoData from "../../../components/improved/LinePronosticoData";
+import MatrizClassification from "../../../components/improved/MatrizClassification";
 import ImportanciaData from "../../../components/improved/ImportanciaData";
 import Pronosticar from "../../../components/improved/Pronosticar";
 
 var customEvents = [];
 
-export default function ForecastAD() {
+export default function ForecastBA() {
   const { onMenuToggleProcess } = useContext(LayoutContext);
   const router = useRouter();
   const { user, name, menu } = router.query;
@@ -56,13 +55,13 @@ export default function ForecastAD() {
     customEvents = [];
     customEvents.push({
       status: "Objetivo",
-      subTitle: "Pronóstico de los datos",
+      subTitle: "Clasificación de los datos",
       description:
-        "Hacer un pronóstico de los datos de " +
+        "Clasificar los datos de " +
         name +
-        " a través de un algoritmo de aprendizaje automático.",
+        "a través de un algoritmo de clasificación multiple.",
       icon: "pi pi-bolt",
-      color: "#4B244A"
+      color: "#25171A"
     });
     customEvents.push({
       status: "Fuente de datos",
@@ -70,7 +69,7 @@ export default function ForecastAD() {
       description:
         "Se ocupa información obtenida del archivo CSV proporcionado por el usuario.",
       icon: "pi pi-code",
-      color: "#533A7B"
+      color: "#4B244A"
     });
 
     setCountTask(0);
@@ -170,7 +169,7 @@ export default function ForecastAD() {
   function nextTask(count) {
     switch (count) {
       case 0:
-        getForecastAdImprovedData(
+        getClassificationImprovedData(
           user,
           name,
           column,
@@ -181,44 +180,67 @@ export default function ForecastAD() {
         break;
       case 1:
         customEvents.push({
-          status: "Descripción de la estructura de los datos",
+          status: "Selección de características",
           subTitle: "",
           description:
-            "Se observa que los datos son numéricos (flotante y entero).",
+            "A través de un mapa de calor de identifican posibles variables correlacionadas.",
           icon: "pi pi-book",
-          color: "#6969B3"
+          color: "#533A7B"
         });
         setEventsTask(customEvents);
         setCountTask(count + 1);
         break;
       case 2:
         customEvents.push({
-          status: "Aplicación del algoritmo",
-          subTitle: "Se hace la división de los datos.",
+          status: "Definición de las variables predictoras y variable clase",
+          subTitle: "",
           description:
-            "Se seleccionan las variables predictoras (X) y la variable a pronosticar (Y) y se entrena el modelo.",
+            "Variables que utilizaremos para la creación de nuestros modelos.",
           icon: "pi pi-chart-bar",
-          color: "#4B244A"
+          color: "#25171A"
         });
         setEventsTask(customEvents);
         setCountTask(count + 1);
         break;
       case 3:
         customEvents.push({
-          status: "Conformación del modelo de pronóstico",
-          subTitle: "Gráfica del pronóstico y la importancia",
+          status: "Modelo 1",
+          subTitle: "Árboles de decisión (AD).",
           description:
-            "Se muestra el modelo final y la gráfica del pronóstico terminada.",
-          icon: "pi pi-map",
-          color: "#533A7B"
+            "Se aplicará el algoritmo de árboles de decisión a nuestra dataset.",
+          icon: "pi pi-chart-bar",
+          color: "#4B244A"
         });
         setEventsTask(customEvents);
         setCountTask(count + 1);
         break;
       case 4:
         customEvents.push({
-          status: "Pronóstico listo",
-          subTitle: "Modelo de pronóstico terminado",
+          status: "Modelo 2",
+          subTitle: "Bosques aleatorios (BA).",
+          description:
+            "Se aplicará el algoritmo de bosques aleatorios a nuestra dataset.",
+          icon: "pi pi-map",
+          color: "#533A7B"
+        });
+        setEventsTask(customEvents);
+        setCountTask(count + 1);
+        break;
+      case 5:
+        customEvents.push({
+          status: "Validación",
+          subTitle: "",
+          description: "Se validan los modelos para conocer la mejor opción.",
+          icon: "pi pi-map",
+          color: "#25171A"
+        });
+        setEventsTask(customEvents);
+        setCountTask(count + 1);
+        break;
+      case 6:
+        customEvents.push({
+          status: "Clasificación lista",
+          subTitle: "Modelo de clasificación terminado",
           description: "Es momento de generar valores y ver magia.",
           icon: "pi pi-map",
           color: "#533A7B"
@@ -241,7 +263,7 @@ export default function ForecastAD() {
 
   function onPronostic() {
     setPronosticApi(null);
-    getForecastAdPronosticImprovedData(
+    getClassificationPronosticImprovedData(
       user,
       name,
       column,
@@ -254,7 +276,7 @@ export default function ForecastAD() {
   return (
     <div>
       <Head>
-        <title>Alpha Mining | Forecast AD</title>
+        <title>Alpha Mining | Classification</title>
       </Head>
 
       <div className="grid">
@@ -264,7 +286,7 @@ export default function ForecastAD() {
           }
         >
           <div className="card timeline-demo">
-            <h5>Pronóstico con árboles de decisión</h5>
+            <h5>Clasificación múltiple</h5>
             <Timeline
               value={eventsTask}
               align="alternate"
@@ -289,90 +311,122 @@ export default function ForecastAD() {
               <TableMainDataForecast var={mainData} method={selectColumn} />
             ) : null}
 
-            {countTask >= 1 ? <TableMainData var={mainNewData} /> : null}
+            {countTask >= 1 ? (
+              <div>
+                <TableMainData var={mainNewData} />
+
+                <p>Variables nulas: </p>
+                <NullData var={mainNewData} />
+
+                <p>Agrupación de datos por variable: </p>
+                <GroupBy var={mainNewData} column={column} />
+
+                <p>Descripción de los datos: </p>
+                <DescribeData var={mainNewData} />
+              </div>
+            ) : null}
 
             {countTask >= 2 ? (
               <div className="pt-5">
-                <h5>Descripción de la estructura de los datos.</h5>
+                <h5>Selección de características.</h5>
 
-                <NullData var={mainNewData} />
-                <DescribeData var={mainNewData} />
+                <p>
+                  A través de un mapa de calor de identifican posibles variables
+                  correlacionadas.
+                </p>
+                <CorrData var={mainNewData} />
               </div>
             ) : null}
 
             {countTask >= 3 ? (
               <div className="pt-5">
-                <h5>Aplicación del algoritmo</h5>
-                <p>
-                  Se seleccionan las variables predictoras (X) y la variable a
-                  pronosticar (Y). Primero la variable predictoria (X).
-                </p>
+                <h5>
+                  Definición de las variables predictoras y variable clase.
+                </h5>
 
+                <p>Variables predictorias:</p>
                 <XData var={mainNewData} />
 
-                <p>
-                  Segundo la variable a pronosticar (Y), esta formada de Close.
-                </p>
-
+                <p>Variable clase:</p>
                 <YData var={mainNewData} />
-
-                <p>
-                  Se hace la división de los datos. En variables de
-                  entrenamiento y variables iniciales. A continuación se muestra
-                  las variables iniciales.
-                </p>
-
-                <XTestData var={mainNewData} />
-
-                <p>Se entrena el modelo.</p>
-
-                <YPronosticoData var={mainNewData} />
-
-                <p>
-                  Comprobamos que nuestro modelo esta entrenado comparando los
-                  valores iniciales con el pronostico.
-                </p>
-
-                <ValoresData var={mainNewData} />
-
-                <p>La información del algoritmo se muestra a continuación:</p>
-
-                <Variables var={mainNewData} />
               </div>
             ) : null}
 
             {countTask >= 4 ? (
               <div className="pt-5">
-                <h5>Conformación del modelo de pronóstico.</h5>
-                <ul>
-                  <li>
-                    Se tiene un Score de{" "}
-                    {mainNewData.variables.score.toFixed(4)}, que indica que el
-                    pronóstico del precio de cierre de la acción se logrará con
-                    un {mainNewData.variables.score.toFixed(4) * 100}% de
-                    efectividad.
-                  </li>
-                  <li>
-                    Además, los pronósticos del modelo final se alejan en
-                    promedio {mainNewData.variables.mse.toFixed(2)} y{" "}
-                    {mainNewData.variables.rmse.toFixed(2)} unidades del valor
-                    real, esto es, MSE y RMSE, respectivamente.
-                  </li>
-                </ul>
+                <h5>Modelo 1: Árboles de decisión (AD).</h5>
 
-                <LinePronosticoData var={mainNewData} />
+                <p>Se muestrán los valores de la predicción del modelo: </p>
+                <ValoresData var={mainNewData} />
 
-                <p>Se muestra la importancia del modelo:</p>
+                <p>Matriz de clasificación: Árbol de decisión:</p>
+                <MatrizClassification var={mainNewData} />
 
+                <p>Reporte de la clasificación:</p>
+                <pre className="app-code" style={{ fontSize: 12 }}>
+                  <code>
+                    {"Criterio: "}
+                    {mainNewData.variables_ad.criterion}
+                    <br />
+                    {"Exactitud: "}
+                    {mainNewData.variables_ad.exactitud}
+                  </code>
+                </pre>
+
+                <p>Se muestra la importancia de las variables:</p>
                 <ImportanciaData var={mainNewData} />
               </div>
             ) : null}
 
             {countTask >= 5 ? (
               <div className="pt-5">
-                <h5>Pronóstico listo.</h5>
+                <h5>Modelo 2: Bosques aleatorios (BA).</h5>
+
+                <p>Se muestrán los valores de la predicción del modelo: </p>
+                <ValoresData var={mainNewData} />
+
+                <p>Matriz de clasificación: Bosques aleatorios:</p>
+                <MatrizClassification var={mainNewData} />
+
+                <p>Reporte de la clasificación:</p>
+                <pre className="app-code" style={{ fontSize: 12 }}>
+                  <code>
+                    {"Criterio: "}
+                    {mainNewData.variables_ba.criterion}
+                    <br />
+                    {"Exactitud: "}
+                    {mainNewData.variables_ba.exactitud}
+                  </code>
+                </pre>
+
+                <p>Se muestra la importancia de las variables:</p>
+                <ImportanciaData var={mainNewData} />
+              </div>
+            ) : null}
+
+            {countTask >= 6 ? (
+              <div className="pt-5">
+                <h5>Validación de los modelos.</h5>
+
+                <p>Se muestra la confianza de cada modelo.</p>
+                <pre className="app-code" style={{ fontSize: 12 }}>
+                  <code>
+                    {"Árboles de decisión: "}
+                    {mainNewData.validation.ad}
+                    <br />
+                    {"Bosques aleatorios: "}
+                    {mainNewData.validation.ba}
+                  </code>
+                </pre>
+              </div>
+            ) : null}
+
+            {countTask >= 7 ? (
+              <div className="pt-5">
+                <h5>Nuevas clasificaciones.</h5>
                 <p>
-                  Escribe los valores para generar un pronóstico del dataframe
+                  Escribe los valores para generar una clasificación del
+                  dataframe.
                 </p>
 
                 <Pronosticar
@@ -383,7 +437,7 @@ export default function ForecastAD() {
               </div>
             ) : null}
 
-            {countTask >= 0 && countTask <= 4 ? (
+            {countTask >= 0 && countTask <= 6 ? (
               <div
                 style={{
                   display: "flex",
@@ -408,7 +462,7 @@ export default function ForecastAD() {
               </div>
             ) : null}
 
-            {countTask >= 5 ? (
+            {countTask >= 7 ? (
               <div
                 style={{
                   display: "flex",
