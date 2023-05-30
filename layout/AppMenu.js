@@ -212,13 +212,13 @@ const AppMenu = () => {
         {
           label: "Documentación",
           icon: "pi pi-fw pi-question",
-          to: "https://alphafinancedocumentation.vercel.app/",
+          to: "https://alphaminingdocs.vercel.app/",
           target: "_blank"
         },
         {
           label: "Ver código",
           icon: "pi pi-fw pi-search",
-          url: "https://github.com/alanmgg/Alpha-Finance-NextJS",
+          url: "https://github.com/alanmgg/Alpha-Mining-NextJS",
           target: "_blank"
         }
       ]
