@@ -8,7 +8,7 @@ const NotFoundPage = () => {
       <div className="flex flex-column align-items-center justify-content-center">
         <img
           src="/demo/images/notfound/logo-blue.svg"
-          alt="Sakai logo"
+          alt="alpha mining logo"
           className="mb-5 w-6rem flex-shrink-0"
         />
         <div
